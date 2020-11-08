@@ -24,6 +24,7 @@
     <Keyword>MFCProj</Keyword>
     <RootNamespace>MrJackInLondon</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MrJackInLondon</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -186,7 +187,9 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MrJackInLondon.h" />
     <ClInclude Include="MrJackInLondonDlg.h" />
+    <ClInclude Include="MrJackInLondonHTP.h" />
     <ClInclude Include="MrJackInLondonInGame.h" />
+    <ClInclude Include="MrJackInLondonInGame_T.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -194,7 +197,9 @@
   <ItemGroup>
     <ClCompile Include="MrJackInLondon.cpp" />
     <ClCompile Include="MrJackInLondonDlg.cpp" />
+    <ClCompile Include="MrJackInLondonHTP.cpp" />
     <ClCompile Include="MrJackInLondonInGame.cpp" />
+    <ClCompile Include="MrJackInLondonInGame_T.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

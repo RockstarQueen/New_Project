@@ -1,0 +1,13 @@
+﻿  MrJackInLondon.cpp
+  MrJackInLondonDlg.cpp
+C:\Users\Hwawon\New_Project\MrJackInLondon\MrJackInLondonDlg.cpp(110,37): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Hwawon\New_Project\MrJackInLondon\MrJackInLondonDlg.cpp(111,39): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Hwawon\New_Project\MrJackInLondon\MrJackInLondonDlg.cpp(125,50): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Hwawon\New_Project\MrJackInLondon\MrJackInLondonDlg.cpp(125,30): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Hwawon\New_Project\MrJackInLondon\MrJackInLondonDlg.cpp(170,38): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Hwawon\New_Project\MrJackInLondon\MrJackInLondonDlg.cpp(171,40): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MrJackInLondonHTP.cpp
+  MrJackInLondonInGame.cpp
+  MrJackInLondonInGame_T.cpp
+  코드를 생성하고 있습니다...
+  MrJackInLondon.vcxproj -> C:\Users\Hwawon\New_Project\x64\Debug\MrJackInLondon.exe

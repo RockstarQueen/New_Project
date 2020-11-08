@@ -41,4 +41,6 @@ public:
 	float f_rect_rate_Main;
 	float f_image_rate_Main;
 	int i_priority_range_Main;
+	afx_msg void OnBnClickedBtStart();
+	afx_msg void OnBnClickedBtHtp();
 };
