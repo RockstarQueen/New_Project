@@ -8,14 +8,19 @@
 #define IDD_MRJACKINLONDON_DIALOG       102
 #define IDR_MAINFRAME                   130
 #define IDD_DIALOG_GAME                 131
+#define IDD_DIALOG_InGame               135
+#define IDD_DIALOG1                     136
+#define IDD_DIALOG_HTP                  136
+#define IDC_BT_START                    1000
+#define IDC_BT_HTP                      1002
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        133
+#define _APS_NEXT_RESOURCE_VALUE        139
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1000
+#define _APS_NEXT_CONTROL_VALUE         1004
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
