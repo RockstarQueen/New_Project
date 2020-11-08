@@ -70,6 +70,7 @@ BEGIN_MESSAGE_MAP(CMrJackInLondonDlg, CDialogEx)
 	ON_WM_SIZE()
 	ON_BN_CLICKED(IDC_BT_START, &CMrJackInLondonDlg::OnBnClickedBtStart)
 	ON_BN_CLICKED(IDC_BT_HTP, &CMrJackInLondonDlg::OnBnClickedBtHtp)
+	ON_WM_GETMINMAXINFO()
 END_MESSAGE_MAP()
 
 
@@ -229,4 +230,17 @@ void CMrJackInLondonDlg::OnBnClickedBtHtp()
 	MrJackInLondonHTP dialog2;
 	dialog2.DoModal();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMrJackInLondonDlg::OnGetMinMaxInfo(MINMAXINFO* lpMMI)
+{
+	lpMMI->ptMinTrackSize.x = 777;
+	lpMMI->ptMinTrackSize.y = 800;
+
+	lpMMI->ptMaxTrackSize.x = 1165;
+	lpMMI->ptMaxTrackSize.y = 1200;
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	CDialogEx::OnGetMinMaxInfo(lpMMI);
 }
