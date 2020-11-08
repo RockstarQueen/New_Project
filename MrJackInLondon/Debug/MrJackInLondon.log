@@ -1,0 +1,8 @@
+﻿  MrJackInLondonDlg.cpp
+C:\Users\aceof\source\repos\MrJackInLondon\MrJackInLondon\MrJackInLondonDlg.cpp(106,37): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aceof\source\repos\MrJackInLondon\MrJackInLondon\MrJackInLondonDlg.cpp(107,39): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aceof\source\repos\MrJackInLondon\MrJackInLondon\MrJackInLondonDlg.cpp(121,74): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aceof\source\repos\MrJackInLondon\MrJackInLondon\MrJackInLondonDlg.cpp(121,49): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aceof\source\repos\MrJackInLondon\MrJackInLondon\MrJackInLondonDlg.cpp(166,38): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aceof\source\repos\MrJackInLondon\MrJackInLondon\MrJackInLondonDlg.cpp(167,40): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MrJackInLondon.vcxproj -> C:\Users\aceof\source\repos\MrJackInLondon\Debug\MrJackInLondon.exe
