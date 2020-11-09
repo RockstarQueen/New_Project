@@ -214,6 +214,8 @@
     <None Include="res\MrJackInLondon.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Mr.Jack\Boardpan.bmp" />
+    <Image Include="..\Mr.Jack\기타이미지\게임보드판.jpg" />
     <Image Include="Mr.jackIcon.ico" />
     <Image Include="res\MrJackInLondon.ico" />
   </ItemGroup>
