@@ -80,5 +80,11 @@
     <Image Include="Mr.jackIcon.ico">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\Mr.Jack\기타이미지\게임보드판.jpg">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Mr.Jack\Boardpan.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>
