@@ -14,7 +14,6 @@ IMPLEMENT_DYNAMIC(MrJackInLondonHTP, CDialogEx)
 MrJackInLondonHTP::MrJackInLondonHTP(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_HTP, pParent)
 {
-
 }
 
 MrJackInLondonHTP::~MrJackInLondonHTP()
