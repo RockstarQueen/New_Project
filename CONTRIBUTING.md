@@ -2,6 +2,9 @@
 <RockstarQueen>
 <p>
  ClassDiagram 그리기 ver.1 (2020/11/03)<br>
+ CMrJackInLondonDlg의 버튼 그래픽 적용 (2020/11/10)<br>
+ CMrJackInLondonInGame_T 수정 (2020/11/10)<br>
+ CMrJackInLondonDlg 수정 (2020/11/10)<br>
 </p>
   
 ### hyunwoo9120
@@ -25,6 +28,11 @@
 <arittung>
 <p>
   구현할 클래스와 메소드 의사코드 작성<br>
-  GameImage 모으기<br>
-  (캐릭터 카드, 게임 화면, 가로등, 맨홀, 게임 버튼 등 게임 전반에 걸쳐 필요할때마다 계속 작업 중)<br>
+ 게임에 필요한 이미지 편집 및 제작(2020/11/10)<br>
+ 1. 버튼 4개(Click전 후의 Play와 Rule)<br>
+ 2. 가로등 5개(1~4라운드 임시 가로등과 영구 가로등)<br> 
+ 3. 맨홀 <br>
+ 4. 라운드 이미지 2개(현재라운드이미지, 지난라운드 및 대기 라운드용 이미지)<br>
+ 5. 캐릭터카드 8종<br>
+ 6. 범인 카드 8종<br>
 </p>
