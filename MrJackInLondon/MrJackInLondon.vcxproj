@@ -218,6 +218,7 @@
     <Image Include="..\Mr.Jack\기타이미지\게임보드판.jpg" />
     <Image Include="Mr.jackIcon.ico" />
     <Image Include="res\MrJackInLondon.ico" />
+    <Image Include="~\Mr.Jack\Boardpan.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
