@@ -61,6 +61,8 @@ CMrJackInLondonDlg::CMrJackInLondonDlg(CWnd* pParent /*=nullptr*/)
 void CMrJackInLondonDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_BT_HTP, m_png_button_Rule);
+	DDX_Control(pDX, IDC_BT_START, m_png_button_Play);
 }
 
 BEGIN_MESSAGE_MAP(CMrJackInLondonDlg, CDialogEx)
@@ -107,6 +109,8 @@ BOOL CMrJackInLondonDlg::OnInitDialog()
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 	m_png_image_of_Main.Load(L"Mr_Jack_Title.png");
+	//m_png_button_Play.LoadBitmaps(IDB_PNG_PLAY_DEF, IDB_PNG_PLAY_ON, NULL, NULL);
+	//m_png_button_Play.SizeToContent();
 	GetClientRect(&rectCtl);
 	SetWindowPos(&wndTop, 0, 0, m_png_image_of_Main.GetWidth() / 3, m_png_image_of_Main.GetHeight() / 3, SWP_SHOWWINDOW);
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
