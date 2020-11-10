@@ -7,15 +7,14 @@
 #define IDS_ABOUTBOX                    101
 #define IDD_MRJACKINLONDON_DIALOG       102
 #define IDR_MAINFRAME                   130
-#define IDD_DIALOG_GAME                 131
 #define IDD_DIALOG_InGame               135
 #define IDD_DIALOG1                     136
 #define IDD_DIALOG_HTP                  136
 #define IDB_BITMAP_MAP                  140
-#define IDB_BITMAP1                     157
-#define IDB_BITMAP2                     158
-#define IDB_BITMAP3                     159
-#define IDB_BITMAP4                     160
+#define IDB_BITMAP_PLAY_DEF             157
+#define IDB_BITMAP_PLAY_ON              158
+#define IDB_BITMAP_RULE_DEF             159
+#define IDB_BITMAP_RULE_ON              160
 #define IDC_BT_START                    1000
 #define IDC_BT_HTP                      1002
 #define IDC_BUTTON2                     1005
@@ -24,7 +23,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        161
+#define _APS_NEXT_RESOURCE_VALUE        162
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1006
 #define _APS_NEXT_SYMED_VALUE           101

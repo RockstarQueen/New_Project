@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 
-// MrJackInLondonInGame 대화 상자
+// MrJackInLondonInGame_T 대화 상자
 
 class MrJackInLondonInGame : public CDialogEx
 {
@@ -13,11 +13,14 @@ public:
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_DIALOG_GAME };
+	enum { IDD = IDD_DIALOG_InGame };
 #endif
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
 
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
+	virtual BOOL OnInitDialog();
 };
