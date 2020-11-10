@@ -216,6 +216,7 @@
   <ItemGroup>
     <Image Include="..\Mr.Jack\Boardpan.bmp" />
     <Image Include="..\Mr.Jack\기타이미지\게임보드판.jpg" />
+    <Image Include="Boardpan.bmp" />
     <Image Include="Mr.jackIcon.ico" />
     <Image Include="res\MrJackInLondon.ico" />
     <Image Include="~\Mr.Jack\Boardpan.bmp" />

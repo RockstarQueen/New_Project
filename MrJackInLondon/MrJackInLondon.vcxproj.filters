@@ -89,5 +89,8 @@
     <Image Include="~\Mr.Jack\Boardpan.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Boardpan.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

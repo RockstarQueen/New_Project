@@ -108,22 +108,7 @@ BOOL CMrJackInLondonDlg::OnInitDialog()
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 	m_png_image_of_Main.Load(L"Mr_Jack_Title.png");
 	GetClientRect(&rectCtl);
-	f_image_width_Main = rectCtl.right - rectCtl.left;
-	f_image_height_Main = rectCtl.bottom - rectCtl.top;
-	f_rect_rate_Main = f_image_width_Main / f_image_height_Main;
-	f_image_rate_Main = (float)m_png_image_of_Main.GetWidth() / (float)m_png_image_of_Main.GetHeight();
-	i_priority_range_Main = ((f_image_rate_Main > f_rect_rate_Main && f_image_rate_Main < 1) || (f_image_rate_Main < f_rect_rate_Main && f_image_rate_Main >= 1)) ? 1 : 0;
-	
-	if (i_priority_range_Main)
-		f_image_width_Main = f_image_height_Main * f_image_rate_Main;
-	else
-		f_image_height_Main = f_image_width_Main / f_image_rate_Main;
-
-	rectCtl.left = 0;
-	rectCtl.right = (int)f_image_width_Main;
-	rectCtl.top = 0;
-	rectCtl.bottom = (int)f_image_height_Main;
-	SetWindowPos(&wndTop, 0, 0, f_image_width_Main, f_image_height_Main, SWP_SHOWWINDOW);
+	SetWindowPos(&wndTop, 0, 0, m_png_image_of_Main.GetWidth() / 3, m_png_image_of_Main.GetHeight() / 3, SWP_SHOWWINDOW);
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -168,21 +153,8 @@ void CMrJackInLondonDlg::OnPaint()
 		//CDialogEx::OnPaint();
 		CPaintDC dc(this);
 		//m_png_image_of_Main.Draw(dc, 0, 0);
-		f_image_width_Main = rectCtl.right - rectCtl.left;
-		f_image_height_Main = rectCtl.bottom - rectCtl.top;
-		f_rect_rate_Main = f_image_width_Main / f_image_height_Main;
-		f_image_rate_Main = (float)m_png_image_of_Main.GetWidth() / (float)m_png_image_of_Main.GetHeight();
-		i_priority_range_Main = ((f_image_rate_Main > f_rect_rate_Main && f_image_rate_Main < 1) || (f_image_rate_Main < f_rect_rate_Main&& f_image_rate_Main >= 1)) ? 1 : 0;
 
-		if (i_priority_range_Main)
-			f_image_width_Main = f_image_height_Main * f_image_rate_Main;
-		else
-			f_image_height_Main = f_image_width_Main / f_image_rate_Main;
-
-		rectCtl.left = 0;
-		rectCtl.right = (int)f_image_width_Main;
-		rectCtl.top = 0;
-		rectCtl.bottom = (int)f_image_height_Main;
+		GetClientRect(&rectCtl);
 		
 		m_png_image_of_Main.StretchBlt(dc.m_hDC, 0, 0, rectCtl.right - rectCtl.left, rectCtl.bottom - rectCtl.top, SRCCOPY);
 		//SetWindowPos(&wndTop, 0, 0, rectCtl.right - rectCtl.left, rectCtl.bottom - rectCtl.top, SWP_SHOWWINDOW);
@@ -235,11 +207,6 @@ void CMrJackInLondonDlg::OnBnClickedBtHtp()
 
 void CMrJackInLondonDlg::OnGetMinMaxInfo(MINMAXINFO* lpMMI)
 {
-	lpMMI->ptMinTrackSize.x = 777;
-	lpMMI->ptMinTrackSize.y = 800;
-
-	lpMMI->ptMaxTrackSize.x = 777;
-	lpMMI->ptMaxTrackSize.y = 800;
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 
 	CDialogEx::OnGetMinMaxInfo(lpMMI);
