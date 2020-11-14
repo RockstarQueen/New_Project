@@ -29,6 +29,7 @@ void MrJackInLondonInGame::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(MrJackInLondonInGame, CDialogEx)
 	ON_WM_GETMINMAXINFO()
+	ON_BN_CLICKED(IDC_IGB_HELP, &MrJackInLondonInGame::OnBnClickedIgbHelp)
 END_MESSAGE_MAP()
 
 
@@ -56,4 +57,18 @@ BOOL MrJackInLondonInGame::OnInitDialog()
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
+}
+
+
+void MrJackInLondonInGame::OnBnClickedIgbHelp()
+{
+	TCHAR path[_MAX_PATH];
+
+	GetModuleFileName(NULL, path, sizeof path);
+	CString strpath = path;
+	int i = strpath.ReverseFind('\\');
+	strpath = strpath.Left(i);
+	CString realpath = strpath + "/HTP.pdf";
+	ShellExecute(NULL, _T("open"), _T("MicrosoftEDGE.EXE"), realpath, NULL, SW_SHOW);
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
