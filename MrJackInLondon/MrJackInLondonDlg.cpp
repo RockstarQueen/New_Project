@@ -1,7 +1,7 @@
 ﻿
 // MrJackInLondonDlg.cpp: 구현 파일
 //
-
+#include <iostream>
 #include "pch.h"
 #include "framework.h"
 #include "MrJackInLondon.h"
@@ -207,8 +207,14 @@ void CMrJackInLondonDlg::OnBnClickedBtStart()
 
 void CMrJackInLondonDlg::OnBnClickedBtHtp()
 {
-	MrJackInLondonHTP dialog2;
-	dialog2.DoModal();
+	TCHAR path[_MAX_PATH];
+
+	GetModuleFileName(NULL, path, sizeof path);
+	CString strpath = path;
+	int i = strpath.ReverseFind('\\');
+	strpath = strpath.Left(i);
+	CString realpath = strpath + "/HTP.pdf";
+	ShellExecute(NULL, _T("open"), _T("MicrosoftEDGE.EXE"), realpath , NULL, SW_SHOW);
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
 
