@@ -23,6 +23,7 @@
   MrJackInLondonDlg 파일의 해상도 조정(min, max조정 고민중)(2020/11/08)<br>
   MrJackInLondonInGame 내부 맵 비트맵 파일 생성해서 넣음.(2020/11/09)<br>
   MrJackInLondon How to play 구현. pdf파일을 열리게 함(엣지 익스플로러) (2020/11/14)<br>
+  MrJackInLondon InGame에 도움말 버튼 추가, 클릭시 HTP.pdf 구동(2020/11/14)<br>
 </p>
   
 ### arittung
