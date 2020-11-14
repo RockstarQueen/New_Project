@@ -42,6 +42,12 @@
     <ClInclude Include="Tile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="ClientSocket.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ListenSocket.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MrJackInLondon.cpp">
@@ -60,6 +66,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientSocket.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ListenSocket.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -52,6 +52,10 @@ BOOL CMrJackInLondonApp::InitInstance()
 
 	CWinApp::InitInstance();
 
+	if (!AfxSocketInit())
+	{
+		AfxMessageBox(_T("AfxSocketInit() FAILED. InitInstance"));
+	}
 
 	AfxEnableControlContainer();
 

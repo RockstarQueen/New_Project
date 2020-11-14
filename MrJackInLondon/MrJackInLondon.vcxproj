@@ -184,6 +184,8 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ClientSocket.h" />
+    <ClInclude Include="ListenSocket.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MrJackInLondon.h" />
     <ClInclude Include="MrJackInLondonDlg.h" />
@@ -195,6 +197,8 @@
     <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClientSocket.cpp" />
+    <ClCompile Include="ListenSocket.cpp" />
     <ClCompile Include="MrJackInLondon.cpp" />
     <ClCompile Include="MrJackInLondonDlg.cpp" />
     <ClCompile Include="MrJackInLondonHTP.cpp" />

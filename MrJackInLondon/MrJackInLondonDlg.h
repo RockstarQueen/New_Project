@@ -1,4 +1,4 @@
-﻿
+﻿#include "ListenSocket.h"
 // MrJackInLondonDlg.h: 헤더 파일
 //
 
@@ -11,6 +11,7 @@ class CMrJackInLondonDlg : public CDialogEx
 // 생성입니다.
 public:
 	CMrJackInLondonDlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
+	CListenSocket m_ListenSocket;
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
