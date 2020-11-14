@@ -12,6 +12,7 @@
 <p>
   구현 할 클래스와 메소드 의사코드 작성<br>
   서버-클라이언트의 통신 프로토콜 결정(TCP)<br>
+  ListenSocket과 ClientSocket 추가(2020/11/14)<br>
 </p>
 
   
