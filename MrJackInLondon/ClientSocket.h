@@ -4,9 +4,12 @@
 
 class CClientSocket : public CSocket
 {
+private:
+	SOCKET sock;
 public:
 	CClientSocket();
 	virtual ~CClientSocket();
+	int SetClientSocket();
 };
 
 
