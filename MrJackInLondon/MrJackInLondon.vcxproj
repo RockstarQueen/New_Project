@@ -214,8 +214,11 @@
     <None Include="res\MrJackInLondon.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\문서\카카오톡 받은 파일\KakaoTalk_20201115_190406755_02.bmp" />
     <Image Include="..\..\..\KakaoTalk_20201110_153734974.bmp" />
     <Image Include="..\..\..\KakaoTalk_20201110_153847756.bmp" />
+    <Image Include="..\..\..\TurnEndButtonDefault.bmp" />
+    <Image Include="..\..\..\TurnEndButtonOn.bmp" />
     <Image Include="..\Mr.Jack\Boardpan.bmp" />
     <Image Include="..\Mr.Jack\기타이미지\게임보드판.jpg" />
     <Image Include="bitmap1.bmp" />

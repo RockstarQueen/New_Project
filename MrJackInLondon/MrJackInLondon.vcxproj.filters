@@ -125,5 +125,14 @@
     <Image Include="..\..\..\KakaoTalk_20201110_153847756.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\..\..\..\문서\카카오톡 받은 파일\KakaoTalk_20201115_190406755_02.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\..\..\TurnEndButtonDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\..\..\TurnEndButtonOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>
