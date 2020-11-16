@@ -44,6 +44,6 @@ public:
 	afx_msg void OnBnClickedBtStart();
 	afx_msg void OnBnClickedBtHtp();
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
-	CBitmapButton m_png_button_Rule;
-	CBitmapButton m_png_button_Play;
+	CBitmapButton m_button_Rule;
+	CBitmapButton m_button_Play;
 };

@@ -17,7 +17,9 @@
 #define IDB_BITMAP_RULE_ON              160
 #define IDB_BITMAP1                     165
 #define IDC_BT_START                    1000
+#define IDC_BT_GAMEPLAY                 1000
 #define IDC_BT_HTP                      1002
+#define IDC_BT_GAMERULE                 1002
 #define IDC_BUTTON2                     1005
 #define IDC_IGB_TURNEND                 1005
 #define IDC_HTPB_PREV                   1006

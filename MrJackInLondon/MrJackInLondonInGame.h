@@ -24,4 +24,6 @@ public:
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	virtual BOOL OnInitDialog();
 	afx_msg void OnBnClickedIgbHelp();
+	class Tile;
+	
 };

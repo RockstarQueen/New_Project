@@ -61,8 +61,8 @@ CMrJackInLondonDlg::CMrJackInLondonDlg(CWnd* pParent /*=nullptr*/)
 void CMrJackInLondonDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_BT_HTP, m_png_button_Rule);
-	DDX_Control(pDX, IDC_BT_START, m_png_button_Play);
+	DDX_Control(pDX, IDC_BT_HTP, m_button_Rule);
+	DDX_Control(pDX, IDC_BT_START, m_button_Play);
 }
 
 BEGIN_MESSAGE_MAP(CMrJackInLondonDlg, CDialogEx)
@@ -108,11 +108,13 @@ BOOL CMrJackInLondonDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+
 	m_png_image_of_Main.Load(L"Mr_Jack_Title.png");
-	m_png_button_Play.LoadBitmaps(IDB_BITMAP_PLAY_DEF, IDB_BITMAP_PLAY_ON, NULL, NULL);
-	m_png_button_Play.SizeToContent();
+	m_button_Play.LoadBitmaps(IDB_BITMAP_PLAY_DEF, IDB_BITMAP_PLAY_ON, NULL, NULL);
+	m_button_Play.SizeToContent();
 	GetClientRect(&rectCtl);
 	SetWindowPos(&wndTop, 0, 0, m_png_image_of_Main.GetWidth() / 3, m_png_image_of_Main.GetHeight() / 3, SWP_SHOWWINDOW);
+	//GetDlgItem(IDC_BT_GAMEPLAY)->MoveWindow(width/2 , 2 * height/3, width/2, 2*height / 3);
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -160,10 +162,10 @@ void CMrJackInLondonDlg::OnPaint()
 
 		GetClientRect(&rectCtl);
 		m_png_image_of_Main.StretchBlt(dc.m_hDC, 0, 0, rectCtl.right - rectCtl.left, rectCtl.bottom - rectCtl.top, SRCCOPY);
-		m_png_button_Play.LoadBitmaps(IDB_BITMAP_PLAY_DEF, IDB_BITMAP_PLAY_ON, NULL, NULL);
-		m_png_button_Play.SizeToContent();
-		m_png_button_Rule.LoadBitmaps(IDB_BITMAP_RULE_DEF, IDB_BITMAP_RULE_ON, NULL, NULL);
-		m_png_button_Rule.SizeToContent();
+		m_button_Play.LoadBitmaps(IDB_BITMAP_PLAY_DEF, IDB_BITMAP_PLAY_ON, NULL, NULL);
+		m_button_Play.SizeToContent();
+		m_button_Rule.LoadBitmaps(IDB_BITMAP_RULE_DEF, IDB_BITMAP_RULE_ON, NULL, NULL);
+		m_button_Rule.SizeToContent();
 		
 		//SetWindowPos(&wndTop, 0, 0, rectCtl.right - rectCtl.left, rectCtl.bottom - rectCtl.top, SWP_SHOWWINDOW);
 		
