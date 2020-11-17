@@ -26,4 +26,10 @@ public:
 	afx_msg void OnBnClickedIgbHelp();
 	class Tile;
 	
+	CBitmapButton m_button_Setting;
+	CBitmapButton m_button_Help;
+	CBitmapButton m_button_TurnEnd;
+	afx_msg void OnPaint();
+	
+	CBitmap m_bitmap_map;
 };

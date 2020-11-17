@@ -15,7 +15,10 @@
 #define IDB_BITMAP_PLAY_ON              158
 #define IDB_BITMAP_RULE_DEF             159
 #define IDB_BITMAP_RULE_ON              160
-#define IDB_BITMAP1                     165
+#define IDB_BITMAP_BT_SETTING_DEF       168
+#define IDB_BITMAP_BT_SETTING_ON        169
+#define IDB_BITMAP_BT_TURNEND_ON        170
+#define IDB_BITMAP_BT_TURNEND_DEF       171
 #define IDC_BT_START                    1000
 #define IDC_BT_GAMEPLAY                 1000
 #define IDC_BT_HTP                      1002
@@ -32,7 +35,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        166
+#define _APS_NEXT_RESOURCE_VALUE        172
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1010
 #define _APS_NEXT_SYMED_VALUE           101

@@ -134,5 +134,23 @@
     <Image Include="..\..\..\TurnEndButtonOn.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="SettingButtonDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="SettingButtonOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="ButtonSettingDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="ButtonSettingOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="ButtonTrunEndOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="ButtonTurnEndDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>
