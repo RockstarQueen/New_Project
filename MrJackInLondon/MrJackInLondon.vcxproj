@@ -219,6 +219,11 @@
     <Image Include="..\..\..\KakaoTalk_20201110_153847756.bmp" />
     <Image Include="..\..\..\TurnEndButtonDefault.bmp" />
     <Image Include="..\..\..\TurnEndButtonOn.bmp" />
+    <Image Include="..\Mr.JackImage\가로등, 맨홀, 검문소\SL_example.bmp" />
+    <Image Include="..\Mr.JackImage\가로등, 맨홀, 검문소\SL_example2.bmp" />
+    <Image Include="..\mr.jackimage\캐릭터 말\bitmap1.bmp" />
+    <Image Include="..\Mr.JackImage\캐릭터 말\Stealthy-innocent.bmp" />
+    <Image Include="..\Mr.JackImage\캐릭터 말\Stealthy-suspicious.bmp" />
     <Image Include="..\Mr.Jack\Boardpan.bmp" />
     <Image Include="..\Mr.Jack\기타이미지\게임보드판.jpg" />
     <Image Include="bitmap1.bmp" />

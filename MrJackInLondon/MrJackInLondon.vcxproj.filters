@@ -152,5 +152,20 @@
     <Image Include="ButtonTurnEndDefault.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\Mr.JackImage\캐릭터 말\Stealthy-suspicious.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Mr.JackImage\캐릭터 말\Stealthy-innocent.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Mr.JackImage\가로등, 맨홀, 검문소\SL_example2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\mr.jackimage\캐릭터 말\bitmap1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Mr.JackImage\가로등, 맨홀, 검문소\SL_example.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

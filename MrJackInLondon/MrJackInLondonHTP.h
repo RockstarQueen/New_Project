@@ -22,4 +22,10 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	virtual BOOL OnInitDialog();
+private:
+	int i_page_num;
+public:
+	afx_msg void OnPaint();
+	afx_msg void OnBnClickedHtpbPrev();
+	afx_msg void OnBnClickedHtpbNext();
 };

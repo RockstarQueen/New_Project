@@ -19,6 +19,10 @@
 #define IDB_BITMAP_BT_SETTING_ON        169
 #define IDB_BITMAP_BT_TURNEND_ON        170
 #define IDB_BITMAP_BT_TURNEND_DEF       171
+#define IDB_BITMAP_STEALTHY_SUSP        174
+#define IDB_BITMAP_STEALTHY_INNO        175
+#define IDB_BITMAP_HTP_SL_EX1           178
+#define IDB_BITMAP_HTP_SL_EX2           179
 #define IDC_BT_START                    1000
 #define IDC_BT_GAMEPLAY                 1000
 #define IDC_BT_HTP                      1002
@@ -30,14 +34,29 @@
 #define IDC_BUTTON1                     1008
 #define IDC_IGB_HELP                    1008
 #define IDC_BUTTON_SETTING              1009
+#define IDC_S_T                         1011
+#define IDC_S_P1_T                      1012
+#define IDC_S_P1_N1                     1013
+#define IDC_S_P2_T                      1014
+#define IDC_S_P2_N1                     1015
+#define IDC_S_P2_P2                     1016
+#define IDC_S_P2_P1                     1017
+#define IDC_S_P2_N2                     1018
+#define IDC_S_P2_N3                     1019
+#define IDC_S_P3_T                      1020
+#define IDC_S_P3_N1                     1021
+#define IDC_S_P3_P1                     1023
+#define IDC_S_P3_P2                     1024
+#define IDC_S_P3_N2                     1025
+#define IDC_S_P3_N3                     1026
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        172
+#define _APS_NEXT_RESOURCE_VALUE        180
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1010
+#define _APS_NEXT_CONTROL_VALUE         1027
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
