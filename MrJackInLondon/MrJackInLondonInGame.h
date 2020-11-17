@@ -32,4 +32,5 @@ public:
 	afx_msg void OnPaint();
 	
 	CBitmap m_bitmap_map;
+	CImage m_png_Light_1;
 };

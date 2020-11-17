@@ -167,5 +167,56 @@
     <Image Include="..\Mr.JackImage\가로등, 맨홀, 검문소\SL_example.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\Mr.jackIcon.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Boardpan.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\GamePlayButtonDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\GamePlayButtonOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\GameRuleButtonDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\GameRuleButtonOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\ButtonSettingDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\ButtonSettingOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\ButtonTrunEndOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\ButtonTurnEndDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Stealthy-suspicious.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Stealthy-innocent.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\SL_example2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\SL_example.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\InGameRuleButtonOn.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\InGameRuleButtonDefault.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\StreetLamp1.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

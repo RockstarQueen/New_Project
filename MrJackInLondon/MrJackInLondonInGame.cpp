@@ -61,7 +61,7 @@ BOOL MrJackInLondonInGame::OnInitDialog()
 	m_bitmap_map.LoadBitmap(IDB_BITMAP_MAP);
 	m_button_Setting.LoadBitmaps(IDB_BITMAP_BT_SETTING_DEF, IDB_BITMAP_BT_SETTING_ON, NULL, NULL);
 	m_button_Setting.SizeToContent();
-
+	m_png_Light_1.Load(L"res\\StreetLamp1");
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 	
@@ -98,4 +98,7 @@ void MrJackInLondonInGame::OnPaint()
 	m_button_Setting.SizeToContent();
 	m_button_TurnEnd.LoadBitmaps(IDB_BITMAP_BT_TURNEND_DEF, IDB_BITMAP_BT_TURNEND_ON, NULL, NULL);
 	m_button_TurnEnd.SizeToContent();
+	m_button_Help.LoadBitmaps(IDB_BITMAP_BT_INGAMERULE_DEF, IDB_BITMAP_BT_INGAMERULE_ON, NULL, NULL);
+	m_button_Help.SizeToContent();
+	//m_png_Light_1.Draw(dc, 0, 0);
 }

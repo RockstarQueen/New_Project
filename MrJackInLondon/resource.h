@@ -23,6 +23,10 @@
 #define IDB_BITMAP_STEALTHY_INNO        175
 #define IDB_BITMAP_HTP_SL_EX1           178
 #define IDB_BITMAP_HTP_SL_EX2           179
+#define IDB_BITMAP_BT_INGAMERULE_ON     180
+#define IDB_BITMAP_BT_INGAMERULE_DEF    181
+#define IDB_PNG1                        182
+#define IDB_PNG_LIGHT1                  182
 #define IDC_BT_START                    1000
 #define IDC_BT_GAMEPLAY                 1000
 #define IDC_BT_HTP                      1002
@@ -54,7 +58,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        180
+#define _APS_NEXT_RESOURCE_VALUE        183
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1027
 #define _APS_NEXT_SYMED_VALUE           101
