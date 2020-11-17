@@ -109,7 +109,7 @@ BOOL CMrJackInLondonDlg::OnInitDialog()
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 
-	m_png_image_of_Main.Load(L"Mr_Jack_Title.png");
+	m_png_image_of_Main.Load(L"res\\Mr_Jack_Title.png");
 	m_button_Play.LoadBitmaps(IDB_BITMAP_PLAY_DEF, IDB_BITMAP_PLAY_ON, NULL, NULL);
 	m_button_Play.SizeToContent();
 	GetClientRect(&rectCtl);
