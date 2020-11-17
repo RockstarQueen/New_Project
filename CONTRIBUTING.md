@@ -6,6 +6,8 @@
  CMrJackInLondonInGame_T 수정 (2020/11/10)<br>
  CMrJackInLondonDlg 수정 (2020/11/10)<br>
  Tile Class 구현 (2020/11/16)<br>
+ CMrJackInLondonInGame의 버튼 그래픽 적용(2020/11/17)<br>
+ Resource 경로 정리 및 디버그(2020/11/17)<br>
 </p>
   
 ### hyunwoo9120
