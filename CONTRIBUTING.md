@@ -32,6 +32,7 @@ ClientSocket에서 소켓 생성 후 Server에 접속 요청(2020/11/15)<br>
   MrJackInLondon pdf방식 철회. HTP Dialog 작성 시작함(2020/11/17)<br>
   MrJackInLondonHTP에 있는 버튼 동작 구현, Invalidate를 통한 새로고침 구현(2020/11/17)<br>
   MrJackInLondonInGame에서 png파일 추가 확인(2020/11/20)<br>
+  MrJackInLondonInGame에서 함수 내 사각형 클릭 구현 기능 추가(2020/11/20)<br>
 </p>
   
 ### arittung

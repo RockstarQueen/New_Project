@@ -81,7 +81,8 @@ END_MESSAGE_MAP()
 BOOL CMrJackInLondonDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
+	MrJackInLondonInGame dialogig;
+	dialogig.DoModal();
 	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
 	// IDM_ABOUTBOX는 시스템 명령 범위에 있어야 합니다.

@@ -16,6 +16,9 @@ IMPLEMENT_DYNAMIC(MrJackInLondonInGame, CDialogEx)
 MrJackInLondonInGame::MrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
 {
+	for (int i = 0; i < 100; i++) {
+		rect[i].SetRect(85, 80, 120, 135);
+	}
 
 }
 
@@ -38,6 +41,8 @@ BEGIN_MESSAGE_MAP(MrJackInLondonInGame, CDialogEx)
 	ON_BN_CLICKED(IDC_IGB_HELP, &MrJackInLondonInGame::OnBnClickedIgbHelp)
 	ON_WM_PAINT()
 	ON_BN_CLICKED(IDC_BUTTON_SETTING, &MrJackInLondonInGame::OnBnClickedButtonSetting)
+//	ON_WM_MOUSEMOVE()
+ON_WM_LBUTTONDOWN()
 END_MESSAGE_MAP()
 
 
@@ -109,7 +114,8 @@ void MrJackInLondonInGame::OnPaint()
 	m_button_TurnEnd.SizeToContent();
 	m_button_Help.LoadBitmaps(IDB_BITMAP_BT_INGAMERULE_DEF, IDB_BITMAP_BT_INGAMERULE_ON, NULL, NULL);
 	m_button_Help.SizeToContent();
-	m_png_Light_1.Draw(dc, 50, 50);
+	m_png_Light_1.Draw(dc, 150, 50);
+	dc.Rectangle(rect[1]);
 	//m_png_Light_1.Draw(dc, 0, 0);
 }
 
@@ -119,4 +125,29 @@ void MrJackInLondonInGame::OnBnClickedButtonSetting()
 	MrJackInLondonSetting dialogset;
 	dialogset.DoModal();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+//void MrJackInLondonInGame::OnMouseMove(UINT nFlags, CPoint point)
+//{
+//	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+//	CClientDC dc(this);
+//	CString temp;
+//	temp.Format("X= %4d, Y= %4d", m_pos.x, m_pos.y);
+//	m_pos = point;
+//	CDialogEx::OnMouseMove(nFlags, point);
+//}
+
+
+void MrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+	
+	if (point.x >= rect[1].left && point.y >= rect[1].top && point.x <= rect[1].right && point.y <= rect[1].bottom) {
+		MessageBox(_T("제발.."));
+	}
+	else {
+		MessageBox(_T("다행이다"));
+	}
+	CDialogEx::OnLButtonDown(nFlags, point);
 }

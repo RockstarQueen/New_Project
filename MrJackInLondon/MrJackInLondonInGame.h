@@ -20,6 +20,8 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
 
 	DECLARE_MESSAGE_MAP()
+	CPoint m_pos;
+	CRect rect[100];
 public:
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	virtual BOOL OnInitDialog();
@@ -34,4 +36,6 @@ public:
 	CBitmap m_bitmap_map;
 	CImage m_png_Light_1;
 	afx_msg void OnBnClickedButtonSetting();
+//	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 };
