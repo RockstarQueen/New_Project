@@ -5,6 +5,7 @@
 #include "MrJackInLondon.h"
 #include "MrJackInLondonInGame.h"
 #include "afxdialogex.h"
+#include "MrJackInLondonHTP.h"
 
 
 // MrJackInLondonInGame_T 대화 상자
@@ -19,6 +20,7 @@ MrJackInLondonInGame::MrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 
 MrJackInLondonInGame::~MrJackInLondonInGame()
 {
+	m_png_Light_1.Destroy();
 }
 
 void MrJackInLondonInGame::DoDataExchange(CDataExchange* pDX)
@@ -61,7 +63,7 @@ BOOL MrJackInLondonInGame::OnInitDialog()
 	m_bitmap_map.LoadBitmap(IDB_BITMAP_MAP);
 	m_button_Setting.LoadBitmaps(IDB_BITMAP_BT_SETTING_DEF, IDB_BITMAP_BT_SETTING_ON, NULL, NULL);
 	m_button_Setting.SizeToContent();
-	m_png_Light_1.Load(L"res\\StreetLamp1");
+	m_png_Light_1.Load(L"res\\StreetLamp1.png");
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 	
@@ -70,14 +72,18 @@ BOOL MrJackInLondonInGame::OnInitDialog()
 
 void MrJackInLondonInGame::OnBnClickedIgbHelp()
 {
-	TCHAR path[_MAX_PATH];
+	MrJackInLondonHTP dialogHTP;
+	dialogHTP.DoModal();
+	//TCHAR path[_MAX_PATH];
 
+	/*
 	GetModuleFileName(NULL, path, sizeof path);
 	CString strpath = path;
 	int i = strpath.ReverseFind('\\');
 	strpath = strpath.Left(i);
 	CString realpath = strpath + "/HTP.pdf";
 	ShellExecute(NULL, _T("open"), _T("MicrosoftEDGE.EXE"), realpath, NULL, SW_SHOW);
+	*/
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
 
@@ -87,6 +93,7 @@ void MrJackInLondonInGame::OnPaint()
 	CPaintDC dc(this); // device context for painting
 					   // TODO: 여기에 메시지 처리기 코드를 추가합니다.
 					   // 그리기 메시지에 대해서는 CDialogEx::OnPaint()을(를) 호출하지 마십시오.
+
 	CDC m_dc;
 	BITMAP bmpInfo;
 	m_dc.CreateCompatibleDC(&dc);
@@ -100,5 +107,6 @@ void MrJackInLondonInGame::OnPaint()
 	m_button_TurnEnd.SizeToContent();
 	m_button_Help.LoadBitmaps(IDB_BITMAP_BT_INGAMERULE_DEF, IDB_BITMAP_BT_INGAMERULE_ON, NULL, NULL);
 	m_button_Help.SizeToContent();
+	m_png_Light_1.Draw(dc, 50, 50);
 	//m_png_Light_1.Draw(dc, 0, 0);
 }
