@@ -27,6 +27,7 @@
 #define IDB_BITMAP_BT_INGAMERULE_DEF    181
 #define IDB_PNG1                        182
 #define IDB_PNG_LIGHT1                  182
+#define IDD_DIALOG_Setting              183
 #define IDC_BT_START                    1000
 #define IDC_BT_GAMEPLAY                 1000
 #define IDC_BT_HTP                      1002
@@ -53,14 +54,18 @@
 #define IDC_S_P3_P2                     1024
 #define IDC_S_P3_N2                     1025
 #define IDC_S_P3_N3                     1026
+#define IDC_SLIDER1                     1027
+#define IDC_CB_Mute                     1029
+#define IDC_S_Sound                     1030
+#define IDC_S_Makers                    1031
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        183
+#define _APS_NEXT_RESOURCE_VALUE        185
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1027
+#define _APS_NEXT_CONTROL_VALUE         1033
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

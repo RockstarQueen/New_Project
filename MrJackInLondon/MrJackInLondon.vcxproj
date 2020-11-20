@@ -189,6 +189,7 @@
     <ClInclude Include="MrJackInLondonDlg.h" />
     <ClInclude Include="MrJackInLondonHTP.h" />
     <ClInclude Include="MrJackInLondonInGame.h" />
+    <ClInclude Include="MrJackInLondonSetting.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="MrJackInLondonDlg.cpp" />
     <ClCompile Include="MrJackInLondonHTP.cpp" />
     <ClCompile Include="MrJackInLondonInGame.cpp" />
+    <ClCompile Include="MrJackInLondonSetting.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

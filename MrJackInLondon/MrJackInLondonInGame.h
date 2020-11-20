@@ -33,4 +33,5 @@ public:
 	
 	CBitmap m_bitmap_map;
 	CImage m_png_Light_1;
+	afx_msg void OnBnClickedButtonSetting();
 };

@@ -6,6 +6,7 @@
 #include "MrJackInLondonInGame.h"
 #include "afxdialogex.h"
 #include "MrJackInLondonHTP.h"
+#include "MrJackInLondonSetting.h"
 
 
 // MrJackInLondonInGame_T 대화 상자
@@ -36,6 +37,7 @@ BEGIN_MESSAGE_MAP(MrJackInLondonInGame, CDialogEx)
 	ON_WM_GETMINMAXINFO()
 	ON_BN_CLICKED(IDC_IGB_HELP, &MrJackInLondonInGame::OnBnClickedIgbHelp)
 	ON_WM_PAINT()
+	ON_BN_CLICKED(IDC_BUTTON_SETTING, &MrJackInLondonInGame::OnBnClickedButtonSetting)
 END_MESSAGE_MAP()
 
 
@@ -109,4 +111,12 @@ void MrJackInLondonInGame::OnPaint()
 	m_button_Help.SizeToContent();
 	m_png_Light_1.Draw(dc, 50, 50);
 	//m_png_Light_1.Draw(dc, 0, 0);
+}
+
+
+void MrJackInLondonInGame::OnBnClickedButtonSetting()
+{
+	MrJackInLondonSetting dialogset;
+	dialogset.DoModal();
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
