@@ -8,18 +8,69 @@
 #include "MrJackInLondonHTP.h"
 #include "MrJackInLondonSetting.h"
 
-
 // MrJackInLondonInGame_T 대화 상자
 
 IMPLEMENT_DYNAMIC(MrJackInLondonInGame, CDialogEx)
 
 MrJackInLondonInGame::MrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
-{
-	for (int i = 0; i < 100; i++) {
-		rect[i].SetRect(85, 80, 120, 135);
+{ 
+	//제작:이화원 탈출하는 위치& 타일의 판정을 Rect배열로 구현함. 
+	Escape_route[0].SetRect(15, 15, 120, 80);
+	Escape_route[1].SetRect(605, 15, 680, 80);
+	Escape_route[2].SetRect(15, 490, 120, 560);
+	Escape_route[3].SetRect(605, 490, 680, 560);
+	for (int i = 0; i < 6; i++) {
+		rect[i].SetRect(30, 110 + 58 * i, 75, 165 + 58 * i);
 	}
-
+	for (int i = 6; i < 13; i++) {
+		int k = i - 6;
+		rect[i].SetRect(80, 80 + 58 * k, 125, 135 + 58 * k);
+	}
+	for (int i = 13; i < 21; i++) {
+		int k = i - 13;
+		rect[i].SetRect(130, 52 + 58 * k, 175, 107 + 58 * k);
+	}
+	for (int i = 21; i < 30; i++) {
+		int k = i - 21;
+		rect[i].SetRect(180, 22 + 58 * k, 225, 77 + 58 * k);
+	}
+	for (int i = 30; i < 38; i++) {
+		int k = i - 30;
+		rect[i].SetRect(230, 52 + 58 * k, 275, 107 + 58 * k);
+	}
+	for (int i = 38; i < 47; i++) {
+		int k = i - 38;
+		rect[i].SetRect(280, 22 + 58 * k, 325, 77 + 58 * k);
+	}
+	for (int i = 47; i < 55; i++) {
+		int k = i - 47;
+		rect[i].SetRect(330, 52 + 58 * k, 375, 107 + 58 * k);
+	}
+	for (int i = 55; i < 64; i++) {
+		int k = i - 55;
+		rect[i].SetRect(380, 22 + 58 * k, 425, 77 + 58 * k);
+	}
+	for (int i = 64; i < 72; i++) {
+		int k = i - 64;
+		rect[i].SetRect(430, 52 + 58 * k, 475, 107 + 58 * k);
+	}
+	for (int i = 72; i < 81; i++) {
+		int k = i - 72;
+		rect[i].SetRect(480, 22 + 58 * k, 525, 77 + 58 * k);
+	}
+	for (int i = 81; i < 89; i++) {
+		int k = i - 81;
+		rect[i].SetRect(530, 52 + 58 * k, 575, 107 + 58 * k);
+	}
+	for (int i = 89; i < 96; i++) {
+		int k = i - 89;
+		rect[i].SetRect(580, 80 + 58 * k, 625, 135 + 58 * k);
+	}
+	for (int i = 96; i < 102; i++) {
+		int k = i - 96;
+		rect[i].SetRect(630, 110 + 58 * k, 675, 165 + 58 * k);
+	}
 }
 
 MrJackInLondonInGame::~MrJackInLondonInGame()
@@ -115,7 +166,12 @@ void MrJackInLondonInGame::OnPaint()
 	m_button_Help.LoadBitmaps(IDB_BITMAP_BT_INGAMERULE_DEF, IDB_BITMAP_BT_INGAMERULE_ON, NULL, NULL);
 	m_button_Help.SizeToContent();
 	m_png_Light_1.Draw(dc, 150, 50);
-	dc.Rectangle(rect[1]);
+	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. lhw
+	for(int i=0;i<103;i++)
+		dc.Rectangle(rect[i]);
+	for (int i = 0; i < 4; i++) {
+		dc.Rectangle(Escape_route[i]);
+	}
 	//m_png_Light_1.Draw(dc, 0, 0);
 }
 
@@ -141,13 +197,28 @@ void MrJackInLondonInGame::OnBnClickedButtonSetting()
 
 void MrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 {
+	CString msg;
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
-	
-	if (point.x >= rect[1].left && point.y >= rect[1].top && point.x <= rect[1].right && point.y <= rect[1].bottom) {
+	//타일 안에 있으면 반응하게 하는 함수. 주석 처리시 발생안함. lhw. <<현재 i값을 못불러옴. 마우스의 x좌표로 불러오는 문제가 보임. 수정 바람(20201120)
+	for (int i = 0; i < 102; i++) {
+		if (rect[i].PtInRect(point)) {
+			MessageBox(_T("사각형 안에 있어용"));
+		}
+	}
+	for (int j = 0; j < 4; j++) {
+		if (Escape_route[j].PtInRect(point)) {
+			msg = j+"번째 안에 있다.";
+			AfxMessageBox(msg);
+		}
+	}
+	/*
+	if (point.x >= rect[i].left && point.y >= rect[i].top && point.x <= rect[i].right && point.y <= rect[i].bottom) {
 		MessageBox(_T("제발.."));
 	}
 	else {
 		MessageBox(_T("다행이다"));
 	}
+	*/
+	
 	CDialogEx::OnLButtonDown(nFlags, point);
 }

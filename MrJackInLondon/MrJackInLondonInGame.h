@@ -21,7 +21,8 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 	CPoint m_pos;
-	CRect rect[100];
+	CRect rect[103];
+	CRect Escape_route[4];
 public:
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	virtual BOOL OnInitDialog();
