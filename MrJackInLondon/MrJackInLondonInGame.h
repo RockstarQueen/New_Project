@@ -40,4 +40,5 @@ public:
 //	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	CImage m_png_Goodley;
+	CImage m_png_CheckPoint1;
 };

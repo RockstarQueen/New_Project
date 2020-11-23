@@ -8,6 +8,9 @@
  Tile Class 구현 (2020/11/16)<br>
  CMrJackInLondonInGame의 버튼 그래픽 적용(2020/11/17)<br>
  Resource 경로 정리 및 디버그(2020/11/17)<br>
+ 그래픽 Testing (2020/11/23)<br>
+ Character Class 및 sub Classes 추가(2020/11/23)<br>
+ 그래픽 최초 좌표 찾기(2020/11/23)<br>
 </p>
   
 ### hyunwoo9120
