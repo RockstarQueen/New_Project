@@ -34,7 +34,7 @@ protected:
 public:
 	CImage m_png_image_of_Main;
 	afx_msg void OnSize(UINT nType, int cx, int cy);
-	CRect rectCtl;
+	CRect m_rect;
 	CWnd* pCt1;
 	float f_image_width_Main;
 	float f_image_height_Main;

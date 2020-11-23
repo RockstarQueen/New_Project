@@ -3,13 +3,13 @@
 
 // MrJackInLondonHTP 대화 상자
 
-class MrJackInLondonHTP : public CDialogEx
+class CMrJackInLondonRule : public CDialogEx
 {
-	DECLARE_DYNAMIC(MrJackInLondonHTP)
+	DECLARE_DYNAMIC(CMrJackInLondonRule)
 
 public:
-	MrJackInLondonHTP(CWnd* pParent = nullptr);   // 표준 생성자입니다.
-	virtual ~MrJackInLondonHTP();
+	CMrJackInLondonRule(CWnd* pParent = nullptr);   // 표준 생성자입니다.
+	virtual ~CMrJackInLondonRule();
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME

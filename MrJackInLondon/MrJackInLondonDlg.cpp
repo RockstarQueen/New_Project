@@ -81,7 +81,7 @@ END_MESSAGE_MAP()
 BOOL CMrJackInLondonDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-	MrJackInLondonInGame dialogig;
+	CMrJackInLondonInGame dialogig;
 	dialogig.DoModal();
 	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
@@ -113,7 +113,7 @@ BOOL CMrJackInLondonDlg::OnInitDialog()
 	m_png_image_of_Main.Load(L"res\\Mr_Jack_Title.png");
 	m_button_Play.LoadBitmaps(IDB_BITMAP_PLAY_DEF, IDB_BITMAP_PLAY_ON, NULL, NULL);
 	m_button_Play.SizeToContent();
-	GetClientRect(&rectCtl);
+	GetClientRect(&m_rect);
 	SetWindowPos(&wndTop, 0, 0, m_png_image_of_Main.GetWidth() / 3, m_png_image_of_Main.GetHeight() / 3, SWP_SHOWWINDOW);
 	//GetDlgItem(IDC_BT_GAMEPLAY)->MoveWindow(width/2 , 2 * height/3, width/2, 2*height / 3);
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
@@ -161,8 +161,8 @@ void CMrJackInLondonDlg::OnPaint()
 		CPaintDC dc(this);
 		//m_png_image_of_Main.Draw(dc, 0, 0);
 
-		GetClientRect(&rectCtl);
-		m_png_image_of_Main.StretchBlt(dc.m_hDC, 0, 0, rectCtl.right - rectCtl.left, rectCtl.bottom - rectCtl.top, SRCCOPY);
+		GetClientRect(&m_rect);
+		m_png_image_of_Main.StretchBlt(dc.m_hDC, 0, 0, m_rect.right - m_rect.left, m_rect.bottom - m_rect.top, SRCCOPY);
 		m_button_Play.LoadBitmaps(IDB_BITMAP_PLAY_DEF, IDB_BITMAP_PLAY_ON, NULL, NULL);
 		m_button_Play.SizeToContent();
 		m_button_Rule.LoadBitmaps(IDB_BITMAP_RULE_DEF, IDB_BITMAP_RULE_ON, NULL, NULL);
@@ -186,7 +186,7 @@ void CMrJackInLondonDlg::OnSize(UINT nType, int cx, int cy)
 {
 	CDialogEx::OnSize(nType, cx, cy);
 
-	GetClientRect(&rectCtl);
+	GetClientRect(&m_rect);
 	
 	Invalidate();
 
@@ -202,7 +202,7 @@ void CMrJackInLondonDlg::OnSize(UINT nType, int cx, int cy)
 
 void CMrJackInLondonDlg::OnBnClickedBtStart()
 {
-	MrJackInLondonInGame dialog1;
+	CMrJackInLondonInGame dialog1;
 	dialog1.DoModal();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
@@ -211,7 +211,7 @@ void CMrJackInLondonDlg::OnBnClickedBtStart()
 void CMrJackInLondonDlg::OnBnClickedBtHtp()
 {
 	
-	MrJackInLondonHTP dialog2;
+	CMrJackInLondonRule dialog2;
 	dialog2.DoModal();
 	/*
 	TCHAR path[_MAX_PATH];

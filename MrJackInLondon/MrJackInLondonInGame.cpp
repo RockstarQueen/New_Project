@@ -10,9 +10,9 @@
 
 // MrJackInLondonInGame_T 대화 상자
 
-IMPLEMENT_DYNAMIC(MrJackInLondonInGame, CDialogEx)
+IMPLEMENT_DYNAMIC(CMrJackInLondonInGame, CDialogEx)
 
-MrJackInLondonInGame::MrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
+CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
 { 
 	//제작:이화원 탈출하는 위치& 타일의 판정을 Rect배열로 구현함. 
@@ -73,12 +73,12 @@ MrJackInLondonInGame::MrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	}
 }
 
-MrJackInLondonInGame::~MrJackInLondonInGame()
+CMrJackInLondonInGame::~CMrJackInLondonInGame()
 {
 	m_png_Light_1.Destroy();
 }
 
-void MrJackInLondonInGame::DoDataExchange(CDataExchange* pDX)
+void CMrJackInLondonInGame::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_BUTTON_SETTING, m_button_Setting);
@@ -87,11 +87,11 @@ void MrJackInLondonInGame::DoDataExchange(CDataExchange* pDX)
 }
 
 
-BEGIN_MESSAGE_MAP(MrJackInLondonInGame, CDialogEx)
+BEGIN_MESSAGE_MAP(CMrJackInLondonInGame, CDialogEx)
 	ON_WM_GETMINMAXINFO()
-	ON_BN_CLICKED(IDC_IGB_HELP, &MrJackInLondonInGame::OnBnClickedIgbHelp)
+	ON_BN_CLICKED(IDC_IGB_HELP, &CMrJackInLondonInGame::OnBnClickedIgbHelp)
 	ON_WM_PAINT()
-	ON_BN_CLICKED(IDC_BUTTON_SETTING, &MrJackInLondonInGame::OnBnClickedButtonSetting)
+	ON_BN_CLICKED(IDC_BUTTON_SETTING, &CMrJackInLondonInGame::OnBnClickedButtonSetting)
 //	ON_WM_MOUSEMOVE()
 ON_WM_LBUTTONDOWN()
 END_MESSAGE_MAP()
@@ -100,7 +100,7 @@ END_MESSAGE_MAP()
 // MrJackInLondonInGame_T 메시지 처리기
 
 
-void MrJackInLondonInGame::OnGetMinMaxInfo(MINMAXINFO* lpMMI2)
+void CMrJackInLondonInGame::OnGetMinMaxInfo(MINMAXINFO* lpMMI2)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 
@@ -113,7 +113,7 @@ void MrJackInLondonInGame::OnGetMinMaxInfo(MINMAXINFO* lpMMI2)
 }
 
 
-BOOL MrJackInLondonInGame::OnInitDialog()
+BOOL CMrJackInLondonInGame::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
@@ -128,9 +128,9 @@ BOOL MrJackInLondonInGame::OnInitDialog()
 }
 
 
-void MrJackInLondonInGame::OnBnClickedIgbHelp()
+void CMrJackInLondonInGame::OnBnClickedIgbHelp()
 {
-	MrJackInLondonHTP dialogHTP;
+	CMrJackInLondonRule dialogHTP;
 	dialogHTP.DoModal();
 	//TCHAR path[_MAX_PATH];
 
@@ -146,7 +146,7 @@ void MrJackInLondonInGame::OnBnClickedIgbHelp()
 }
 
 
-void MrJackInLondonInGame::OnPaint()
+void CMrJackInLondonInGame::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
 					   // TODO: 여기에 메시지 처리기 코드를 추가합니다.
@@ -176,9 +176,9 @@ void MrJackInLondonInGame::OnPaint()
 }
 
 
-void MrJackInLondonInGame::OnBnClickedButtonSetting()
+void CMrJackInLondonInGame::OnBnClickedButtonSetting()
 {
-	MrJackInLondonSetting dialogset;
+	CMrJackInLondonSetting dialogset;
 	dialogset.DoModal();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
@@ -195,7 +195,7 @@ void MrJackInLondonInGame::OnBnClickedButtonSetting()
 //}
 
 
-void MrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
+void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	CString msg;
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.

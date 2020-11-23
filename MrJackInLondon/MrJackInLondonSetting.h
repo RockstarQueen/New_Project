@@ -3,13 +3,13 @@
 
 // MrJackInLondonSetting 대화 상자
 
-class MrJackInLondonSetting : public CDialogEx
+class CMrJackInLondonSetting : public CDialogEx
 {
-	DECLARE_DYNAMIC(MrJackInLondonSetting)
+	DECLARE_DYNAMIC(CMrJackInLondonSetting)
 
 public:
-	MrJackInLondonSetting(CWnd* pParent = nullptr);   // 표준 생성자입니다.
-	virtual ~MrJackInLondonSetting();
+	CMrJackInLondonSetting(CWnd* pParent = nullptr);   // 표준 생성자입니다.
+	virtual ~CMrJackInLondonSetting();
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME

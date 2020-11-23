@@ -9,25 +9,25 @@
 
 // MrJackInLondonSetting 대화 상자
 
-IMPLEMENT_DYNAMIC(MrJackInLondonSetting, CDialogEx)
+IMPLEMENT_DYNAMIC(CMrJackInLondonSetting, CDialogEx)
 
-MrJackInLondonSetting::MrJackInLondonSetting(CWnd* pParent /*=nullptr*/)
+CMrJackInLondonSetting::CMrJackInLondonSetting(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_Setting, pParent)
 {
 
 }
 
-MrJackInLondonSetting::~MrJackInLondonSetting()
+CMrJackInLondonSetting::~CMrJackInLondonSetting()
 {
 }
 
-void MrJackInLondonSetting::DoDataExchange(CDataExchange* pDX)
+void CMrJackInLondonSetting::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 }
 
 
-BEGIN_MESSAGE_MAP(MrJackInLondonSetting, CDialogEx)
+BEGIN_MESSAGE_MAP(CMrJackInLondonSetting, CDialogEx)
 END_MESSAGE_MAP()
 
 

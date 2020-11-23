@@ -184,6 +184,15 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CGoodley.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="CJeremy.h" />
+    <ClInclude Include="CLestrade.h" />
+    <ClInclude Include="CShelock.h" />
+    <ClInclude Include="CSmith.h" />
+    <ClInclude Include="CStealthy.h" />
+    <ClInclude Include="CWatson.h" />
+    <ClInclude Include="CWilliam.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MrJackInLondon.h" />
     <ClInclude Include="MrJackInLondonDlg.h" />
@@ -196,9 +205,18 @@
     <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CGoodley.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CJeremy.cpp" />
+    <ClCompile Include="CLestrade.cpp" />
+    <ClCompile Include="CShelock.cpp" />
+    <ClCompile Include="CSmith.cpp" />
+    <ClCompile Include="CStealthy.cpp" />
+    <ClCompile Include="CWatson.cpp" />
+    <ClCompile Include="CWilliam.cpp" />
     <ClCompile Include="MrJackInLondon.cpp" />
     <ClCompile Include="MrJackInLondonDlg.cpp" />
-    <ClCompile Include="MrJackInLondonHTP.cpp" />
+    <ClCompile Include="MrJackInLondonRule.cpp" />
     <ClCompile Include="MrJackInLondonInGame.cpp" />
     <ClCompile Include="MrJackInLondonSetting.cpp" />
     <ClCompile Include="pch.cpp">
