@@ -121,7 +121,8 @@ BOOL CMrJackInLondonInGame::OnInitDialog()
 	m_bitmap_map.LoadBitmap(IDB_BITMAP_MAP);
 	m_button_Setting.LoadBitmaps(IDB_BITMAP_BT_SETTING_DEF, IDB_BITMAP_BT_SETTING_ON, NULL, NULL);
 	m_button_Setting.SizeToContent();
-	m_png_Light_1.Load(L"res\\StreetLamp1.png");
+	m_png_Light_1.Load(L"res\\StreetLamp.png");
+	m_png_Goodley.Load(L"res\\GoodleySuspicious.png");
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 	
@@ -165,13 +166,14 @@ void CMrJackInLondonInGame::OnPaint()
 	m_button_TurnEnd.SizeToContent();
 	m_button_Help.LoadBitmaps(IDB_BITMAP_BT_INGAMERULE_DEF, IDB_BITMAP_BT_INGAMERULE_ON, NULL, NULL);
 	m_button_Help.SizeToContent();
-	m_png_Light_1.Draw(dc, 150, 50);
-	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. lhw
-	for(int i=0;i<103;i++)
+	m_png_Light_1.Draw(dc, 71, 81);//현재 테스트 상태, 나중에 Lamp1으로 교체
+	m_png_Goodley.Draw(dc, 82, 90);
+	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. 
+	/*for(int i=0;i<103;i++)
 		dc.Rectangle(rect[i]);
 	for (int i = 0; i < 4; i++) {
 		dc.Rectangle(Escape_route[i]);
-	}
+	}*/
 	//m_png_Light_1.Draw(dc, 0, 0);
 }
 
