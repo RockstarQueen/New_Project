@@ -72,6 +72,9 @@
     <ClInclude Include="CJeremy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CMrJackInLondonMatch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MrJackInLondon.cpp">
@@ -120,6 +123,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CJeremy.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CMrJackInLondonMatch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

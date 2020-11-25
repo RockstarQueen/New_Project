@@ -46,4 +46,5 @@ public:
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	CBitmapButton m_button_Rule;
 	CBitmapButton m_button_Play;
+	CSocket m_Socket;
 };

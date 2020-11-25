@@ -28,6 +28,8 @@
 #define IDB_PNG1                        182
 #define IDB_PNG_LIGHT1                  182
 #define IDD_DIALOG_Setting              183
+#define IDD_DIALOG2                     185
+#define IDD_DIALOG_MATCHING             185
 #define IDC_BT_START                    1000
 #define IDC_BT_GAMEPLAY                 1000
 #define IDC_BT_HTP                      1002
@@ -63,7 +65,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        185
+#define _APS_NEXT_RESOURCE_VALUE        187
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1033
 #define _APS_NEXT_SYMED_VALUE           101
