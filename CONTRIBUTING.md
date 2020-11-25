@@ -42,6 +42,9 @@ multi room 구조(thread)로 2인 통신 제작 (2020/11/21)<br>
   MrJackInLondonInGame에서 png파일 추가 확인(2020/11/20)<br>
   MrJackInLondonInGame에서 함수 내 사각형 클릭 구현 기능 추가(2020/11/20)<br>
   MrJackInLondonInGame에서 타일 사각형 추가 & 출구 사각형 추가 + 충돌판정 구현(2020/11/20)<br>
+  MrJackInLondonInGame에서 좌표 구현(2020/11/25)<br>
+  MrJackInLondonInGame에서 말 움직이는거 구현(2020/11/25)<br>
+  MrJackInLondonInGame에서 Character Class 다듬기(2020/11/25)<br>
 </p>
   
 ### arittung

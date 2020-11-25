@@ -7,6 +7,7 @@
 #include "afxdialogex.h"
 #include "MrJackInLondonHTP.h"
 #include "MrJackInLondonSetting.h"
+#include "Tile.h"
 
 // MrJackInLondonInGame_T 대화 상자
 
@@ -15,6 +16,8 @@ IMPLEMENT_DYNAMIC(CMrJackInLondonInGame, CDialogEx)
 CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
 { 
+	i_Button_pressed_after = 0;
+	i_Button_pressed_before = 0;
 	//제작:이화원 탈출하는 위치& 타일의 판정을 Rect배열로 구현함. 
 	Escape_route[0].SetRect(15, 15, 120, 80);
 	Escape_route[1].SetRect(605, 15, 680, 80);
@@ -124,6 +127,7 @@ BOOL CMrJackInLondonInGame::OnInitDialog()
 	m_png_Light_1.Load(L"res\\StreetLamp.png");
 	m_png_Goodley.Load(L"res\\GoodleySuspicious.png");
 	m_png_CheckPoint1.Load(L"res\\CheckPoint.png");
+	m_png_Light_Map.Load(L"res\\able_to_go.png");
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
@@ -171,6 +175,43 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_1.Draw(dc, 71, 81);//현재 테스트 상태, 나중에 Lamp1으로 교체
 	m_png_Goodley.Draw(dc, 82, 90);
 	m_png_CheckPoint1.Draw(dc, 10, 25);
+
+	if ((i_Button_pressed_before == 3) && i_Button_pressed_after == 4) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 4 + 20);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 3) && i_Button_pressed_after == 2) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 2 + 20);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 4) && i_Button_pressed_after == 3) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 3 + 20);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 1 || i_Button_pressed_before == 3) && i_Button_pressed_after == 4) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 3 + 20);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	else if (i_Button_pressed_before == 2) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 2 + 20);
+		
+		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 3 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 65 + 50 * 1, 81 + 6 * 58 - 30);
+	}
+	else if (i_Button_pressed_before == 3) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 3 + 20);
+		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 2 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 4 * 58 - 30);
+	}
+	else if (i_Button_pressed_before == 4) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 4 + 20);
+		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 3 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 5 * 58 - 30);
+	}
 	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. 
 	/*
 	for(int i=0;i<103;i++)
@@ -179,6 +220,7 @@ void CMrJackInLondonInGame::OnPaint()
 		dc.Rectangle(Escape_route[i]);
 	}
 	*/
+	
 	//m_png_Light_1.Draw(dc, 0, 0);
 }
 
@@ -207,9 +249,21 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 	CString msg;
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 	//타일 안에 있으면 반응하게 하는 함수. 주석 처리시 발생안함. lhw. <<현재 i값을 못불러옴. 마우스의 x좌표로 불러오는 문제가 보임. 수정 바람(20201120)
+	/*
 	for (int i = 0; i < 109; i++) {
 		if (rect[i].PtInRect(point)) {
 			MessageBox(_T("사각형 안에 있어용"));
+		}
+	}
+	*/
+	for (int i = 1; i < 109; i++) {
+		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0) {
+			i_Button_pressed_before = i;
+			Invalidate();
+		}
+		else if (rect[i].PtInRect(point) && i_Button_pressed_before != 0) {
+			i_Button_pressed_after = i;
+			Invalidate();
 		}
 	}
 	for (int j = 0; j < 4; j++) {

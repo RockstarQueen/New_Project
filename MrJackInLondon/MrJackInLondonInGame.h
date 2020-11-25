@@ -41,5 +41,8 @@ public:
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	CImage m_png_Goodley;
 	CImage m_png_CheckPoint1;
+	CImage m_png_Light_Map;
 	//CTile m_Tile[110] = {CTile(0,0,0), CTile()};
+	int i_Button_pressed_before;
+	int i_Button_pressed_after;
 };
