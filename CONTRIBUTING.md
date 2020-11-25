@@ -45,6 +45,7 @@ multi room 구조(thread)로 2인 통신 제작 (2020/11/21)<br>
   MrJackInLondonInGame에서 좌표 구현(2020/11/25)<br>
   MrJackInLondonInGame에서 말 움직이는거 구현(2020/11/25)<br>
   MrJackInLondonInGame에서 Character Class 다듬기(2020/11/25)<br>
+  Added Move HTP bmp file(2020/11/25)<br>
 </p>
   
 ### arittung
