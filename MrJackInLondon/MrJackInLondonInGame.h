@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include "Tile.h"
 
 // MrJackInLondonInGame_T 대화 상자
 
@@ -41,4 +41,5 @@ public:
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	CImage m_png_Goodley;
 	CImage m_png_CheckPoint1;
+	//CTile m_Tile[110] = {CTile(0,0,0), CTile()};
 };
