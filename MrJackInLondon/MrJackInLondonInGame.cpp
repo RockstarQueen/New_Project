@@ -20,55 +20,55 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	Escape_route[1].SetRect(605, 15, 680, 80);
 	Escape_route[2].SetRect(15, 490, 120, 560);
 	Escape_route[3].SetRect(605, 490, 680, 560);
-	for (int i = 0; i < 6; i++) {
-		rect[i].SetRect(30, 110 + 58 * i, 75, 165 + 58 * i);
+	for (int i = 1; i < 7; i++) {
+		rect[i].SetRect(30, 52 + 58 * i, 75, 107 + 58 * i);
 	}
-	for (int i = 6; i < 13; i++) {
-		int k = i - 6;
+	for (int i = 10; i < 17; i++) {
+		int k = i - 10;
 		rect[i].SetRect(80, 80 + 58 * k, 125, 135 + 58 * k);
 	}
-	for (int i = 13; i < 21; i++) {
-		int k = i - 13;
+	for (int i = 17; i < 25; i++) {
+		int k = i - 17;
 		rect[i].SetRect(130, 52 + 58 * k, 175, 107 + 58 * k);
 	}
-	for (int i = 21; i < 30; i++) {
-		int k = i - 21;
+	for (int i = 25; i < 34; i++) {
+		int k = i - 25;
 		rect[i].SetRect(180, 22 + 58 * k, 225, 77 + 58 * k);
 	}
-	for (int i = 30; i < 38; i++) {
-		int k = i - 30;
+	for (int i = 34; i < 42; i++) {
+		int k = i - 34;
 		rect[i].SetRect(230, 52 + 58 * k, 275, 107 + 58 * k);
 	}
-	for (int i = 38; i < 47; i++) {
-		int k = i - 38;
+	for (int i = 42; i < 51; i++) {
+		int k = i - 42;
 		rect[i].SetRect(280, 22 + 58 * k, 325, 77 + 58 * k);
 	}
-	for (int i = 47; i < 55; i++) {
-		int k = i - 47;
+	for (int i = 51; i < 59; i++) {
+		int k = i - 51;
 		rect[i].SetRect(330, 52 + 58 * k, 375, 107 + 58 * k);
 	}
-	for (int i = 55; i < 64; i++) {
-		int k = i - 55;
+	for (int i = 59; i < 68; i++) {
+		int k = i - 59;
 		rect[i].SetRect(380, 22 + 58 * k, 425, 77 + 58 * k);
 	}
-	for (int i = 64; i < 72; i++) {
-		int k = i - 64;
+	for (int i = 68; i < 76; i++) {
+		int k = i - 68;
 		rect[i].SetRect(430, 52 + 58 * k, 475, 107 + 58 * k);
 	}
-	for (int i = 72; i < 81; i++) {
-		int k = i - 72;
+	for (int i = 76; i < 85; i++) {
+		int k = i - 76;
 		rect[i].SetRect(480, 22 + 58 * k, 525, 77 + 58 * k);
 	}
-	for (int i = 81; i < 89; i++) {
-		int k = i - 81;
+	for (int i = 85; i < 93; i++) {
+		int k = i - 85;
 		rect[i].SetRect(530, 52 + 58 * k, 575, 107 + 58 * k);
 	}
-	for (int i = 89; i < 96; i++) {
-		int k = i - 89;
+	for (int i = 94; i < 101; i++) {
+		int k = i - 94;
 		rect[i].SetRect(580, 80 + 58 * k, 625, 135 + 58 * k);
 	}
-	for (int i = 96; i < 102; i++) {
-		int k = i - 96;
+	for (int i = 103; i < 109; i++) {
+		int k = i - 103;
 		rect[i].SetRect(630, 110 + 58 * k, 675, 165 + 58 * k);
 	}
 }
@@ -207,7 +207,7 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 	CString msg;
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 	//타일 안에 있으면 반응하게 하는 함수. 주석 처리시 발생안함. lhw. <<현재 i값을 못불러옴. 마우스의 x좌표로 불러오는 문제가 보임. 수정 바람(20201120)
-	for (int i = 0; i < 102; i++) {
+	for (int i = 0; i < 109; i++) {
 		if (rect[i].PtInRect(point)) {
 			MessageBox(_T("사각형 안에 있어용"));
 		}
