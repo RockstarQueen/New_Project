@@ -1,1 +1,10 @@
 ./vs
+*.obj
+*.pdb
+*.exe
+*.tlog
+*.idb
+*.ilk
+*.recipe
+*.log
+*.ipch
