@@ -36,13 +36,25 @@ public:
 	
 	CBitmap m_bitmap_map;
 	CImage m_png_Light_1;
+	CImage m_png_Light_2;
+	CImage m_png_Light_3;
+	CImage m_png_Light_4;
+	CImage m_png_Light_5;
+	CImage m_png_etile;
+	int stealthy_move;
+	int goodley_move;
+
 	afx_msg void OnBnClickedButtonSetting();
 //	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	CImage m_png_Goodley;
+	CImage m_png_Stealthy;
+
 	CImage m_png_CheckPoint1;
 	CImage m_png_Light_Map;
+	CImage m_png_Manhole_Closed;
 	//CTile m_Tile[110] = {CTile(0,0,0), CTile()};
 	int i_Button_pressed_before;
 	int i_Button_pressed_after;
+	int set_Jack();
 };

@@ -1,6 +1,7 @@
 ﻿// MrJackInLondonInGame_T.cpp: 구현 파일
 //
-
+#include <math.h>
+#include <time.h>
 #include "pch.h"
 #include "MrJackInLondon.h"
 #include "MrJackInLondonInGame.h"
@@ -125,9 +126,16 @@ BOOL CMrJackInLondonInGame::OnInitDialog()
 	m_button_Setting.LoadBitmaps(IDB_BITMAP_BT_SETTING_DEF, IDB_BITMAP_BT_SETTING_ON, NULL, NULL);
 	m_button_Setting.SizeToContent();
 	m_png_Light_1.Load(L"res\\StreetLamp.png");
+	m_png_Light_2.Load(L"res\\StreetLamp1.png");
+	m_png_Light_3.Load(L"res\\StreetLamp2.png");
+	m_png_Light_4.Load(L"res\\StreetLamp3.png");
+	m_png_Light_5.Load(L"res\\StreetLamp4.png");
 	m_png_Goodley.Load(L"res\\GoodleySuspicious.png");
+	m_png_Stealthy.Load(L"res\\Stealthy-suspicious.png");
 	m_png_CheckPoint1.Load(L"res\\CheckPoint.png");
+	m_png_etile.Load(L"res\\empty_tile.png");
 	m_png_Light_Map.Load(L"res\\able_to_go.png");
+	m_png_Manhole_Closed.Load(L"res\\Manhole_Closed.png");
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
@@ -172,10 +180,25 @@ void CMrJackInLondonInGame::OnPaint()
 	m_button_TurnEnd.SizeToContent();
 	m_button_Help.LoadBitmaps(IDB_BITMAP_BT_INGAMERULE_DEF, IDB_BITMAP_BT_INGAMERULE_ON, NULL, NULL);
 	m_button_Help.SizeToContent();
-	m_png_Light_1.Draw(dc, 71, 81);//현재 테스트 상태, 나중에 Lamp1으로 교체
-	m_png_Goodley.Draw(dc, 82, 90);
-	m_png_CheckPoint1.Draw(dc, 10, 25);
-
+	//m_png_Light_1.Draw(dc, 71, 81);//현재 테스트 상태, 나중에 Lamp1으로 교체
+	//m_png_Goodley.Draw(dc, 82, 90);
+	//m_png_CheckPoint1.Draw(dc, 10, 25);
+	m_png_Manhole_Closed.Draw(dc, 70 + 50 * 4, 81 + 2 * 58);
+	m_png_Goodley.Draw(dc, 32 + 50 * 12, 37 + 58 * 4 - 35);
+	m_png_Stealthy.Draw(dc, 32 + 50 * 8, 37 + 58 * 8 - 35);
+	m_png_Light_1.Draw(dc, 71 + 50 * 4, 81 + 4 * 58);
+	m_png_Light_1.Draw(dc, 71 + 50 * 6, 81 + 2 * 58);
+	m_png_Light_2.Draw(dc, 70 + 50 * 0, 81 + 5 * 58);
+	m_png_Light_3.Draw(dc, 73 + 50 * 10, 81 + 1 * 58);
+	m_png_Light_4.Draw(dc, 71 + 50 * 1, 81 + 1 * 58-29);
+	m_png_Light_5.Draw(dc, 71 + 50 * 9, 81 + 6 * 58 - 29);
+	
+	if ((i_Button_pressed_before == 3) && i_Button_pressed_after == 4) {
+		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 4 + 20);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	
 	if ((i_Button_pressed_before == 3) && i_Button_pressed_after == 4) {
 		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 4 + 20);
 		i_Button_pressed_before = 0;
@@ -196,11 +219,22 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
+	if ((i_Button_pressed_before == 75 || i_Button_pressed_before == 73) && i_Button_pressed_after == 74) {
+		m_png_Stealthy.Draw(dc, 32 + 50 * 8, 37 + 58 * 7 - 35);
+		m_png_etile.Draw(dc, 32 + 50 * 8, 37 + 58 * 8 - 35);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
 	else if (i_Button_pressed_before == 2) {
 		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 2 + 20);
-		
-		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 3 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 65 + 50 * 1, 81 + 6 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 0, 81 + 1 * 58 );
+		m_png_Light_Map.Draw(dc, 70 + 50 * 4, 81 + -1 * 58);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 7 * 58);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 4 * 58);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 10, 81 + 0 * 58);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 11, 81 + 4 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * -1, 81 + 3 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 1, 81 + 6 * 58 - 30);
 	}
 	else if (i_Button_pressed_before == 3) {
 		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 3 + 20);
@@ -211,6 +245,20 @@ void CMrJackInLondonInGame::OnPaint()
 		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 4 + 20);
 		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 3 * 58 - 30);
 		m_png_Light_Map.Draw(dc, 65 + 50 * -1, 81 + 5 * 58 - 30);
+	}
+	else if (i_Button_pressed_before == 75) {
+		m_png_Stealthy.Draw(dc, 32 + 50 * 8, 37 + 58 * 8 - 35);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 6 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 7 * 58);
+	}
+	else if (i_Button_pressed_before == 74) {
+		m_png_Stealthy.Draw(dc, 32 + 50 * 8, 37 + 58 * 7 - 35);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 5 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 7 * 58 - 30);
+	}
+	else {
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
 	}
 	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. 
 	/*
@@ -282,4 +330,14 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 	*/
 	
 	CDialogEx::OnLButtonDown(nFlags, point);
+}
+
+
+int CMrJackInLondonInGame::set_Jack()
+{
+	srand((unsigned int)time(NULL));
+	int rand_pick=(rand()%8)+1;
+
+	// TODO: 여기에 구현 코드 추가.
+	return 0;
 }

@@ -2,8 +2,12 @@
 #include "Character.h"
 CCharacter::CCharacter() {
 	/*
-	if (Characters == 0) {
-
+	Characters a;
+	switch (a) {
+	case 1:
+		break;
+	case 2:
+		break;
 	}
 	*/
 	b_innocent = 0;
