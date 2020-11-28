@@ -19,10 +19,11 @@ public:
 	int GetXPos();
 	int GetYPos();
 	void Moveable();
-	void Move();
+	void Move(int xpos, int ypos);
 	int GetPos();
 
 protected:
+	CPoint p_charpos;
 	bool b_innocent;
 	int i_position;
 	int i_xposition;

@@ -1,7 +1,8 @@
 #pragma once
 #include "Character.h"
-class CJeremy :
-	public CCharacter
+class CJeremy :	public CCharacter
 {
+public:
+	CJeremy();
 };
 

@@ -9,6 +9,25 @@
 #include "MrJackInLondonHTP.h"
 #include "MrJackInLondonSetting.h"
 #include "Tile.h"
+#include "CGoodley.h"
+#include "CJeremy.h"
+#include "CLestrade.h"
+#include "CShelock.h"
+#include "CStealthy.h"
+#include "CSmith.h"
+#include "CWatson.h"
+#include "CWilliam.h"
+#include "Character.h"
+
+
+CGoodley goodley;
+CShelock homes;
+CJeremy jeremy;
+CLestrade lestrade;
+CSmith john;
+CStealthy stealthy;
+CWatson watson;
+CWilliam william;
 
 // MrJackInLondonInGame_T 대화 상자
 
@@ -17,6 +36,7 @@ IMPLEMENT_DYNAMIC(CMrJackInLondonInGame, CDialogEx)
 CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
 { 
+	
 	i_Button_pressed_after = 0;
 	i_Button_pressed_before = 0;
 	//제작:이화원 탈출하는 위치& 타일의 판정을 Rect배열로 구현함. 
@@ -24,6 +44,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	Escape_route[1].SetRect(605, 15, 680, 80);
 	Escape_route[2].SetRect(15, 490, 120, 560);
 	Escape_route[3].SetRect(605, 490, 680, 560);
+
 	for (int i = 1; i < 7; i++) {
 		rect[i].SetRect(30, 52 + 58 * i, 75, 107 + 58 * i);
 	}
@@ -130,13 +151,22 @@ BOOL CMrJackInLondonInGame::OnInitDialog()
 	m_png_Light_3.Load(L"res\\StreetLamp2.png");
 	m_png_Light_4.Load(L"res\\StreetLamp3.png");
 	m_png_Light_5.Load(L"res\\StreetLamp4.png");
-	m_png_Goodley.Load(L"res\\GoodleySuspicious.png");
+
+	m_png_Goodley.Load(L"res\\Goodley-suspicious.png");
+	m_png_Homes.Load(L"res\\Homes-suspicious.png");
+	m_png_Jeremy.Load(L"res\\Jeremy-suspicious.png");
+	m_png_John.Load(L"res\\John-suspicious.png");
+	m_png_Lestrade.Load(L"res\\Lestrade-suspicious.png");
 	m_png_Stealthy.Load(L"res\\Stealthy-suspicious.png");
+	m_png_William.Load(L"res\\William-suspicious.png");
+	m_png_Watson.Load(L"res\\Watson-suspicious.png");
+
 	m_png_CheckPoint1.Load(L"res\\CheckPoint.png");
 	m_png_etile.Load(L"res\\empty_tile.png");
 	m_png_Light_Map.Load(L"res\\able_to_go.png");
 	m_png_Manhole_Closed.Load(L"res\\Manhole_Closed.png");
-
+	
+	
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 	
@@ -184,8 +214,9 @@ void CMrJackInLondonInGame::OnPaint()
 	//m_png_Goodley.Draw(dc, 82, 90);
 	//m_png_CheckPoint1.Draw(dc, 10, 25);
 	m_png_Manhole_Closed.Draw(dc, 70 + 50 * 4, 81 + 2 * 58);
-	m_png_Goodley.Draw(dc, 32 + 50 * 12, 37 + 58 * 4 - 35);
-	m_png_Stealthy.Draw(dc, 32 + 50 * 8, 37 + 58 * 8 - 35);
+	//m_png_Goodley.Draw(dc, 32 + 50 * 12, 37 + 58 * 4 - 35);
+	
+	//등대 초기 구현.
 	m_png_Light_1.Draw(dc, 71 + 50 * 4, 81 + 4 * 58);
 	m_png_Light_1.Draw(dc, 71 + 50 * 6, 81 + 2 * 58);
 	m_png_Light_2.Draw(dc, 70 + 50 * 0, 81 + 5 * 58);
@@ -210,7 +241,8 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 4) && i_Button_pressed_after == 3) {
-		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 3 + 20);
+		goodley.Move(0, 3);
+		m_png_Goodley.Draw(dc, 32 + 50 * goodley.GetXPos(), 37 + 58 * goodley.GetYPos() + 20);
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
@@ -220,13 +252,15 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	if ((i_Button_pressed_before == 75 || i_Button_pressed_before == 73) && i_Button_pressed_after == 74) {
-		m_png_Stealthy.Draw(dc, 32 + 50 * 8, 37 + 58 * 7 - 35);
+		
+		stealthy.Move(8, 6);
 		m_png_etile.Draw(dc, 32 + 50 * 8, 37 + 58 * 8 - 35);
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
 	else if (i_Button_pressed_before == 2) {
-		m_png_Goodley.Draw(dc, 32 + 50 * 0, 37 + 58 * 2 + 20);
+		
+		m_png_Goodley.Draw(dc, 32 + 50 * goodley.GetXPos(), 37 + 58 * goodley.GetYPos() +20);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 0, 81 + 1 * 58 );
 		m_png_Light_Map.Draw(dc, 70 + 50 * 4, 81 + -1 * 58);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 7 * 58);
@@ -260,9 +294,63 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
+	if (goodley.GetXPos() % 2 == 0) {
+		m_png_Goodley.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 35);
+	}
+	else if (goodley.GetXPos() % 2 != 0) {
+		m_png_Goodley.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 65);
+	}
+	if (homes.GetXPos() % 2 == 0) {
+		m_png_Homes.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 35);
+	}
+	else if (goodley.GetXPos() % 2 != 0) {
+		m_png_Homes.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 65);
+	}
+	if (jeremy.GetXPos() % 2 == 0) {
+		m_png_Jeremy.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 35);
+	}
+	else if (jeremy.GetXPos() % 2 != 0) {
+		m_png_Jeremy.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 65);
+	}
+	if (john.GetXPos() % 2 == 0) {
+		m_png_John.Draw(dc, 32 + 50 * john.GetXPos(), 95 + 58 * john.GetYPos() - 35);
+	}
+	else if (john.GetXPos() % 2 != 0) {
+		m_png_John.Draw(dc, 32 + 50 * john.GetXPos(), 95 + 58 * john.GetYPos() - 65);
+	}
+	if (lestrade.GetXPos() % 2 == 0) {
+		m_png_Lestrade.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 35);
+	}
+	else if (lestrade.GetXPos() % 2 != 0) {
+		m_png_Lestrade.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 65);
+	}
+	if (stealthy.GetXPos() % 2 == 0) {
+		m_png_Stealthy.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 35);
+	}
+	else if (stealthy.GetXPos() % 2 != 0) {
+		m_png_Stealthy.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 65);
+	}
+	if (watson.GetXPos() % 2 == 0) {
+		m_png_Watson.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 35);
+	}
+	else if (watson.GetXPos() % 2 != 0) {
+		m_png_Watson.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 65);
+	}
+	if (william.GetXPos() % 2 == 0) {
+		m_png_William.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 35);
+	}
+	else if (william.GetXPos() % 2 != 0) {
+		m_png_William.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 65);
+	}
+	
+	
+	
+	
+	
+	
 	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. 
 	/*
-	for(int i=0;i<103;i++)
+	for(int i=0;i<109;i++)
 		dc.Rectangle(rect[i]);
 	for (int i = 0; i < 4; i++) {
 		dc.Rectangle(Escape_route[i]);
@@ -304,6 +392,10 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 		}
 	}
 	*/
+	
+
+	msg.Format(_T("값: %d, %d"), stealthy.GetXPos(), stealthy.GetYPos());
+	MessageBox(msg);
 	for (int i = 1; i < 109; i++) {
 		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0) {
 			i_Button_pressed_before = i;

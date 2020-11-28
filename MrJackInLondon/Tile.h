@@ -6,7 +6,7 @@ public:
 	const int i_num;
 	const int i_type;
 	CTile(int pos, int type, int valid);
-
+	CPoint p_tilepos;
 	/*
 	type 0 장애물
 	type 1 일반 타일(길)
@@ -30,6 +30,4 @@ public:
 	ex1) manhole & Smith = 52
 	ex2) manhole & Jeremy = 102
 	*/
-	int i_xpos;
-	int i_ypos;
 };

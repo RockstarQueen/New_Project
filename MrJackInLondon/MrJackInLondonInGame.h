@@ -49,6 +49,13 @@ public:
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	CImage m_png_Goodley;
 	CImage m_png_Stealthy;
+	CImage m_png_Homes;
+	CImage m_png_Jeremy;
+	CImage m_png_John;
+	CImage m_png_Lestrade;
+	CImage m_png_Watson;
+	CImage m_png_William;
+
 
 	CImage m_png_CheckPoint1;
 	CImage m_png_Light_Map;

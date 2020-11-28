@@ -3,5 +3,7 @@
 class CWilliam :
 	public CCharacter
 {
+public:
+	CWilliam();
 };
 

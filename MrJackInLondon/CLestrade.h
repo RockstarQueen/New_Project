@@ -3,5 +3,7 @@
 class CLestrade :
 	public CCharacter
 {
+public:
+	CLestrade();
 };
 

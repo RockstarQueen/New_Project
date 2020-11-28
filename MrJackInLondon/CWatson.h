@@ -3,5 +3,7 @@
 class CWatson :
 	public CCharacter
 {
+public:
+	CWatson();
 };
 

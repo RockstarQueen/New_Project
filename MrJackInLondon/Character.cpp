@@ -1,39 +1,35 @@
 #include "pch.h"
 #include "Character.h"
 CCharacter::CCharacter() {
-	/*
-	Characters a;
-	switch (a) {
-	case 1:
-		break;
-	case 2:
-		break;
-	}
-	*/
 	b_innocent = 0;
-	i_xposition = 0;
-	i_yposition = 0;
 }
 int CCharacter::GetXPos() {
 	
-	return this->i_xposition;
+	return this->p_charpos.x;
 }
 int CCharacter::GetYPos() {
-	return this->i_yposition;
+	return this->p_charpos.y;
 }
 
 int CCharacter::GetPos() {
 	return this->i_position;
 }
 void CCharacter::Moveable() {
-	int now_pos;
-	now_pos = this->GetPos();
-	if (now_pos  > 9&&now_pos<103) {
+	int now_xpos;
+	int now_ypos;
+	CPoint a;
+	a.x = this->GetXPos();
+	a.y = this->GetYPos();
+	
+	
+	if (a.x != 0 && a.x != 11 && a.y != 0 && a.y != 11) {
 
 	}
-}
-void CCharacter::Move() {
 	
+}
+void CCharacter::Move(int xpos, int ypos) {
+	this->p_charpos.x = xpos;
+	this->p_charpos.y = ypos;
 }
 bool CCharacter::GetInno() {
 	return this->b_innocent;

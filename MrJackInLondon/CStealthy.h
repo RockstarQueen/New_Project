@@ -1,5 +1,9 @@
 #pragma once
-class CStealthy
+#include "Character.h"
+
+class CStealthy: public CCharacter
 {
+public:
+	CStealthy();
 };
 

@@ -3,5 +3,7 @@
 class CShelock :
 	public CCharacter
 {
+public:
+	CShelock();
 };
 
