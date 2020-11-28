@@ -37,171 +37,182 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	Escape_route[1].SetRect(605, 15, 680, 80);
 	Escape_route[2].SetRect(15, 490, 120, 560);
 	Escape_route[3].SetRect(605, 490, 680, 560);
-	tile[1].setTile(0, 0, 0);
-	tile[2].setTile(2, 0, 0);
-	tile[3].setTile(3, 1, 0);
-	tile[4].setTile(4, 1, 0);
-	tile[5].setTile(5, 1, 0);
-	tile[6].setTile(6, 1, 0);
-	tile[7].setTile(7, 1, 0);
-	tile[8].setTile(8, 0, 0);
-	tile[9].setTile(9, 0, 0);
-	tile[10].setTile(10, 1, 0);
-	tile[11].setTile(11, 1, 0);
-	tile[12].setTile(12, 0, 0);
-	tile[13].setTile(13, 0, 0);
-	tile[14].setTile(14, 1, 0);
-	tile[15].setTile(15, 0, 0);
-	tile[16].setTile(16, 1, 0);
-	tile[17].setTile(17, 0, 0);
-	tile[18].setTile(18, 0, 0);
-	tile[19].setTile(19, 2, 0);
-	tile[20].setTile(20, 1, 0);
-	tile[21].setTile(21, 0, 0);
-	tile[22].setTile(22, 1, 0);
-	tile[23].setTile(23, 1, 0);
-	tile[24].setTile(24, 1, 0);
-	tile[25].setTile(25, 0, 0);
-	tile[26].setTile(26, 0, 0);
-	tile[27].setTile(27, 0, 0);
-	tile[28].setTile(28, 1, 0);
-	tile[29].setTile(29, 0, 0);
-	tile[30].setTile(30, 1, 0);
-	tile[31].setTile(31, 0, 0);
-	tile[32].setTile(32, 1, 0);
-	tile[33].setTile(33, 0, 0);
-	tile[34].setTile(34, 0, 0);
-	tile[35].setTile(35, 1, 0);
-	tile[36].setTile(36, 1, 0);
-	tile[37].setTile(37, 1, 0);
-	tile[38].setTile(38, 1, 0);
-	tile[39].setTile(39, 1, 0);
-	tile[40].setTile(40, 1, 0);
-	tile[41].setTile(41, 1, 0);
-	tile[42].setTile(42, 0, 0);
-	tile[43].setTile(43, 1, 0);
-	tile[44].setTile(44, 2, 0);
-	tile[45].setTile(45, 0, 0);
-	tile[46].setTile(46, 1, 0);
-	tile[47].setTile(47, 0, 0);
-	tile[48].setTile(48, 2, 0);
-	tile[49].setTile(49, 0, 0);
-	tile[50].setTile(50, 1, 0);
-	tile[51].setTile(51, 0, 0);
-	tile[52].setTile(52, 1, 0);
-	tile[53].setTile(53, 1, 0);
-	tile[54].setTile(54, 1, 0);
-	tile[55].setTile(55, 1, 0);
-	tile[56].setTile(56, 1, 0);
-	tile[57].setTile(57, 1, 0);
-	tile[58].setTile(58, 1, 0);
-	tile[59].setTile(59, 1, 0);
-	tile[60].setTile(60, 0, 0);
-	tile[61].setTile(61, 1, 0);
-	tile[62].setTile(62, 0, 0);
-	tile[63].setTile(63, 2, 0);
-	tile[64].setTile(64, 0, 0);
-	tile[65].setTile(65, 1, 0);
-	tile[66].setTile(66, 0, 0);
-	tile[67].setTile(67, 2, 0);
-	tile[68].setTile(68, 1, 0);
-	tile[69].setTile(69, 0, 0);
-	tile[70].setTile(70, 1, 0);
-	tile[71].setTile(71, 1, 0);
-	tile[72].setTile(72, 1, 0);
-	tile[73].setTile(73, 1, 0);
-	tile[74].setTile(74, 1, 0);
-	tile[75].setTile(75, 1, 0);
-	tile[76].setTile(76, 1, 0);
-	tile[77].setTile(77, 0, 0);
-	tile[78].setTile(78, 0, 0);
-	tile[79].setTile(79, 1, 0);
-	tile[80].setTile(80, 0, 0);
-	tile[81].setTile(81, 1, 0);
-	tile[82].setTile(82, 0, 0);
-	tile[83].setTile(83, 1, 0);
-	tile[84].setTile(84, 0, 0);
-	tile[85].setTile(85, 0, 0);
-	tile[86].setTile(86, 0, 0);
-	tile[87].setTile(87, 1, 0);
-	tile[88].setTile(88, 1, 0);
-	tile[89].setTile(89, 1, 0);
-	tile[90].setTile(90, 0, 0);
-	tile[91].setTile(91, 1, 0);
-	tile[92].setTile(92, 2, 0);
-	tile[93].setTile(93, 0, 0);
-	tile[94].setTile(94, 0, 0);
-	tile[95].setTile(95, 1, 0);
-	tile[96].setTile(96, 2, 0);
-	tile[97].setTile(97, 1, 0);
-	tile[98].setTile(98, 0, 0);
-	tile[99].setTile(99, 0, 0);
-	tile[100].setTile(100, 1, 0);
-	tile[101].setTile(101, 1, 0);
-	tile[102].setTile(102, 0, 0);
-	tile[103].setTile(103, 0, 0);
-	tile[104].setTile(104, 1, 0);
-	tile[105].setTile(105, 1, 0);
-	tile[106].setTile(106, 1, 0);
-	tile[107].setTile(107, 1, 0);
-	tile[108].setTile(108, 1, 0);
-
-
-
+	tile[0].setTile((0,1), 0, 0);
+	tile[1].setTile((0,2), 1, 0);
+	tile[2].setTile((0,3), 1, 0);
+	tile[3].setTile((0,4), 1, 0);
+	tile[4].setTile((0,5), 1, 0);
+	tile[5].setTile((0,6), 1, 0);
+	tile[6].setTile((1,1), 1, 0);
+	tile[7].setTile((0,0), 0, 0);
+	tile[8].setTile((0,0), 0, 0);
+	tile[9].setTile((1,1), 1, 0);
+	tile[10].setTile((1,2), 1, 0);
+	tile[11].setTile((1,3), 0, 0);
+	tile[12].setTile((1,4), 0, 0);
+	tile[13].setTile((1,5), 1, 0);
+	tile[14].setTile((1,6), 2, 0);
+	tile[15].setTile((1,7), 1, 0);
+	tile[16].setTile((0,0), 0, 0);
+	tile[17].setTile((2,0), 0, 0);
+	tile[18].setTile((2,1), 2, 0);
+	tile[19].setTile((2,2), 1, 0);
+	tile[20].setTile((2,3), 0, 0);
+	tile[21].setTile((2,4), 1, 0);
+	tile[22].setTile((2,5), 1, 0);
+	tile[23].setTile((2,6), 1, 0);
+	tile[24].setTile((2,7), 0, 0);
+	tile[25].setTile((3,0), 0, 0);
+	tile[26].setTile((3,1), 0, 0);
+	tile[27].setTile((3,2), 1, 0);
+	tile[28].setTile((3,3), 0, 0);
+	tile[29].setTile((3,4), 1, 0);
+	tile[30].setTile((3,5), 0, 0);
+	tile[31].setTile((3,6), 1, 0);
+	tile[32].setTile((3,7), 0, 0);
+	tile[33].setTile((3,8), 0, 0);
+	tile[34].setTile((4,0), 1, 0);
+	tile[35].setTile((4,1), 1, 0);
+	tile[36].setTile((4,2), 1, 0);
+	tile[37].setTile((4,3), 1, 0);
+	tile[38].setTile((4, 4), 1, 0);
+	tile[39].setTile((4, 5), 1, 0);
+	tile[40].setTile((4, 6), 1, 0);
+	tile[41].setTile((4, 7), 0, 0);
+	tile[42].setTile((5, 1), 1, 0);
+	tile[43].setTile((5, 2), 2, 0);
+	tile[44].setTile((5, 3), 0, 0);
+	tile[45].setTile((5, 4), 1, 0);
+	tile[46].setTile((5, 5), 0, 0);
+	tile[47].setTile((5, 6), 2, 0);
+	tile[48].setTile((5, 7), 0, 0);
+	tile[49].setTile((5, 8), 1, 0);
+	tile[50].setTile((5, 9), 0, 0);
+	tile[51].setTile((6, 1), 1, 0);
+	tile[52].setTile((6, 2), 1, 0);
+	tile[53].setTile((6, 3), 1, 0);
+	tile[54].setTile((6, 4), 1, 0);
+	tile[55].setTile((6, 5), 1, 0);
+	tile[56].setTile((6, 6), 1, 0);
+	tile[57].setTile((6, 7), 1, 0);
+	tile[58].setTile((6, 8), 1, 0);
+	tile[59].setTile((7, 1), 0, 0);
+	tile[60].setTile((7, 2), 1, 0);
+	tile[61].setTile((7, 3), 0, 0);
+	tile[62].setTile((7, 4), 2, 0);
+	tile[63].setTile((7, 5), 0, 0);
+	tile[64].setTile((7, 6), 1, 0);
+	tile[65].setTile((7, 7), 0, 0);
+	tile[66].setTile((7, 8), 2, 0);
+	tile[67].setTile((7, 9), 1, 0);
+	tile[68].setTile((8, 1), 0, 0);
+	tile[69].setTile((8, 2), 1, 0);
+	tile[70].setTile((8, 3), 1, 0);
+	tile[71].setTile((8, 4), 1, 0);
+	tile[72].setTile((8, 5), 1, 0);
+	tile[73].setTile((8, 6), 1, 0);
+	tile[74].setTile((8, 7), 1, 0);
+	tile[75].setTile((8, 8), 1, 0);
+	tile[76].setTile((9, 1), 0, 0);
+	tile[77].setTile((9, 2), 0, 0);
+	tile[78].setTile((9, 3), 1, 0);
+	tile[79].setTile((9, 4), 0, 0);
+	tile[80].setTile((9, 5), 1, 0);
+	tile[81].setTile((9, 6), 0, 0);
+	tile[82].setTile((9, 7), 1, 0);
+	tile[83].setTile((9, 8), 0, 0);
+	tile[84].setTile((9, 9), 0, 0);
+	tile[85].setTile((10, 1), 0, 0);
+	tile[86].setTile((10, 2), 1, 0);
+	tile[87].setTile((10, 3), 1, 0);
+	tile[88].setTile((10, 4), 1, 0);
+	tile[89].setTile((10, 5), 0, 0);
+	tile[90].setTile((10, 6), 1, 0);
+	tile[91].setTile((10, 7), 2, 0);
+	tile[92].setTile((10, 8), 0, 0);
+	tile[93].setTile((0,0), 0, 0);
+	tile[94].setTile((11,1), 1, 0);
+	tile[95].setTile((11, 2), 2, 0);
+	tile[96].setTile((11, 3), 1, 0);
+	tile[97].setTile((11, 4), 0, 0);
+	tile[98].setTile((11, 5), 0, 0);
+	tile[99].setTile((11, 6), 1, 0);
+	tile[100].setTile((11, 7), 1, 0);
+	tile[101].setTile((0,0), 0, 0);
+	tile[102].setTile((0,0), 0, 0);
+	tile[103].setTile((12,1), 1, 0);
+	tile[104].setTile((12, 2), 1, 0);
+	tile[105].setTile((12, 3), 1, 0);
+	tile[106].setTile((12, 4), 1, 0);
+	tile[107].setTile((12, 5), 1, 0);
+	tile[108].setTile((12, 6), 0, 0);
+	for (int i = 0; i < 110; i++) {
+		if (tile[i].i_type_m == 2) {
+			tile[i].setItem(1);
+		}
+	}
+	tile[76].setItem(7);
+	tile[3].setItem(4);
+	tile[39].setItem(6);
+	tile[57].setItem(3);
+	tile[54].setItem(5);
+	tile[72].setItem(10);
+	tile[106].setItem(9);
+	tile[35].setItem(8);
 
 
 
 
 
 	for (int i = 1; i < 8; i++) {
-		rect[i].SetRect(30, 52 + 58 * (i-1), 75, 107 + 58 * (i-1));
+		rect[i].SetRect(30, 52 + 58 * i, 75, 107 + 58 * i);
 	}
-	for (int i = 10; i < 17; i++) {
-		int k = i - 10;
+	for (int i = 9; i < 17; i++) {
+		int k = i - 9;
 		rect[i].SetRect(80, 80 + 58 * k, 125, 135 + 58 * k);
 	}
-	for (int i = 17; i < 26; i++) {
-		int k = i - 17;
+	for (int i = 17; i < 25; i++) {
+		int k = i - 16;
 		rect[i].SetRect(130, -6 + 58 * k, 175, 49 + 58 * k);
 	}
-	for (int i = 26; i < 35; i++) {
+	for (int i = 25; i < 34; i++) {
 		int k = i - 25;
-		rect[i].SetRect(180, 22 + 58 * (k-1), 225, 77 + 58 * (k-1));
+		rect[i].SetRect(180, 22 + 58 * k, 225, 77 + 58 * k);
 	}
-	for (int i = 35; i < 43; i++) {
-		int k = i - 34;
+	for (int i = 34; i < 42; i++) {
+		int k = i - 33;
 		rect[i].SetRect(230, -6 + 58 * k, 275, 49 + 58 * k);
 	}
-	for (int i = 43; i < 52; i++) {
+	for (int i = 42; i < 51; i++) {
 		int k = i - 42;
-		rect[i].SetRect(280, 22 + 58 * (k - 1), 325, 77 + 58 * (k - 1));
+		rect[i].SetRect(280, 22 + 58 * k , 325, 77 + 58 * k);
 	}
-	for (int i = 52; i < 60; i++) {
-		int k = i - 51;
+	for (int i = 51; i < 59; i++) {
+		int k = i - 50;
 		rect[i].SetRect(330, -6 + 58 * k, 375, 49 + 58 * k);
 	}
-	for (int i = 60; i < 69; i++) {
+	for (int i = 59; i < 68; i++) {
 		int k = i - 59;
-		rect[i].SetRect(380, 22 + 58 * (k - 1), 425, 77 + 58 * (k - 1));
+		rect[i].SetRect(380, 22 + 58 * k , 425, 77 + 58 * k);
 	}
-	for (int i = 69; i < 77; i++) {
-		int k = i - 68;
+	for (int i = 68; i < 76; i++) {
+		int k = i - 67;
 		rect[i].SetRect(430, -6 + 58 * k, 475, 49 + 58 * k);
 	}
-	for (int i = 77; i < 86; i++) {
+	for (int i = 76; i < 85; i++) {
 		int k = i - 76;
-		rect[i].SetRect(480, 22 + 58 * (k - 1), 525, 77 + 58 * (k - 1));
+		rect[i].SetRect(480, 22 + 58 * k , 525, 77 + 58 *k );
 	}
-	for (int i = 86; i < 94; i++) {
-		int k = i - 85;
+	for (int i = 85; i < 93; i++) {
+		int k = i - 84;
 		rect[i].SetRect(530, -6 + 58 * k, 575, 49 + 58 * k);
 	}
-	for (int i = 94; i < 102; i++) {
-		int k = i - 94;
+	for (int i = 93; i < 102; i++) {
+		int k = i - 93;
 		rect[i].SetRect(580, 80 + 58 * (k - 1), 625, 135 + 58 * (k - 1));
 	}
 	for (int i = 103; i < 109; i++) {
-		int k = i - 103;
+		int k = i - 102;
 		rect[i].SetRect(630, 110 + 58 * (k - 1), 675, 165 + 58 * (k - 1));
 	}
 }
@@ -254,6 +265,7 @@ BOOL CMrJackInLondonInGame::OnInitDialog()
 	m_bitmap_map.LoadBitmap(IDB_BITMAP_MAP);
 	m_button_Setting.LoadBitmaps(IDB_BITMAP_BT_SETTING_DEF, IDB_BITMAP_BT_SETTING_ON, NULL, NULL);
 	m_button_Setting.SizeToContent();
+
 	m_png_Light_1.Load(L"res\\StreetLamp.png");
 	m_png_Light_2.Load(L"res\\StreetLamp1.png");
 	m_png_Light_3.Load(L"res\\StreetLamp2.png");
@@ -343,7 +355,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 3) && i_Button_pressed_after == 2) {
+	if ((i_Button_pressed_before == 3||i_Button_pressed_before==1) && i_Button_pressed_after == 2) {
 		watson.Move(0, 2);
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
@@ -420,6 +432,7 @@ void CMrJackInLondonInGame::OnPaint()
 	for (int i = 0; i < 4; i++) {
 		dc.Rectangle(Escape_route[i]);
 	}
+	
 	//m_png_Light_1.Draw(dc, 0, 0);
 }
 
@@ -457,16 +470,20 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 	}
 	*/
 	
-
+	/*
 	msg.Format(_T("값: %d, %d"), stealthy.GetXPos(), stealthy.GetYPos());
 	MessageBox(msg);
+	*/
 	for (int i = 1; i < 109; i++) {
-		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0) {
+		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0&&tile[i].i_Item_on>2) {
 			i_Button_pressed_before = i;
 			Invalidate();
 		}
 		else if (rect[i].PtInRect(point) && i_Button_pressed_before != 0) {
 			i_Button_pressed_after = i;
+			tile[i_Button_pressed_after].i_Item_on = tile[i_Button_pressed_before].i_Item_on;
+			tile[i_Button_pressed_before].i_Item_on = 0;
+			
 			Invalidate();
 		}
 	}

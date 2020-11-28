@@ -34,5 +34,8 @@ public:
 	ex1) manhole & Smith = 52
 	ex2) manhole & Jeremy = 102
 	*/
-	void setTile(int pos, int type, int valid);
+	void setTile(CPoint pos_2d, int type, int valid);
+	void setItem(int value) {
+		this->i_Item_on = value;
+	}
 };

@@ -12,8 +12,8 @@ CTile::CTile() {
 	this->i_valid_m = 0;
 }
 
-void CTile::setTile(int num, int type, int valid) {
-	this->i_num_m = num;
+void CTile::setTile(CPoint pos_2d, int type, int valid) {
+	this->p_tilepos = pos_2d;
 	this->i_type_m = type;
 	this->i_valid_m = valid;
 }
