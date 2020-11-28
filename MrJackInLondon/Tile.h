@@ -2,11 +2,15 @@
 class CTile
 {
 public:
+	/*
 	const int i_valid;
 	const int i_num;
 	const int i_type;
+	*/
+	CTile();
 	CTile(int pos, int type, int valid);
 	CPoint p_tilepos;
+	int i_valid_m, i_num_m, i_type_m;
 	/*
 	type 0 장애물
 	type 1 일반 타일(길)
@@ -30,4 +34,5 @@ public:
 	ex1) manhole & Smith = 52
 	ex2) manhole & Jeremy = 102
 	*/
+	void setTile(int pos, int type, int valid);
 };

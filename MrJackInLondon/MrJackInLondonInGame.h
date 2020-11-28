@@ -1,5 +1,14 @@
 ﻿#pragma once
 #include "Tile.h"
+#include "CGoodley.h"
+#include "CJeremy.h"
+#include "CLestrade.h"
+#include "CShelock.h"
+#include "CStealthy.h"
+#include "CSmith.h"
+#include "CWatson.h"
+#include "CWilliam.h"
+#include "Character.h"
 
 // MrJackInLondonInGame_T 대화 상자
 
@@ -23,6 +32,7 @@ protected:
 	CPoint m_pos;
 	CRect rect[109];
 	CRect Escape_route[4];
+	CTile tile[109];
 public:
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	virtual BOOL OnInitDialog();
@@ -43,6 +53,15 @@ public:
 	CImage m_png_etile;
 	int stealthy_move;
 	int goodley_move;
+
+	CGoodley goodley;
+	CShelock homes;
+	CJeremy jeremy;
+	CLestrade lestrade;
+	CSmith john;
+	CStealthy stealthy;
+	CWatson watson;
+	CWilliam william;
 
 	afx_msg void OnBnClickedButtonSetting();
 //	afx_msg void OnMouseMove(UINT nFlags, CPoint point);

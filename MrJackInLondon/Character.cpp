@@ -14,9 +14,14 @@ int CCharacter::GetYPos() {
 int CCharacter::GetPos() {
 	return this->i_position;
 }
+
+void CCharacter::Move(int xpos, int ypos) {
+	this->p_charpos.x = xpos;
+	this->p_charpos.y = ypos;
+}
+
+
 void CCharacter::Moveable() {
-	int now_xpos;
-	int now_ypos;
 	CPoint a;
 	a.x = this->GetXPos();
 	a.y = this->GetYPos();
@@ -27,10 +32,8 @@ void CCharacter::Moveable() {
 	}
 	
 }
-void CCharacter::Move(int xpos, int ypos) {
-	this->p_charpos.x = xpos;
-	this->p_charpos.y = ypos;
-}
 bool CCharacter::GetInno() {
 	return this->b_innocent;
 }
+
+
