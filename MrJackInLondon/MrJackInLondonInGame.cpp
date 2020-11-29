@@ -38,7 +38,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	Escape_route[2].SetRect(15, 490, 120, 560);
 	Escape_route[3].SetRect(605, 490, 680, 560);
 	tile[0].setTile((0,1), 0, 0);
-	tile[1].setTile((0,2), 1, 0);
+	tile[1].setTile((0,2), 0, 0);
 	tile[2].setTile((0,3), 1, 0);
 	tile[3].setTile((0,4), 1, 0);
 	tile[4].setTile((0,5), 1, 0);
@@ -152,11 +152,11 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 		}
 	}
 	tile[76].setItem(7);
-	tile[3].setItem(4);
+	tile[2].setItem(4);
 	tile[39].setItem(6);
 	tile[57].setItem(3);
 	tile[54].setItem(5);
-	tile[72].setItem(10);
+	tile[75].setItem(10);
 	tile[106].setItem(9);
 	tile[35].setItem(8);
 
@@ -355,6 +355,12 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
+
+	if ((i_Button_pressed_before == 99 || i_Button_pressed_before == 2) && i_Button_pressed_after == 1) {
+		watson.Move(0, 1);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
 	if ((i_Button_pressed_before == 3||i_Button_pressed_before==1) && i_Button_pressed_after == 2) {
 		watson.Move(0, 2);
 		i_Button_pressed_before = 0;
@@ -373,6 +379,13 @@ void CMrJackInLondonInGame::OnPaint()
 	if ((i_Button_pressed_before == 75 || i_Button_pressed_before == 73) && i_Button_pressed_after == 74) {
 		
 		stealthy.Move(8, 6);
+		m_png_etile.Draw(dc, 32 + 50 * 8, 37 + 58 * 8 - 35);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 67 || i_Button_pressed_before == 74) && i_Button_pressed_after == 75) {
+
+		stealthy.Move(8, 7);
 		m_png_etile.Draw(dc, 32 + 50 * 8, 37 + 58 * 8 - 35);
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
@@ -403,6 +416,10 @@ void CMrJackInLondonInGame::OnPaint()
 		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 5 * 58 - 30);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 7 * 58 - 30);
 	}
+	else if (i_Button_pressed_before == 67) {
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 7 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 5, 81 + 7 * 58 - 30);
+	}
 	else {
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
@@ -425,13 +442,14 @@ void CMrJackInLondonInGame::OnPaint()
 	william.GetXPos() % 2 == 0 ? m_png_William.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 35) : m_png_William.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 65);
 
 	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. 
-	
+	/*
 	for(int i=1;i<109;i++)
 		if(tile[i].i_type_m==1)
 			dc.Rectangle(rect[i]);
 	for (int i = 0; i < 4; i++) {
 		dc.Rectangle(Escape_route[i]);
 	}
+	*/
 	
 	//m_png_Light_1.Draw(dc, 0, 0);
 }
