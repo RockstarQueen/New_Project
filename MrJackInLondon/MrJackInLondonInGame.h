@@ -54,6 +54,7 @@ public:
 	int stealthy_move;
 	int goodley_move;
 
+	int move_count;
 	CGoodley goodley;
 	CShelock homes;
 	CJeremy jeremy;
@@ -83,4 +84,6 @@ public:
 	int i_Button_pressed_before;
 	int i_Button_pressed_after;
 	int set_Jack();
+	afx_msg void OnBnClickedIgbTurnend();
+	void round_start();
 };

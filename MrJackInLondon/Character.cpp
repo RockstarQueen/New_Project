@@ -2,6 +2,7 @@
 #include "Character.h"
 CCharacter::CCharacter() {
 	b_innocent = 0;
+	move_count = 3;
 }
 int CCharacter::GetXPos() {
 	
@@ -21,6 +22,7 @@ void CCharacter::Move(int xpos, int ypos) {
 }
 void CCharacter::Move(CPoint dest_pos) {
 	this->p_charpos = dest_pos;
+	move_count--;
 }
 
 

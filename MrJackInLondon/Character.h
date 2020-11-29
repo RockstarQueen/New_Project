@@ -22,6 +22,7 @@ public:
 	void Move(int xpos, int ypos);
 	void Move(CPoint dest_pos);
 	int GetPos();
+	int move_count;
 
 protected:
 	CPoint p_charpos;

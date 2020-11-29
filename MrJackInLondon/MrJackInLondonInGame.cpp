@@ -152,6 +152,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 			tile[i].setItem(1);
 		}
 	}
+
 	//homes
 	tile[57].setItem(3);
 	//watson
@@ -168,10 +169,6 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	tile[106].setItem(9);
 	//Jeremy
 	tile[71].setItem(10);
-
-
-
-
 
 	for (int i = 1; i < 8; i++) {
 		rect[i].SetRect(30, 52 + 58 * i, 75, 107 + 58 * i);
@@ -247,6 +244,7 @@ BEGIN_MESSAGE_MAP(CMrJackInLondonInGame, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_SETTING, &CMrJackInLondonInGame::OnBnClickedButtonSetting)
 //	ON_WM_MOUSEMOVE()
 ON_WM_LBUTTONDOWN()
+ON_BN_CLICKED(IDC_IGB_TURNEND, &CMrJackInLondonInGame::OnBnClickedIgbTurnend)
 END_MESSAGE_MAP()
 
 
@@ -736,7 +734,31 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 	*/
 	for (int i = 1; i < 109; i++) {
 		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0&&tile[i].i_default_item>2) {
-			i_Button_pressed_before = i;
+			if (tile[i].i_default_item == 3&&homes.move_count>0) {
+				i_Button_pressed_before = i;
+			}
+			if (tile[i].i_default_item == 4 && watson.move_count > 0) {
+				i_Button_pressed_before = i;
+			}
+			if (tile[i].i_default_item == 5 && john.move_count > 0) {
+				i_Button_pressed_before = i;
+			}
+			if (tile[i].i_default_item == 6 && lestrade.move_count > 0) {
+				i_Button_pressed_before = i;
+			}
+			if (tile[i].i_default_item == 7 && stealthy.move_count > 0) {
+				i_Button_pressed_before = i;
+			}
+			if (tile[i].i_default_item == 8 && william.move_count > 0) {
+				i_Button_pressed_before = i;
+			}
+			if (tile[i].i_default_item == 9 && goodley.move_count > 0) {
+				i_Button_pressed_before = i;
+			}
+			if (tile[i].i_default_item == 10 && jeremy.move_count > 0) {
+				i_Button_pressed_before = i;
+			}
+
 			Invalidate();
 		}
 		else if (rect[i].PtInRect(point) && i_Button_pressed_before != 0) {
@@ -774,4 +796,27 @@ int CMrJackInLondonInGame::set_Jack()
 
 	// TODO: 여기에 구현 코드 추가.
 	return 0;
+}
+
+
+void CMrJackInLondonInGame::OnBnClickedIgbTurnend()
+{
+	//Char좌표: (캐릭터명.p_charpos.x, 캐릭터명.p_charpos.y)
+	//
+	round_start();
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
+
+
+void CMrJackInLondonInGame::round_start()
+{
+	jeremy.move_count = 3;
+	watson.move_count = 3;
+	goodley.move_count = 3;
+	lestrade.move_count = 3;
+	homes.move_count = 3;
+	william.move_count = 3;
+	john.move_count = 3;
+	stealthy.move_count = 3;
+	// TODO: 여기에 구현 코드 추가.
 }
