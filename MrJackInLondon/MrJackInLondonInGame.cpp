@@ -835,7 +835,7 @@ void CMrJackInLondonInGame::round_end()
 void CMrJackInLondonInGame::turn_end()
 {
 	//가로등 주의 -> 밝아져랏.
-	for (int i = 0; i < 109; i++) {
+	for (int i = 1; i < 100; i++) {
 		if (tile[i].i_default_item == 1) {
 			tile[i - 1].onLight == TRUE;
 			tile[i + 1].onLight == TRUE;

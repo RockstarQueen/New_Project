@@ -5,4 +5,4 @@ C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(842,24
 C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(843,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
 C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(844,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
 C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(845,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
-LINK : fatal error LNK1168: C:\Users\Hwawon\nov27\New_Project\x64\Debug\MrJackInLondon.exe을(를) 쓰기용으로 열 수 없습니다.
+  MrJackInLondon.vcxproj -> C:\Users\Hwawon\nov27\New_Project\x64\Debug\MrJackInLondon.exe
