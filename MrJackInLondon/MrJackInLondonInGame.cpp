@@ -37,7 +37,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	Escape_route[1].SetRect(605, 15, 680, 80);
 	Escape_route[2].SetRect(15, 490, 120, 560);
 	Escape_route[3].SetRect(605, 490, 680, 560);
-
+	//tile 값 초기화, 2차원 연동.
 	tile[0].setTile(CPoint(0,0), 0, 0);
 	tile[1].setTile(CPoint(0,1), 0, 0);
 	tile[2].setTile(CPoint(0,2), 1, 0);
@@ -147,6 +147,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	tile[106].setTile(CPoint(12, 3), 1, 0);
 	tile[107].setTile(CPoint(12, 4), 1, 0);
 	tile[108].setTile(CPoint(12, 5), 0, 0);
+
 	for (int i = 0; i < 110; i++) {
 		if (tile[i].i_type_m == 2) {
 			tile[i].setItem(1);
@@ -170,6 +171,8 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	//Jeremy
 	tile[71].setItem(10);
 
+
+	//SetRect -> 판정 구현
 	for (int i = 1; i < 8; i++) {
 		rect[i].SetRect(30, 52 + 58 * i, 75, 107 + 58 * i);
 	}
@@ -351,7 +354,7 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_4.Draw(dc, 71 + 50 * 1, 81 + 1 * 58-29);
 	m_png_Light_5.Draw(dc, 71 + 50 * 9, 81 + 6 * 58 - 29);
 	
-
+	//tile[i_b_p_b] -> tile[i_b_p_a] 
 	if ((i_Button_pressed_before == 75 && i_Button_pressed_after == 67)) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
@@ -397,7 +400,6 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-
 	if ((i_Button_pressed_before == 99 || i_Button_pressed_before == 2) && i_Button_pressed_after == 1) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
@@ -740,6 +742,25 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			}
 			if (tile[i].i_default_item == 4 && watson.move_count == 0) {
 				MessageBox(_T("원하는 방향을 선택해주세요"));
+				if (rect[i - 9].PtInRect(point)) {
+
+				}
+				if (rect[i - 8].PtInRect(point)) {
+
+				}
+				if (rect[i - 1].PtInRect(point)) {
+
+				}
+				if (rect[i + 1].PtInRect(point)) {
+
+				}
+				if (rect[i + 8].PtInRect(point)) {
+
+				}
+				if (rect[i + 9].PtInRect(point)) {
+
+				}
+
 			}
 			if (tile[i].i_default_item == 5 && john.move_count > 0) {
 				i_Button_pressed_before = i;
@@ -793,7 +814,31 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 int CMrJackInLondonInGame::set_Jack()
 {
 	srand((unsigned int)time(NULL));
-	int rand_pick=(rand()%8)+1;
+	int rand_pick = (rand() % 8) + 1;
+	if (rand_pick == 1) {
+		homes.b_jack = TRUE;
+	}
+	if (rand_pick == 2) {
+		watson.b_jack = TRUE;
+	}
+	if (rand_pick == 3) {
+		john.b_jack=TRUE;
+	}
+	if (rand_pick == 4) {
+		lestrade.b_jack = TRUE;
+	}
+	if (rand_pick == 5) {
+		stealthy.b_jack = TRUE;
+	}
+	if (rand_pick == 6) {
+		william.b_jack = TRUE;
+	}
+	if (rand_pick == 7) {
+		goodley.b_jack = TRUE;
+	}
+	if (rand_pick == 8) {
+		jeremy.b_jack = TRUE;
+	}
 
 	// TODO: 여기에 구현 코드 추가.
 	return 0;
@@ -835,15 +880,20 @@ void CMrJackInLondonInGame::round_end()
 void CMrJackInLondonInGame::turn_end()
 {
 	//가로등 주의 -> 밝아져랏.
-	for (int i = 1; i < 100; i++) {
+	for (int i = 9; i < 100; i++) {
 		if (tile[i].i_default_item == 1) {
-			tile[i - 1].onLight == TRUE;
-			tile[i + 1].onLight == TRUE;
-			tile[i - 9].onLight == TRUE;
-			tile[i - 8].onLight == TRUE;
-			tile[i + 8].onLight == TRUE;
-			tile[i + 9].onLight == TRUE;
+			tile[i - 1].onLight = TRUE;
+			tile[i + 1].onLight = TRUE;
+			tile[i - 9].onLight = TRUE;
+			tile[i - 8].onLight = TRUE;
+			tile[i + 8].onLight = TRUE;
+			tile[i + 9].onLight = TRUE;
 		}
+		/*
+		if (tile[i].i_default_item == 4) {
+			while(watson.lightpos())
+		}
+		*/
 	}
 	watson.lightpos();
 

@@ -20,6 +20,7 @@ void CCharacter::Move(int xpos, int ypos) {
 	this->p_charpos.x = xpos;
 	this->p_charpos.y = ypos;
 }
+
 void CCharacter::Move(CPoint dest_pos) {
 	this->p_charpos = dest_pos;
 	move_count--;

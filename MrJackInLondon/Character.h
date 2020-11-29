@@ -23,7 +23,7 @@ public:
 	void Move(CPoint dest_pos);
 	int GetPos();
 	int move_count;
-
+	bool b_jack;
 protected:
 	CPoint p_charpos;
 	bool b_innocent;

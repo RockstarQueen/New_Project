@@ -5,6 +5,6 @@ class CWatson :
 {
 public:
 	CWatson();
-	void lightpos();
+	int lightpos();
 };
 
