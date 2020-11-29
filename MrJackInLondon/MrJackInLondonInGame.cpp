@@ -487,6 +487,69 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
+	if ((i_Button_pressed_before == 72 || i_Button_pressed_before == 70) && i_Button_pressed_after == 71) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 73 || i_Button_pressed_before == 71) && i_Button_pressed_after == 72) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 74 || i_Button_pressed_before == 72) && i_Button_pressed_after == 73) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
 	if ((i_Button_pressed_before == 75 || i_Button_pressed_before == 73) && i_Button_pressed_after == 74) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
@@ -529,24 +592,61 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
+	if ((i_Button_pressed_before == 72 || i_Button_pressed_before == 74 || i_Button_pressed_before == 82) && i_Button_pressed_after == 73) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
 	else if (i_Button_pressed_before == 2) {
 		m_png_Light_Map.Draw(dc, 70 + 50 * 0, 81 + 1 * 58 );
-		m_png_Light_Map.Draw(dc, 70 + 50 * 4, 81 + -1 * 58);
+		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 51 + 3 * 58);
 
+		m_png_Light_Map.Draw(dc, 70 + 50 * 4, 81 + -1 * 58);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 7 * 58);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 4 * 58);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 10, 81 + 0 * 58);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 11, 81 + 4 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 70 + 50 * -1, 81 + 3 * 58 - 30);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 1, 81 + 6 * 58 - 30);
 	}
 	else if (i_Button_pressed_before == 3) {
-		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 2 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 4 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 51 + 2 * 58);
+		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 51 + 4 * 58);
 	}
 	else if (i_Button_pressed_before == 4) {
 		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 3 * 58 - 30);
 		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 5 * 58 - 30);
+	}
+	else if (i_Button_pressed_before == 5) {
+		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 4 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 6 * 58 - 30);
+	}
+	else if (i_Button_pressed_before == 71) {
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 2 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 4 * 58 - 30);
+	}
+	else if (i_Button_pressed_before == 72) {
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 3 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 5 * 58 - 30);
+	}
+	else if (i_Button_pressed_before == 73) {
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 4 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 6 * 58 - 30);
 	}
 	else if (i_Button_pressed_before == 75) {
 		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 6 * 58 - 30);
