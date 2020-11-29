@@ -11,6 +11,7 @@ public:
 	CTile(int pos, int type, int valid);
 	CPoint p_tilepos;
 	int i_valid_m, i_num_m, i_type_m;
+	int i_default_item;
 	/*
 	type 0 장애물
 	type 1 일반 타일(길)
@@ -35,7 +36,11 @@ public:
 	ex2) manhole & Jeremy = 102
 	*/
 	void setTile(CPoint pos_2d, int type, int valid);
+	
 	void setItem(int value) {
 		this->i_Item_on = value;
+		this->i_default_item = value;
 	}
+	void checkPos();
+	void swapItem(CTile& old_tile);
 };

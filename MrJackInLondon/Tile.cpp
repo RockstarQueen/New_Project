@@ -17,3 +17,13 @@ void CTile::setTile(CPoint pos_2d, int type, int valid) {
 	this->i_type_m = type;
 	this->i_valid_m = valid;
 }
+
+void CTile::checkPos() {
+	
+}
+
+void CTile::swapItem(CTile& old_tile) {
+	int temp=old_tile.i_default_item;
+	old_tile.i_default_item = this->i_default_item;
+	this->i_default_item = temp;
+}

@@ -20,6 +20,7 @@ public:
 	int GetYPos();
 	void Moveable();
 	void Move(int xpos, int ypos);
+	void Move(CPoint dest_pos);
 	int GetPos();
 
 protected:
