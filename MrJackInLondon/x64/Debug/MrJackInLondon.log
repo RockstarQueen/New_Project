@@ -1,17 +1,8 @@
-﻿  CGoodley.cpp
-  CJeremy.cpp
-  CLestrade.cpp
-  CMrJackInLondonMatch.cpp
-  CShelock.cpp
-  CSmith.cpp
-  CStealthy.cpp
-  CWatson.cpp
-  CWilliam.cpp
-  Character.cpp
-  MrJackInLondon.cpp
-  MrJackInLondonDlg.cpp
-  MrJackInLondonInGame.cpp
-  MrJackInLondonRule.cpp
-  MrJackInLondonSetting.cpp
-  코드를 생성하고 있습니다...
-  MrJackInLondon.vcxproj -> C:\Users\Hwawon\nov27\New_Project\x64\Debug\MrJackInLondon.exe
+﻿  MrJackInLondonInGame.cpp
+C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(840,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(841,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(842,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(843,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(844,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\Hwawon\nov27\New_Project\MrJackInLondon\MrJackInLondonInGame.cpp(845,24): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+LINK : fatal error LNK1168: C:\Users\Hwawon\nov27\New_Project\x64\Debug\MrJackInLondon.exe을(를) 쓰기용으로 열 수 없습니다.

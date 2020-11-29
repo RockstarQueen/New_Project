@@ -417,8 +417,6 @@ void CMrJackInLondonInGame::OnPaint()
 			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
 		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
 
-
-		watson.Move(0, 1);
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
@@ -740,6 +738,9 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			if (tile[i].i_default_item == 4 && watson.move_count > 0) {
 				i_Button_pressed_before = i;
 			}
+			if (tile[i].i_default_item == 4 && watson.move_count == 0) {
+				MessageBox(_T("원하는 방향을 선택해주세요"));
+			}
 			if (tile[i].i_default_item == 5 && john.move_count > 0) {
 				i_Button_pressed_before = i;
 			}
@@ -803,6 +804,7 @@ void CMrJackInLondonInGame::OnBnClickedIgbTurnend()
 {
 	//Char좌표: (캐릭터명.p_charpos.x, 캐릭터명.p_charpos.y)
 	//
+	round_end();
 	round_start();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
@@ -810,6 +812,7 @@ void CMrJackInLondonInGame::OnBnClickedIgbTurnend()
 
 void CMrJackInLondonInGame::round_start()
 {
+	//movecount 리셋.
 	jeremy.move_count = 3;
 	watson.move_count = 3;
 	goodley.move_count = 3;
@@ -817,6 +820,32 @@ void CMrJackInLondonInGame::round_start()
 	homes.move_count = 3;
 	william.move_count = 3;
 	john.move_count = 3;
-	stealthy.move_count = 3;
+	stealthy.move_count = 4;
+	// TODO: 여기에 구현 코드 추가.
+}
+
+
+void CMrJackInLondonInGame::round_end()
+{
+	i_round++;
+	// TODO: 여기에 구현 코드 추가.
+}
+
+
+void CMrJackInLondonInGame::turn_end()
+{
+	//가로등 주의 -> 밝아져랏.
+	for (int i = 0; i < 109; i++) {
+		if (tile[i].i_default_item == 1) {
+			tile[i - 1].onLight == TRUE;
+			tile[i + 1].onLight == TRUE;
+			tile[i - 9].onLight == TRUE;
+			tile[i - 8].onLight == TRUE;
+			tile[i + 8].onLight == TRUE;
+			tile[i + 9].onLight == TRUE;
+		}
+	}
+	watson.lightpos();
+
 	// TODO: 여기에 구현 코드 추가.
 }

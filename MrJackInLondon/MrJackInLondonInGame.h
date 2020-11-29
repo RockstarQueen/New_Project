@@ -83,7 +83,10 @@ public:
 	//CTile m_Tile[110] = {CTile(0,0,0), CTile()};
 	int i_Button_pressed_before;
 	int i_Button_pressed_after;
+	int i_round=1;
 	int set_Jack();
 	afx_msg void OnBnClickedIgbTurnend();
 	void round_start();
+	void round_end();
+	void turn_end();
 };
