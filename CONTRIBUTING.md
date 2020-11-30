@@ -51,6 +51,8 @@ multi room 구조(thread)로 2인 통신 제작 (2020/11/21)<br>
   Linked Character Class&Tile class to InGmae(2020/11/28)<br>
   게임 내부 구현중.. 캐릭터 자체이동 가능.(2020/11/29)<br>
   Movecount 추가 완료. 캐릭터는 일정 횟수 이상 한 턴에 못움직임(2020/11/29)<br>
+  Watson 구현완료. 게임에 추가됨.(2020/11/30)<br>
+  Game시작시 역할에 따라 잭이 누구인지 알려주는 기능 추가(2020/11/30)<br>
 </p>
   
 ### arittung

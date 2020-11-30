@@ -84,7 +84,10 @@ public:
 	int i_Button_pressed_before;
 	int i_Button_pressed_after;
 	int i_round=1;
+	int i_player_num;
 	int set_Jack();
+	CString s_is_jack;
+	CString s_not_jack;
 	afx_msg void OnBnClickedIgbTurnend();
 	void round_start();
 	void round_end();

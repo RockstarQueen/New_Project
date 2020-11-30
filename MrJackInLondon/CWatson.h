@@ -6,5 +6,6 @@ class CWatson :
 public:
 	CWatson();
 	int lightpos();
+	int i_light_pos=0;
 };
 

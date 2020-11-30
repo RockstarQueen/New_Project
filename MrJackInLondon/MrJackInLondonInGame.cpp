@@ -29,7 +29,10 @@ IMPLEMENT_DYNAMIC(CMrJackInLondonInGame, CDialogEx)
 CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
 { 
-	
+	s_is_jack.Format(_T("당신은 도둑입니다. 잭: "));
+	s_not_jack.Format(_T("당신은 경찰입니다."));
+	set_Jack();
+	i_player_num==1 ? MessageBox(s_is_jack) : MessageBox(s_not_jack);
 	i_Button_pressed_after = 0;
 	i_Button_pressed_before = 0;
 	//제작:이화원 탈출하는 위치& 타일의 판정을 Rect배열로 구현함. 
@@ -354,6 +357,9 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_4.Draw(dc, 71 + 50 * 1, 81 + 1 * 58-29);
 	m_png_Light_5.Draw(dc, 71 + 50 * 9, 81 + 6 * 58 - 29);
 	
+	if (watson.move_count == 0) {
+
+	}
 	//tile[i_b_p_b] -> tile[i_b_p_a] 
 	if ((i_Button_pressed_before == 75 && i_Button_pressed_after == 67)) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
@@ -737,30 +743,13 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			if (tile[i].i_default_item == 3&&homes.move_count>0) {
 				i_Button_pressed_before = i;
 			}
-			if (tile[i].i_default_item == 4 && watson.move_count > 0) {
-				i_Button_pressed_before = i;
-			}
-			if (tile[i].i_default_item == 4 && watson.move_count == 0) {
-				MessageBox(_T("원하는 방향을 선택해주세요"));
-				if (rect[i - 9].PtInRect(point)) {
-
+			if (tile[i].i_default_item == 4 && watson.move_count >= 0) {
+				if (watson.move_count == 0) {
+					MessageBox(_T("구역을 선택하세요"));
+					i_Button_pressed_before = i;
 				}
-				if (rect[i - 8].PtInRect(point)) {
-
-				}
-				if (rect[i - 1].PtInRect(point)) {
-
-				}
-				if (rect[i + 1].PtInRect(point)) {
-
-				}
-				if (rect[i + 8].PtInRect(point)) {
-
-				}
-				if (rect[i + 9].PtInRect(point)) {
-
-				}
-
+				else
+					i_Button_pressed_before = i;	
 			}
 			if (tile[i].i_default_item == 5 && john.move_count > 0) {
 				i_Button_pressed_before = i;
@@ -781,6 +770,26 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 				i_Button_pressed_before = i;
 			}
 
+			Invalidate();
+		}
+		else if (rect[i].PtInRect(point) && i_Button_pressed_before != 0 && watson.move_count == 0 && tile[i_Button_pressed_before].i_default_item==4) {
+			i_Button_pressed_after=i;
+			
+			if(i_Button_pressed_after-i_Button_pressed_before==-9)
+				watson.i_light_pos = -9;
+			if (i_Button_pressed_after - i_Button_pressed_before == -8)
+				watson.i_light_pos = -8;
+			if (i_Button_pressed_after - i_Button_pressed_before == -1)
+				watson.i_light_pos = -1;
+			if (i_Button_pressed_after - i_Button_pressed_before == 1)
+				watson.i_light_pos = 1;
+			if (i_Button_pressed_after - i_Button_pressed_before == 8)
+				watson.i_light_pos = 8;
+			if (i_Button_pressed_after - i_Button_pressed_before == 9)
+				watson.i_light_pos = 9;
+
+			i_Button_pressed_before = 0;
+			i_Button_pressed_after = 0;
 			Invalidate();
 		}
 		else if (rect[i].PtInRect(point) && i_Button_pressed_before != 0) {
@@ -817,27 +826,43 @@ int CMrJackInLondonInGame::set_Jack()
 	int rand_pick = (rand() % 8) + 1;
 	if (rand_pick == 1) {
 		homes.b_jack = TRUE;
+		CString jack_name=(_T("Shelock Homes"));
+		s_is_jack+=jack_name;
 	}
 	if (rand_pick == 2) {
 		watson.b_jack = TRUE;
+		CString jack_name = (_T("Watson"));
+		s_is_jack += jack_name;
 	}
 	if (rand_pick == 3) {
 		john.b_jack=TRUE;
+		CString jack_name = (_T("John Smith"));
+		s_is_jack += jack_name;
 	}
 	if (rand_pick == 4) {
 		lestrade.b_jack = TRUE;
+		CString jack_name = (_T("Lestrade"));
+		s_is_jack += jack_name;
 	}
 	if (rand_pick == 5) {
 		stealthy.b_jack = TRUE;
+		CString jack_name = (_T("Stealthy"));
+		s_is_jack += jack_name;
 	}
 	if (rand_pick == 6) {
 		william.b_jack = TRUE;
+		CString jack_name = (_T("william"));
+		s_is_jack += jack_name;
 	}
 	if (rand_pick == 7) {
 		goodley.b_jack = TRUE;
+		CString jack_name = (_T("Goodley"));
+		s_is_jack += jack_name;
 	}
 	if (rand_pick == 8) {
 		jeremy.b_jack = TRUE;
+		CString jack_name = (_T("Jeremy Bert"));
+		s_is_jack += jack_name;
 	}
 
 	// TODO: 여기에 구현 코드 추가.
@@ -850,6 +875,8 @@ void CMrJackInLondonInGame::OnBnClickedIgbTurnend()
 	//Char좌표: (캐릭터명.p_charpos.x, 캐릭터명.p_charpos.y)
 	//
 	round_end();
+	CString watson_str;
+	watson_str.Format(_T("%d"), watson.i_light_pos);
 	round_start();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
@@ -858,6 +885,7 @@ void CMrJackInLondonInGame::OnBnClickedIgbTurnend()
 void CMrJackInLondonInGame::round_start()
 {
 	//movecount 리셋.
+	
 	jeremy.move_count = 3;
 	watson.move_count = 3;
 	goodley.move_count = 3;
@@ -895,7 +923,6 @@ void CMrJackInLondonInGame::turn_end()
 		}
 		*/
 	}
-	watson.lightpos();
 
 	// TODO: 여기에 구현 코드 추가.
 }
