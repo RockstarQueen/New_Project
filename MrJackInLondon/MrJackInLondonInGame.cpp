@@ -50,14 +50,14 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	tile[6].setTile(CPoint(0,6), 1, 0);
 	tile[7].setTile(CPoint(0,0), 0, 0);
 	tile[8].setTile(CPoint(0,0), 0, 0);
-	tile[9].setTile(CPoint(1,0), 1, 0);
-	tile[10].setTile(CPoint(1,1), 1, 0);
-	tile[11].setTile(CPoint(1,2), 0, 0);
-	tile[12].setTile(CPoint(1,3), 0, 0);
-	tile[13].setTile(CPoint(1,4), 1, 0);
-	tile[14].setTile(CPoint(1,5), 2, 0);
-	tile[15].setTile(CPoint(1,6), 1, 0);
-	tile[16].setTile(CPoint(0,7), 0, 0);
+	tile[9].setTile(CPoint(1,1), 1, 0);
+	tile[10].setTile(CPoint(1,2), 1, 0);
+	tile[11].setTile(CPoint(1,3), 0, 0);
+	tile[12].setTile(CPoint(1,4), 0, 0);
+	tile[13].setTile(CPoint(1,5), 1, 0);
+	tile[14].setTile(CPoint(1,6), 2, 0);
+	tile[15].setTile(CPoint(1,7), 1, 0);
+	tile[16].setTile(CPoint(0,0), 0, 0);
 	tile[17].setTile(CPoint(2,0), 0, 0);
 	tile[18].setTile(CPoint(2,1), 2, 0);
 	tile[19].setTile(CPoint(2,2), 1, 0);
@@ -617,6 +617,1384 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
+	if ((i_Button_pressed_before == 10 || i_Button_pressed_before == 3) && i_Button_pressed_after == 2) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 4) && i_Button_pressed_after == 3) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 2 제외
+	if ((i_Button_pressed_before == 3 || i_Button_pressed_before == 5 || i_Button_pressed_before == 13) && i_Button_pressed_after == 4) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 4 || i_Button_pressed_before == 6 || i_Button_pressed_before == 13) && i_Button_pressed_after == 5) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 13 || i_Button_pressed_before == 5) && i_Button_pressed_after == 6) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 10) && i_Button_pressed_after == 9) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 9 || i_Button_pressed_before == 19||i_Button_pressed_before==2) && i_Button_pressed_after == 10) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 2 제외
+	if ((i_Button_pressed_before == 4 || i_Button_pressed_before == 5 || i_Button_pressed_before == 21 || i_Button_pressed_before == 22) && i_Button_pressed_after == 13) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 6) && i_Button_pressed_after == 15) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 23 제외
+	if ((i_Button_pressed_before == 10 || i_Button_pressed_before == 27) && i_Button_pressed_after == 19) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 13 || i_Button_pressed_before == 27 || i_Button_pressed_before == 22) && i_Button_pressed_after == 21) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 21 || i_Button_pressed_before == 13 || i_Button_pressed_before == 31) && i_Button_pressed_after == 22) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 23 제외
+	if ((i_Button_pressed_before == 22 || i_Button_pressed_before == 31 || i_Button_pressed_before == 15) && i_Button_pressed_after == 23) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 19 || i_Button_pressed_before == 35 || i_Button_pressed_before == 36) && i_Button_pressed_after == 27) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 21 || i_Button_pressed_before == 37 || i_Button_pressed_before == 38) && i_Button_pressed_after == 29) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 22 || i_Button_pressed_before == 39 || i_Button_pressed_before == 40) && i_Button_pressed_after == 31) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 23제외
+	if ((i_Button_pressed_before == 35) && i_Button_pressed_after == 34) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 42 제외
+	if ((i_Button_pressed_before == 34 || i_Button_pressed_before == 27 || i_Button_pressed_before == 36) && i_Button_pressed_after == 35) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 37 || i_Button_pressed_before == 27 || i_Button_pressed_before == 35) && i_Button_pressed_after == 36) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 45 제외
+	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 38 || i_Button_pressed_before == 36) && i_Button_pressed_after == 37) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 45 제외
+	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 37 || i_Button_pressed_before == 39) && i_Button_pressed_after == 38) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 31 || i_Button_pressed_before == 40 || i_Button_pressed_before == 38) && i_Button_pressed_after == 39) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 31 || i_Button_pressed_before == 39 || i_Button_pressed_before == 49) && i_Button_pressed_after == 40) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 34 || i_Button_pressed_before == 51) && i_Button_pressed_after == 42) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 36 || i_Button_pressed_before == 37 || i_Button_pressed_before == 53 || i_Button_pressed_before == 54) && i_Button_pressed_after == 45) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 40 || i_Button_pressed_before == 57 || i_Button_pressed_before == 58) && i_Button_pressed_after == 49) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 60 || i_Button_pressed_before == 52) && i_Button_pressed_after == 51) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 42 제외
+	if ((i_Button_pressed_before == 53 || i_Button_pressed_before == 60 || i_Button_pressed_before == 51) && i_Button_pressed_after == 52) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 52 || i_Button_pressed_before == 54) && i_Button_pressed_after == 53) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀45 제외
+	if ((i_Button_pressed_before == 55 || i_Button_pressed_before == 53) && i_Button_pressed_after == 54) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 45 제외
+	if ((i_Button_pressed_before == 56 || i_Button_pressed_before == 54) && i_Button_pressed_after == 55) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 64 제외
+	if ((i_Button_pressed_before == 57 || i_Button_pressed_before == 55) && i_Button_pressed_after == 56) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 64 제외
+	if ((i_Button_pressed_before == 49 || i_Button_pressed_before == 58 || i_Button_pressed_before == 56) && i_Button_pressed_after == 57) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 47 || i_Button_pressed_before == 57) && i_Button_pressed_after == 58) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 67제외
+	if ((i_Button_pressed_before == 51 || i_Button_pressed_before == 52 || i_Button_pressed_before == 69) && i_Button_pressed_after == 60) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 55 || i_Button_pressed_before == 56 || i_Button_pressed_before == 72 || i_Button_pressed_before == 73) && i_Button_pressed_after == 64) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 58 || i_Button_pressed_before == 75) && i_Button_pressed_after == 67) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 60 || i_Button_pressed_before == 70 || i_Button_pressed_before == 78) && i_Button_pressed_after == 69) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 69 || i_Button_pressed_before == 78 || i_Button_pressed_before == 71) && i_Button_pressed_after == 70) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 72 || i_Button_pressed_before == 80 || i_Button_pressed_before == 70) && i_Button_pressed_after == 71) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 73 || i_Button_pressed_before == 80 || i_Button_pressed_before == 71) && i_Button_pressed_after == 72) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 67제외
+	if ((i_Button_pressed_before == 74 || i_Button_pressed_before == 82 || i_Button_pressed_before == 72) && i_Button_pressed_after == 73) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 64 제외
+	if ((i_Button_pressed_before == 73 || i_Button_pressed_before == 82 || i_Button_pressed_before == 75) && i_Button_pressed_after == 74) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 74) && i_Button_pressed_after == 75) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 67 제외
+	if ((i_Button_pressed_before == 69 || i_Button_pressed_before == 70 || i_Button_pressed_before == 86 || i_Button_pressed_before == 87) && i_Button_pressed_after == 78) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 71 || i_Button_pressed_before == 72 || i_Button_pressed_before == 88) && i_Button_pressed_after == 80) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 73 || i_Button_pressed_before == 74 || i_Button_pressed_before == 90) && i_Button_pressed_after == 82) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 87 || i_Button_pressed_before == 78) && i_Button_pressed_after == 86) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 94 제외
+	if ((i_Button_pressed_before == 78 || i_Button_pressed_before == 96 || i_Button_pressed_before == 86 || i_Button_pressed_before == 88) && i_Button_pressed_after == 87) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 96 || i_Button_pressed_before == 80 || i_Button_pressed_before == 87) && i_Button_pressed_after == 88) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 82 || i_Button_pressed_before == 99) && i_Button_pressed_after == 90) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 103 || i_Button_pressed_before == 86) && i_Button_pressed_after == 94) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 104 || i_Button_pressed_before == 88 || i_Button_pressed_before == 87 || i_Button_pressed_before == 105) && i_Button_pressed_after == 96) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 90 || i_Button_pressed_before == 107 || i_Button_pressed_before == 100) && i_Button_pressed_after == 99) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 104) && i_Button_pressed_after == 103) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	// 맨홀 94 제외
+	if ((i_Button_pressed_before == 105 || i_Button_pressed_before == 96 || i_Button_pressed_before == 103) && i_Button_pressed_after == 104) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 96 || i_Button_pressed_before == 104) && i_Button_pressed_after == 105) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 106 제외
+	if ((i_Button_pressed_before == 107 || i_Button_pressed_before == 105) && i_Button_pressed_after == 106) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	if ((i_Button_pressed_before == 99) && i_Button_pressed_after == 107) {
+		if (tile[i_Button_pressed_before].i_default_item == 3)
+			homes.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 4)
+			watson.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 5)
+			john.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 6)
+			lestrade.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 7)
+			stealthy.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 8)
+			william.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 9)
+			goodley.Move(tile[i_Button_pressed_after].p_tilepos);
+		if (tile[i_Button_pressed_before].i_default_item == 10)
+			jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
+
+		tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
+
+		i_Button_pressed_before = 0;
+		i_Button_pressed_after = 0;
+	}
+	//맨홀 106 제외
 	else if (i_Button_pressed_before == 2) {
 		m_png_Light_Map.Draw(dc, 70 + 50 * 0, 81 + 1 * 58 );
 		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 51 + 3 * 58);
