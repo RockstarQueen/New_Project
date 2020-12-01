@@ -57,7 +57,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	tile[13].setTile(CPoint(1,5), 1, 0);
 	tile[14].setTile(CPoint(1,6), 2, 0);
 	tile[15].setTile(CPoint(1,7), 1, 0);
-	tile[16].setTile(CPoint(0,0), 0, 0);
+	tile[16].setTile(CPoint(0,8), 0, 0);
 	tile[17].setTile(CPoint(2,0), 0, 0);
 	tile[18].setTile(CPoint(2,1), 2, 0);
 	tile[19].setTile(CPoint(2,2), 1, 0);
@@ -134,22 +134,22 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	tile[90].setTile(CPoint(10, 5), 1, 0);
 	tile[91].setTile(CPoint(10, 6), 2, 0);
 	tile[92].setTile(CPoint(10, 7), 0, 0);
-	tile[93].setTile((0,0), 0, 0);
-	tile[94].setTile(CPoint(11,0), 1, 0);
-	tile[95].setTile(CPoint(11, 1), 2, 0);
-	tile[96].setTile(CPoint(11, 2), 1, 0);
-	tile[97].setTile(CPoint(11, 3), 0, 0);
-	tile[98].setTile(CPoint(11, 4), 0, 0);
-	tile[99].setTile(CPoint(11, 5), 1, 0);
-	tile[100].setTile(CPoint(11, 6), 1, 0);
+	tile[93].setTile(CPoint(11, 0), 0, 0);
+	tile[94].setTile(CPoint(11, 1), 1, 0);
+	tile[95].setTile(CPoint(11, 2), 2, 0);
+	tile[96].setTile(CPoint(11, 3), 1, 0);
+	tile[97].setTile(CPoint(11, 4), 0, 0);
+	tile[98].setTile(CPoint(11, 5), 0, 0);
+	tile[99].setTile(CPoint(11, 6), 1, 0);
+	tile[100].setTile(CPoint(11, 7), 1, 0);
 	tile[101].setTile(CPoint(0,0), 0, 0);
 	tile[102].setTile((0,0), 0, 0);
-	tile[103].setTile(CPoint(12,0), 1, 0);
-	tile[104].setTile(CPoint(12, 1), 1, 0);
-	tile[105].setTile(CPoint(12, 2), 1, 0);
-	tile[106].setTile(CPoint(12, 3), 1, 0);
-	tile[107].setTile(CPoint(12, 4), 1, 0);
-	tile[108].setTile(CPoint(12, 5), 0, 0);
+	tile[103].setTile(CPoint(12,1), 1, 0);
+	tile[104].setTile(CPoint(12, 2), 1, 0);
+	tile[105].setTile(CPoint(12, 3), 1, 0);
+	tile[106].setTile(CPoint(12, 4), 1, 0);
+	tile[107].setTile(CPoint(12, 5), 1, 0);
+	tile[108].setTile(CPoint(12, 6), 0, 0);
 
 	for (int i = 0; i < 110; i++) {
 		if (tile[i].i_type_m == 2) {
@@ -158,19 +158,19 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	}
 
 	//homes
-	tile[57].setItem(3);
+	tile[56].setItem(3);
 	//watson
  	tile[2].setItem(4);
 	//smith
-	tile[54].setItem(5);
+	tile[53].setItem(5);
 	//Lestrade
-	tile[39].setItem(6);
+	tile[38].setItem(6);
 	//Stealthy
 	tile[75].setItem(7);
 	//William
-	tile[35].setItem(8); 
+	tile[34].setItem(8); 
 	//goodley
-	tile[106].setItem(9);
+	tile[105].setItem(9);
 	//Jeremy
 	tile[71].setItem(10);
 
@@ -850,7 +850,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 13 || i_Button_pressed_before == 27 || i_Button_pressed_before == 22) && i_Button_pressed_after == 21) {
+	if ((i_Button_pressed_before == 13 || i_Button_pressed_before == 22||i_Button_pressed_before==29) && i_Button_pressed_after == 21) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1223,7 +1223,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 60 || i_Button_pressed_before == 52) && i_Button_pressed_after == 51) {
+	if ((i_Button_pressed_before == 60 || i_Button_pressed_before == 52 || i_Button_pressed_before==42) && i_Button_pressed_after == 51) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1318,7 +1318,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//맨홀 45 제외
-	if ((i_Button_pressed_before == 56 || i_Button_pressed_before == 54) && i_Button_pressed_after == 55) {
+	if ((i_Button_pressed_before == 56 || i_Button_pressed_before == 54||i_Button_pressed_before==64) && i_Button_pressed_after == 55) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1342,7 +1342,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//맨홀 64 제외
-	if ((i_Button_pressed_before == 57 || i_Button_pressed_before == 55) && i_Button_pressed_after == 56) {
+	if ((i_Button_pressed_before == 57 || i_Button_pressed_before == 55||i_Button_pressed_before == 64) && i_Button_pressed_after == 56) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1389,7 +1389,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 47 || i_Button_pressed_before == 57) && i_Button_pressed_after == 58) {
+	if ((i_Button_pressed_before == 49 || i_Button_pressed_before == 57||i_Button_pressed_before==67) && i_Button_pressed_after == 58) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1551,7 +1551,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 73 || i_Button_pressed_before == 80 || i_Button_pressed_before == 71) && i_Button_pressed_after == 72) {
+	if ((i_Button_pressed_before == 73 || i_Button_pressed_before == 80 || i_Button_pressed_before == 64|| i_Button_pressed_before == 71 || i_Button_pressed_before == 4) && i_Button_pressed_after == 72) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1575,7 +1575,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	// 맨홀 67제외
-	if ((i_Button_pressed_before == 74 || i_Button_pressed_before == 82 || i_Button_pressed_before == 72) && i_Button_pressed_after == 73) {
+	if ((i_Button_pressed_before == 74 || i_Button_pressed_before == 82 || i_Button_pressed_before == 64|| i_Button_pressed_before == 72||i_Button_pressed_before==4) && i_Button_pressed_after == 73) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1877,7 +1877,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 104) && i_Button_pressed_after == 103) {
+	if ((i_Button_pressed_before == 104||i_Button_pressed_after==94) && i_Button_pressed_after == 103) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1971,7 +1971,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 99) && i_Button_pressed_after == 107) {
+	if ((i_Button_pressed_before == 99|| i_Button_pressed_before == 106) && i_Button_pressed_after == 107) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1997,7 +1997,7 @@ void CMrJackInLondonInGame::OnPaint()
 	//맨홀 106 제외
 	else if (i_Button_pressed_before == 2) {
 		m_png_Light_Map.Draw(dc, 70 + 50 * 0, 81 + 1 * 58 );
-		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 51 + 3 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 51 + 3 * 58);
 
 		m_png_Light_Map.Draw(dc, 70 + 50 * 4, 81 + -1 * 58);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 7 * 58);
@@ -2011,37 +2011,297 @@ void CMrJackInLondonInGame::OnPaint()
 		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 51 + 4 * 58);
 	}
 	else if (i_Button_pressed_before == 4) {
-		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 3 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 5 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 51 + 3 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 51 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 21 + 5 * 58);
 	}
 	else if (i_Button_pressed_before == 5) {
-		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 4 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 15 + 50 * 0, 81 + 6 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 81 + 4 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 81 + 6 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 21 + 5 * 58);
 	}
-	else if (i_Button_pressed_before == 71) {
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 2 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 4 * 58 - 30);
+	else if (i_Button_pressed_before == 6) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 81 + 5 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 81 + 6 * 58);
 	}
-	else if (i_Button_pressed_before == 72) {
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 3 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 5 * 58 - 30);
+	else if (i_Button_pressed_before == 9) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 51 + 2 * 58 - 30);
+		
 	}
-	else if (i_Button_pressed_before == 73) {
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 4 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 6 * 58 - 30);
+	else if (i_Button_pressed_before == 10) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 51 + 1 * 58-30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 51 + 2 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 51 + 2 * 58);
 	}
-	else if (i_Button_pressed_before == 75) {
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 6 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 70 + 50 * 6, 81 + 7 * 58);
+	else if (i_Button_pressed_before == 13) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 81 + 4 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 81 + 5 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 81 + 4 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 81 + 5 * 58 - 30);
 	}
-	else if (i_Button_pressed_before == 74) {
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 5 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 7 * 58 - 30);
+	else if (i_Button_pressed_before == 15) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 81 + 6 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 81 + 6 * 58 - 30);		
+	}
+	else if (i_Button_pressed_before == 19) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 81 + 1 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 3, 81 + 1 * 58);
+	}
+	else if (i_Button_pressed_before == 21) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 81 + 4 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 51 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 3, 81 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 22) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 81 + 4 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 51 + 4 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 51 + 6 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 3, 81 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 23) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 81 + 6 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 51 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 3, 81 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 27) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, -65 + 4 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 4, -65 + 3 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 4, -65 + 4 * 58);
+	}
+	else if (i_Button_pressed_before == 29) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, -65 + 6 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 4, -65 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 31) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, -65 + 7 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 2, -65 + 8 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 4, -65 + 7 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 4, -65 + 8 * 58);
+	}
+	else if (i_Button_pressed_before == 34) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 0 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 1 * 58);
+	}
+	else if (i_Button_pressed_before == 35) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 0 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 2 * 58);
+	}
+	else if (i_Button_pressed_before == 36) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 37) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 4 * 58);
+	}
+	else if (i_Button_pressed_before == 38) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 5 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 39) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 6 * 58);
+	}
+	else if (i_Button_pressed_before == 40) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 7 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 42) {
+	
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 0 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 0 * 58);
+	}
+	else if (i_Button_pressed_before == 45) {
+
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 49) {
+
+	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 7 * 58);
+	}
+	else if (i_Button_pressed_before == 51) {
+
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 0 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 1 * 58);
+	}
+	else if (i_Button_pressed_before == 52) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 0 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 1 * 58);
+	}
+	else if (i_Button_pressed_before == 53) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 54) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 55) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 5 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 56) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 57) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 5 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 7 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 7 * 58);
+	}
+	else if (i_Button_pressed_before == 58) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 7 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 8 * 58);
+	}
+	else if (i_Button_pressed_before == 60) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 0 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 1 * 58);
+	}
+	else if (i_Button_pressed_before == 64) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 5 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 5 * 58);
 	}
 	else if (i_Button_pressed_before == 67) {
-		m_png_Light_Map.Draw(dc, 70 + 50 * 7, 81 + 7 * 58 - 30);
-		m_png_Light_Map.Draw(dc, 70 + 50 * 5, 81 + 7 * 58 - 30);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 7 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 7 * 58);
 	}
+	else if (i_Button_pressed_before == 69) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 1 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 2 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 2 * 58);
+	}
+	else if (i_Button_pressed_before == 70) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 1 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 3 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 2 * 58);
+	}
+	else if (i_Button_pressed_before == 71) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 2 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 4 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 4 * 58);
+	}
+	else if (i_Button_pressed_before == 72) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 3 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 4 * 58);
+	}
+	else if (i_Button_pressed_before == 73) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 4 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 6 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 6 * 58);
+	}
+	else if (i_Button_pressed_before == 74) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 7 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 6 * 58);
+	}
+	else if (i_Button_pressed_before == 75) {
+
+		m_png_Light_Map.Draw(dc, 17 + 50 * 7, 21 + 8 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 6 * 58);
+	}
+	else if (i_Button_pressed_before == 78) {
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 1 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 2 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 1 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 2 * 58);
+	}
+	else if (i_Button_pressed_before == 80) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 82) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 5 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 86) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 1 * 58);
+	}
+	else if (i_Button_pressed_before == 87) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 88) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 4 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 90) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 9, 21 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 6 * 58);
+	}
+	else if (i_Button_pressed_before == 94) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 1 * 58);
+	}
+	else if (i_Button_pressed_before == 96) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 99) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 5 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 7 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 100) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 6 * 58);
+	}
+	else if (i_Button_pressed_before == 103) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 2 * 58);
+	}
+	else if (i_Button_pressed_before == 104) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 1 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 3 * 58);
+	}
+	else if (i_Button_pressed_before == 105) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 2 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 4 * 58);
+	}
+	else if (i_Button_pressed_before == 106) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 5 * 58);
+	}
+	else if (i_Button_pressed_before == 107) {
+	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 6 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 4 * 58);
+	}
+	
 	else {
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
