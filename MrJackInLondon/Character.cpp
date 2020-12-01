@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Character.h"
 CCharacter::CCharacter() {
-	b_innocent = 0;
+	b_innocent = FALSE;
 	move_count = 3;
 }
 int CCharacter::GetXPos() {
