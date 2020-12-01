@@ -1037,7 +1037,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 37 || i_Button_pressed_before == 27 || i_Button_pressed_before == 35) && i_Button_pressed_after == 36) {
+	if ((i_Button_pressed_before == 37 || i_Button_pressed_before == 27 || i_Button_pressed_before == 35||i_Button_pressed_before==45) && i_Button_pressed_after == 36) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1061,7 +1061,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//맨홀 45 제외
-	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 38 || i_Button_pressed_before == 36) && i_Button_pressed_after == 37) {
+	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 38 || i_Button_pressed_before == 36 || i_Button_pressed_before == 45) && i_Button_pressed_after == 37) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1085,7 +1085,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//맨홀 45 제외
-	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 37 || i_Button_pressed_before == 39) && i_Button_pressed_after == 38) {
+	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 37 || i_Button_pressed_before == 39||i_Button_pressed_before == 47) && i_Button_pressed_after == 38) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1108,7 +1108,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 31 || i_Button_pressed_before == 40 || i_Button_pressed_before == 38) && i_Button_pressed_after == 39) {
+	if ((i_Button_pressed_before == 31 || i_Button_pressed_before == 40 || i_Button_pressed_before == 38||i_Button_pressed_before==47) && i_Button_pressed_after == 39) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1270,7 +1270,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_before = 0;
 		i_Button_pressed_after = 0;
 	}
-	if ((i_Button_pressed_before == 52 || i_Button_pressed_before == 54) && i_Button_pressed_after == 53) {
+	if ((i_Button_pressed_before == 52 || i_Button_pressed_before == 54 || i_Button_pressed_before == 45) && i_Button_pressed_after == 53) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1294,7 +1294,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//맨홀45 제외
-	if ((i_Button_pressed_before == 55 || i_Button_pressed_before == 53) && i_Button_pressed_after == 54) {
+	if ((i_Button_pressed_before == 55 || i_Button_pressed_before == 53 || i_Button_pressed_before == 45) && i_Button_pressed_after == 54) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1318,7 +1318,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//맨홀 45 제외
-	if ((i_Button_pressed_before == 56 || i_Button_pressed_before == 54||i_Button_pressed_before==64) && i_Button_pressed_after == 55) {
+	if ((i_Button_pressed_before == 56 || i_Button_pressed_before == 54||i_Button_pressed_before==64|| i_Button_pressed_before == 47) && i_Button_pressed_after == 55) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -1342,7 +1342,7 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//맨홀 64 제외
-	if ((i_Button_pressed_before == 57 || i_Button_pressed_before == 55||i_Button_pressed_before == 64) && i_Button_pressed_after == 56) {
+	if ((i_Button_pressed_before == 57 || i_Button_pressed_before == 55||i_Button_pressed_before == 64|| i_Button_pressed_before == 47) && i_Button_pressed_after == 56) {
 		if (tile[i_Button_pressed_before].i_default_item == 3)
 			homes.Move(tile[i_Button_pressed_after].p_tilepos);
 		if (tile[i_Button_pressed_before].i_default_item == 4)
@@ -2091,6 +2091,7 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 2 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 1 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 3 * 58);
+	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 3 * 58);
 	}
 	else if (i_Button_pressed_before == 37) {
 	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 4 * 58);
@@ -2100,7 +2101,6 @@ void CMrJackInLondonInGame::OnPaint()
 	}
 	else if (i_Button_pressed_before == 38) {
 	m_png_Light_Map.Draw(dc, 17 + 50 * 3, 21 + 4 * 58);
-	m_png_Light_Map.Draw(dc, 17 + 50 * 5, 21 + 5 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 3 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 5 * 58);
 	}
