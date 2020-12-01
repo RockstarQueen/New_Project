@@ -26,10 +26,12 @@ public:
 	bool b_jack;
 protected:
 	CPoint p_charpos;
-	bool b_innocent;
+	bool b_innocent=FALSE;
 	int i_position;
 	int i_xposition;
 	int i_yposition;
 	int i_array_check[6] = { 0,0 };
+public:
+	void setInno();
 };
 

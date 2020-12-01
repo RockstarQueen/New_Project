@@ -32,7 +32,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	s_is_jack.Format(_T("당신은 도둑입니다. 잭: "));
 	s_not_jack.Format(_T("당신은 경찰입니다."));
 	set_Jack();
-	i_player_num==1 ? MessageBox(s_is_jack) : MessageBox(s_not_jack);
+	i_player_num==0 ? MessageBox(s_is_jack) : MessageBox(s_not_jack);
 	i_Button_pressed_after = 0;
 	i_Button_pressed_before = 0;
 	//제작:이화원 탈출하는 위치& 타일의 판정을 Rect배열로 구현함. 
@@ -285,14 +285,23 @@ BOOL CMrJackInLondonInGame::OnInitDialog()
 	m_png_Light_4.Load(L"res\\StreetLamp3.png");
 	m_png_Light_5.Load(L"res\\StreetLamp4.png");
 
-	m_png_Goodley.Load(L"res\\Goodley-suspicious.png");
-	m_png_Homes.Load(L"res\\Homes-suspicious.png");
-	m_png_Jeremy.Load(L"res\\Jeremy-suspicious.png");
-	m_png_John.Load(L"res\\John-suspicious.png");
-	m_png_Lestrade.Load(L"res\\Lestrade-suspicious.png");
-	m_png_Stealthy.Load(L"res\\Stealthy-suspicious.png");
-	m_png_William.Load(L"res\\William-suspicious.png");
-	m_png_Watson.Load(L"res\\Watson-suspicious.png");
+	m_png_Goodley_s.Load(L"res\\Goodley-suspicious.png");
+	m_png_Homes_s.Load(L"res\\Homes-suspicious.png");
+	m_png_Jeremy_s.Load(L"res\\Jeremy-suspicious.png");
+	m_png_John_s.Load(L"res\\John-suspicious.png");
+	m_png_Lestrade_s.Load(L"res\\Lestrade-suspicious.png");
+	m_png_Stealthy_s.Load(L"res\\Stealthy-suspicious.png");
+	m_png_William_s.Load(L"res\\William-suspicious.png");
+	m_png_Watson_s.Load(L"res\\Watson-suspicious.png");
+
+	m_png_Goodley_i.Load(L"res\\Goodley-innocent.png");
+	m_png_Homes_i.Load(L"res\\Homes-innocent.png");
+	m_png_Jeremy_i.Load(L"res\\Jeremy-innocent.png");
+	m_png_John_i.Load(L"res\\John-innocent.png");
+	m_png_Lestrade_i.Load(L"res\\Lestrade-innocent.png");
+	m_png_Stealthy_i.Load(L"res\\Stealthy-innocent.png");
+	m_png_William_i.Load(L"res\\William-innocent.png");
+	m_png_Watson_i.Load(L"res\\Watson-innocent.png");
 
 	m_png_CheckPoint1.Load(L"res\\CheckPoint.png");
 	m_png_etile.Load(L"res\\empty_tile.png");
@@ -2307,22 +2316,39 @@ void CMrJackInLondonInGame::OnPaint()
 		i_Button_pressed_after = 0;
 	}
 	//캐릭터의 좌표에 따라서 구현시키는 함수 구현.
-	goodley.GetXPos() % 2 == 0 ? m_png_Goodley.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 35) : m_png_Goodley.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 65);
-
-	homes.GetXPos() % 2 == 0 ? m_png_Homes.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 35) : m_png_Homes.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 65);
-	
-	jeremy.GetXPos() % 2 == 0 ?	m_png_Jeremy.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 35): m_png_Jeremy.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 65);
-
-	john.GetXPos() % 2 == 0 ? m_png_John.Draw(dc, 32 + 50 * john.GetXPos(), 95 + 58 * john.GetYPos() - 35) : m_png_John.Draw(dc, 32 + 50 * john.GetXPos(), 95 + 58 * john.GetYPos() - 65);
-
-	lestrade.GetXPos() % 2 == 0 ? m_png_Lestrade.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 35) : m_png_Lestrade.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 65);
-	
-	stealthy.GetXPos() % 2 == 0 ? m_png_Stealthy.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 35) : m_png_Stealthy.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 65);
-
-	watson.GetXPos() % 2 == 0 ? m_png_Watson.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 35) : m_png_Watson.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 65);
-
-	william.GetXPos() % 2 == 0 ? m_png_William.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 35) : m_png_William.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 65);
-
+	if (!goodley.GetInno()) {
+		goodley.GetXPos() % 2 == 0 ? m_png_Goodley_s.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 35) : m_png_Goodley_s.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 65);
+	}else
+		goodley.GetXPos() % 2 == 0 ? m_png_Goodley_i.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 35) : m_png_Goodley_i.Draw(dc, 32 + 50 * goodley.GetXPos(), 95 + 58 * goodley.GetYPos() - 65);
+	if (!homes.GetInno()) {
+		homes.GetXPos() % 2 == 0 ? m_png_Homes_s.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 35) : m_png_Homes_s.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 65);
+	}else
+		homes.GetXPos() % 2 == 0 ? m_png_Homes_i.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 35) : m_png_Homes_i.Draw(dc, 32 + 50 * homes.GetXPos(), 95 + 58 * homes.GetYPos() - 65);
+	if (!jeremy.GetInno()) {
+		jeremy.GetXPos() % 2 == 0 ? m_png_Jeremy_s.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 35) : m_png_Jeremy_s.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 65);
+	}
+	else
+		jeremy.GetXPos() % 2 == 0 ? m_png_Jeremy_i.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 35) : m_png_Jeremy_i.Draw(dc, 32 + 50 * jeremy.GetXPos(), 95 + 58 * jeremy.GetYPos() - 65);
+	john.GetXPos() % 2 == 0 ? m_png_John_s.Draw(dc, 32 + 50 * john.GetXPos(), 95 + 58 * john.GetYPos() - 35) : m_png_John_s.Draw(dc, 32 + 50 * john.GetXPos(), 95 + 58 * john.GetYPos() - 65);
+	if (!lestrade.GetInno()) {
+		lestrade.GetXPos() % 2 == 0 ? m_png_Lestrade_s.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 35) : m_png_Lestrade_s.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 65);
+	}
+	else
+		lestrade.GetXPos() % 2 == 0 ? m_png_Lestrade_i.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 35) : m_png_Lestrade_i.Draw(dc, 32 + 50 * lestrade.GetXPos(), 95 + 58 * lestrade.GetYPos() - 65);
+	if (!stealthy.GetInno()) {
+		stealthy.GetXPos() % 2 == 0 ? m_png_Stealthy_s.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 35) : m_png_Stealthy_s.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 65);
+	}else
+		stealthy.GetXPos() % 2 == 0 ? m_png_Stealthy_i.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 35) : m_png_Stealthy_i.Draw(dc, 32 + 50 * stealthy.GetXPos(), 95 + 58 * stealthy.GetYPos() - 65);
+	if (!watson.GetInno()) {
+		watson.GetXPos() % 2 == 0 ? m_png_Watson_s.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 35) : m_png_Watson_s.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 65);
+	}else
+		watson.GetXPos() % 2 == 0 ? m_png_Watson_i.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 35) : m_png_Watson_i.Draw(dc, 32 + 50 * watson.GetXPos(), 95 + 58 * watson.GetYPos() - 65);
+	if (!william.GetInno()) {
+		william.GetXPos() % 2 == 0 ? m_png_William_s.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 35) : m_png_William_s.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 65);
+	}
+	else {
+		william.GetXPos() % 2 == 0 ? m_png_William_i.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 35) : m_png_William_i.Draw(dc, 32 + 50 * william.GetXPos(), 95 + 58 * william.GetYPos() - 65);
+	}
 	//탈출경로와 타일 판정위치 표시하는 것임. 하단에 있는것을 주석처리하면 나타나지 않음. 
 	/*
 	for(int i=1;i<109;i++)
@@ -2513,6 +2539,7 @@ void CMrJackInLondonInGame::OnBnClickedIgbTurnend()
 {
 	//Char좌표: (캐릭터명.p_charpos.x, 캐릭터명.p_charpos.y)
 	//
+	turn_end();
 	round_end();
 	CString watson_str;
 	watson_str.Format(_T("%d"), watson.i_light_pos);
@@ -2533,6 +2560,7 @@ void CMrJackInLondonInGame::round_start()
 	william.move_count = 3;
 	john.move_count = 3;
 	stealthy.move_count = 4;
+	Invalidate();
 	// TODO: 여기에 구현 코드 추가.
 }
 
@@ -2556,12 +2584,427 @@ void CMrJackInLondonInGame::turn_end()
 			tile[i + 8].onLight = TRUE;
 			tile[i + 9].onLight = TRUE;
 		}
-		/*
+		//왓슨도 밝아져라.
 		if (tile[i].i_default_item == 4) {
-			while(watson.lightpos())
+			while (tile[i].i_type_m != 0) {
+				i += watson.i_light_pos;
+				tile[i].onLight = TRUE;
+			}
 		}
-		*/
+	}
+	for(int i=0;i<110;i++){
+		//homes
+		if (homes.b_jack == TRUE) {
+			int jack1dpos=checkchar1dPos(3);
+			if (tile[jack1dpos].onLight == TRUE) {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == FALSE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+			else {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == TRUE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+		}
+		if (watson.b_jack == TRUE) {
+			int jack1dpos = checkchar1dPos(4);
+			if (tile[jack1dpos].onLight == TRUE) {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == FALSE) {
+							if (tile[i].i_default_item == 3)
+								homes.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+			else {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == TRUE) {
+							if (tile[i].i_default_item == 4)
+								homes.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+		}
+		if (john.b_jack == TRUE) {
+			int jack1dpos = checkchar1dPos(5);
+			if (tile[jack1dpos].onLight == TRUE) {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == FALSE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 3)
+								homes.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+			else {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == TRUE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 3)
+								homes.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+		}
+		if (lestrade.b_jack == TRUE) {
+			int jack1dpos = checkchar1dPos(6);
+			if (tile[jack1dpos].onLight == TRUE) {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == FALSE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 3)
+								homes.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+			else {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == TRUE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 3)
+								homes.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+		}
+		if (stealthy.b_jack == TRUE) {
+		int jack1dpos = checkchar1dPos(7);
+		if (tile[jack1dpos].onLight == TRUE) {
+			for (int i = 0; i < 110; i++) {
+				if (tile[i].i_default_item > 2) {
+					if (tile[i].onLight == FALSE) {
+						if (tile[i].i_default_item == 4)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5)
+							john.setInno();
+						else if (tile[i].i_default_item == 6)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 3)
+							homes.setInno();
+						else if (tile[i].i_default_item == 8)
+							william.setInno();
+						else if (tile[i].i_default_item == 9)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10)
+							jeremy.setInno();
+					}
+				}
+			}
+		}
+		else {
+			for (int i = 0; i < 110; i++) {
+				if (tile[i].i_default_item > 2) {
+					if (tile[i].onLight == TRUE) {
+						if (tile[i].i_default_item == 4)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5)
+							john.setInno();
+						else if (tile[i].i_default_item == 6)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 3)
+							homes.setInno();
+						else if (tile[i].i_default_item == 8)
+							william.setInno();
+						else if (tile[i].i_default_item == 9)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10)
+							jeremy.setInno();
+					}
+				}
+			}
+		}
+	}
+		if (william.b_jack == TRUE) {
+			int jack1dpos = checkchar1dPos(8);
+			if (tile[jack1dpos].onLight == TRUE) {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].i_default_item == 4 && tile[i].onLight == FALSE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == FALSE)
+							john.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == FALSE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == FALSE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == FALSE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == FALSE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == FALSE)
+							jeremy.setInno();
+					
+					}
+				}
+			}
+			else {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].i_default_item == 4 && tile[i].onLight == TRUE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == TRUE)
+							john.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == TRUE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == TRUE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 3&& tile[i].onLight == TRUE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == TRUE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == TRUE)
+							jeremy.setInno();
+					}
+				}
+			}
+		}
+		if (goodley.b_jack == TRUE) {
+			int jack1dpos = checkchar1dPos(9);
+			if (tile[jack1dpos].onLight == TRUE) {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].i_default_item == 4 && tile[i].onLight == FALSE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == FALSE)
+							john.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == FALSE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == FALSE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == FALSE)
+							william.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == FALSE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == FALSE)
+							jeremy.setInno();
+					}
+				}
+			}
+			else {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == TRUE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 3)
+								homes.setInno();
+							else if (tile[i].i_default_item == 10)
+								jeremy.setInno();
+						}
+					}
+				}
+			}
+		}
+		if (jeremy.b_jack == TRUE) {
+			int jack1dpos = checkchar1dPos(10);
+			if (tile[jack1dpos].onLight == TRUE) {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == FALSE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 3)
+								homes.setInno();
+						}
+					}
+				}
+			}
+			else {
+				for (int i = 0; i < 110; i++) {
+					if (tile[i].i_default_item > 2) {
+						if (tile[i].onLight == TRUE) {
+							if (tile[i].i_default_item == 4)
+								watson.setInno();
+							else if (tile[i].i_default_item == 5)
+								john.setInno();
+							else if (tile[i].i_default_item == 6)
+								lestrade.setInno();
+							else if (tile[i].i_default_item == 7)
+								stealthy.setInno();
+							else if (tile[i].i_default_item == 8)
+								william.setInno();
+							else if (tile[i].i_default_item == 9)
+								goodley.setInno();
+							else if (tile[i].i_default_item == 3)
+								homes.setInno();
+						}
+					}
+				}
+			}
+		}
 	}
 
+	if (goodley.GetInno()) {
+		MessageBox(_T("구들리 시민"));
+	}
+	if (stealthy.GetInno()) {
+		MessageBox(_T("stealthy 시민"));
+	}
+	if (homes.GetInno()) {
+		MessageBox(_T("homes 시민"));
+	}
+	if (jeremy.GetInno()) {
+		MessageBox(_T("jeremy 시민"));
+	}
+	if (john.GetInno()) {
+		MessageBox(_T("john 시민"));
+	}
+	if (william.GetInno()) {
+		MessageBox(_T("william 시민"));
+	}
+	if (lestrade.GetInno()) {
+		MessageBox(_T("lestrade 시민"));
+	}
+	if (watson.GetInno()) {
+		MessageBox(_T("watson 시민"));
+	}
+	
+
 	// TODO: 여기에 구현 코드 추가.
+}
+
+
+
+
+int CMrJackInLondonInGame::checkchar1dPos(int index)
+{
+	for (int i = 0; i < 110; i++) {
+		if (tile[i].i_default_item == index)
+			return i;
+	}
+	// TODO: 여기에 구현 코드 추가.
+	return 0;
 }

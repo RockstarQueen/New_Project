@@ -63,19 +63,27 @@ public:
 	CStealthy stealthy;
 	CWatson watson;
 	CWilliam william;
-
+	
 	afx_msg void OnBnClickedButtonSetting();
 //	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	CImage m_png_Goodley;
-	CImage m_png_Stealthy;
-	CImage m_png_Homes;
-	CImage m_png_Jeremy;
-	CImage m_png_John;
-	CImage m_png_Lestrade;
-	CImage m_png_Watson;
-	CImage m_png_William;
+	CImage m_png_Goodley_s;
+	CImage m_png_Stealthy_s;
+	CImage m_png_Homes_s;
+	CImage m_png_Jeremy_s;
+	CImage m_png_John_s;
+	CImage m_png_Lestrade_s;
+	CImage m_png_Watson_s;
+	CImage m_png_William_s;
 
+	CImage m_png_Goodley_i;
+	CImage m_png_Stealthy_i;
+	CImage m_png_Homes_i;
+	CImage m_png_Jeremy_i;
+	CImage m_png_John_i;
+	CImage m_png_Lestrade_i;
+	CImage m_png_Watson_i;
+	CImage m_png_William_i;
 
 	CImage m_png_CheckPoint1;
 	CImage m_png_Light_Map;
@@ -92,4 +100,5 @@ public:
 	void round_start();
 	void round_end();
 	void turn_end();
+	int checkchar1dPos(int index);
 };

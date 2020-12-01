@@ -43,3 +43,10 @@ bool CCharacter::GetInno() {
 }
 
 
+
+
+void CCharacter::setInno()
+{
+	this->b_innocent = TRUE;
+	// TODO: 여기에 구현 코드 추가.
+}
