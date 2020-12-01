@@ -5,5 +5,7 @@ class CShelock :
 {
 public:
 	CShelock();
+	int ShelockAble();
+	int Jack;
 };
 

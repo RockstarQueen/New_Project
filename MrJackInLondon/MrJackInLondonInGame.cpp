@@ -2202,6 +2202,7 @@ int CMrJackInLondonInGame::set_Jack()
 {
 	srand((unsigned int)time(NULL));
 	int rand_pick = (rand() % 8) + 1;
+	homes.Jack = rand_pick;
 	if (rand_pick == 1) {
 		homes.b_jack = TRUE;
 		CString jack_name=(_T("Shelock Homes"));
