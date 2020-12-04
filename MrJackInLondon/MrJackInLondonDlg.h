@@ -32,6 +32,7 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
+	//static UINT ThreadFunc(LPVOID lpVoid);
 	CImage m_png_image_of_Main;
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	CRect m_rect;
@@ -41,7 +42,8 @@ public:
 	float f_rect_rate_Main;
 	float f_image_rate_Main;
 	int i_priority_range_Main;
-	afx_msg void OnBnClickedBtStart();
+	afx_msg 
+		void OnBnClickedBtStart();
 	afx_msg void OnBnClickedBtHtp();
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	CBitmapButton m_button_Rule;

@@ -9,6 +9,7 @@
 #include "afxdialogex.h"
 #include "MrJackInLondonInGame.h"
 #include "MrJackInLondonHTP.h"
+#include "Client.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -81,8 +82,8 @@ END_MESSAGE_MAP()
 BOOL CMrJackInLondonDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-	CMrJackInLondonInGame dialogig;
-	dialogig.DoModal();
+	/*MrJackInLondonInGame dialogig;
+	dialogig.DoModal();*/
 	// 시스템 메뉴에 "정보..." 메뉴 항목을 추가합니다.
 
 	// IDM_ABOUTBOX는 시스템 명령 범위에 있어야 합니다.
@@ -199,13 +200,35 @@ void CMrJackInLondonDlg::OnSize(UINT nType, int cx, int cy)
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 }
 
-
+// 게임 시작 버튼 클릭 시
 void CMrJackInLondonDlg::OnBnClickedBtStart()
 {
-	CMrJackInLondonInGame dialog1;
+	CClient clientsocket;
+	//SOCKET sock;
+	if (clientsocket.Create() == false)
+	{
+		int err = clientsocket.GetLastError();
+		TRACE("create error: %d\n", err);
+	}
+	if (clientsocket.Connect(_T(IP), PORT) == false)
+	{
+		int err = clientsocket.GetLastError();
+		TRACE("connect error: %d\n", err);
+	}
+
+	/*char role[32] = "";
+	clientsocket.Receive(role, sizeof(role), 0);
+	if (!strcmp(role, "jack")) {
+		MessageBox(_T("i am jack"));
+	}
+	else if (!strcmp(role, "police")) {
+		MessageBox(_T("i am a police officer"));
+	}*/
+
+	//TRACE("\n~~~~~~~~~~~clientsocket address: %#x~~~~~~~~~~n", &clientsocket);
+	CMrJackInLondonInGame dialog1(nullptr, &clientsocket);
 	dialog1.DoModal();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-
 }
 
 
