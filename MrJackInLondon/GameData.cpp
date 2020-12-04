@@ -92,12 +92,3 @@ bool GameData::light_character(int character) {
 	if (/*가로등 옆 || 주위 캐릭터 옆 || 왓슨 손전등 범위 안*/0) { return true; }
 	else return false;
 }
-
-
-/// <summary>
-/// 8개의 카드 중 잭 역할의 캐릭터를 고르고 세팅하는 함수
-/// </summary>
-void GameData::set_Jack() {
-	srand((unsigned int)time(NULL));
-	this->jack = (Characters)(rand() % 8);
-}
