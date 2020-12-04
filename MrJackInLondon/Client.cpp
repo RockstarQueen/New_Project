@@ -1,11 +1,9 @@
 ﻿// Client.cpp: 구현 파일
-//
-
 #include "pch.h"
 #include "MrJackInLondon.h"
 #include "Client.h"
 
-
+using namespace std;
 // CClient
 
 CClient::CClient()

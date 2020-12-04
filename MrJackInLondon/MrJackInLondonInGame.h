@@ -9,6 +9,8 @@
 #include "CWatson.h"
 #include "CWilliam.h"
 #include "Character.h"
+#include "GameData.h"
+#include "Client.h"
 
 // MrJackInLondonInGame_T 대화 상자
 
@@ -17,7 +19,8 @@ class CMrJackInLondonInGame : public CDialogEx
 	DECLARE_DYNAMIC(CMrJackInLondonInGame)
 
 public:
-	CMrJackInLondonInGame(CWnd* pParent = nullptr);   // 표준 생성자입니다.
+	CClient clsock;
+	CMrJackInLondonInGame(CWnd* pParent/* = nullptr*/, CClient* tempsock);   // 표준 생성자입니다.
 	virtual ~CMrJackInLondonInGame();
 
 // 대화 상자 데이터입니다.
@@ -34,6 +37,8 @@ protected:
 	CRect Escape_route[4];
 	CTile tile[109];
 public:
+	static UINT ThreadFunc(LPVOID lpVoid);
+	SOCKET rsock;
 	afx_msg void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	virtual BOOL OnInitDialog();
 	afx_msg void OnBnClickedIgbHelp();
@@ -93,9 +98,16 @@ public:
 	int i_Button_pressed_after;
 	int i_round=1;
 	int i_player_num;
+	/// <summary>
+	/// 잭을 정하는 함수(서버에서 이미 구현함)
+	/// </summary>
+	/// <returns></returns>
 	int set_Jack();
+
+	// 잭인 캐릭터 이름
 	CString s_is_jack;
 	CString s_not_jack;
+
 	afx_msg void OnBnClickedIgbTurnend();
 	void round_start();
 	void round_end();

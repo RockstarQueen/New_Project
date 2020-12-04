@@ -18,21 +18,64 @@
 #include "CWatson.h"
 #include "CWilliam.h"
 #include "Character.h"
-
-
+#include "GameData.h"
 
 
 // MrJackInLondonInGame_T 대화 상자
 
 IMPLEMENT_DYNAMIC(CMrJackInLondonInGame, CDialogEx)
 
-CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
+UINT CMrJackInLondonInGame::ThreadFunc(LPVOID lpVoid)
+{
+	TRACE("\nrecv thread starts\n");
+	// If you use a worker thread, you'll need to
+	// call AfxSocketInit()...
+	if (AfxSocketInit() == FALSE)
+	{
+		TRACE("AfxSocketInit() failed!\n");
+		return 1;
+	}
+	SOCKET* pSocket = (SOCKET*)lpVoid;
+	CClient* clSocket = new CClient();
+	clSocket->Attach(*pSocket);
+	TRACE("\nAttach finished\n");
+
+	while (true)
+	{
+		TRACE("\n===== receive always =====\n");
+		char recvData[PACKET_SIZE] = "";
+		if (clSocket->Receive(recvData, sizeof(recvData), 0)) {
+			recvData[strlen(recvData)] = '\0';
+
+			// 게임 종료조건
+			if (!strcmp(recvData, "Game End")) {
+				TRACE("\n===== Game End =====\n");
+				break;
+			}
+			else
+				TRACE("\nreceived message: %s\n", recvData);
+				//clSocket->Send(recvData, PACKET_SIZE, 0);
+		}
+	}
+	return 0;
+}
+
+CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent, CClient* tempsock)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
-{ 
-	s_is_jack.Format(_T("당신은 도둑입니다. 잭: "));
+{
+	TRACE("\n~~~~~~~~~~~tmpSocket: %#x~~~~~~~~~~~\n", tempsock);
+
+
+	TRACE("\nstart detach()\n");
+	this->rsock = tempsock->Detach();
+	TRACE("\nfinished detach()\n");
+
+	CWinThread* pthread = AfxBeginThread(ThreadFunc, &this->rsock);
+
+	/*s_is_jack.Format(_T("당신은 도둑입니다. 잭: "));
 	s_not_jack.Format(_T("당신은 경찰입니다."));
-	set_Jack();
-	i_player_num==0 ? MessageBox(s_is_jack) : MessageBox(s_not_jack);
+	set_Jack();*/
+	//i_player_num == 0 ? MessageBox(s_is_jack) : MessageBox(s_not_jack);
 	i_Button_pressed_after = 0;
 	i_Button_pressed_before = 0;
 	//제작:이화원 탈출하는 위치& 타일의 판정을 Rect배열로 구현함. 
@@ -41,44 +84,44 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	Escape_route[2].SetRect(15, 490, 120, 560);
 	Escape_route[3].SetRect(605, 490, 680, 560);
 	//tile 값 초기화, 2차원 연동.
-	tile[0].setTile(CPoint(0,0), 0, 0);
-	tile[1].setTile(CPoint(0,1), 0, 0);
-	tile[2].setTile(CPoint(0,2), 1, 0);
-	tile[3].setTile(CPoint(0,3) , 1, 0);
-	tile[4].setTile(CPoint(0,4), 1, 0);
-	tile[5].setTile(CPoint(0,5), 1, 0);
-	tile[6].setTile(CPoint(0,6), 1, 0);
-	tile[7].setTile(CPoint(0,0), 0, 0);
-	tile[8].setTile(CPoint(0,0), 0, 0);
-	tile[9].setTile(CPoint(1,1), 1, 0);
-	tile[10].setTile(CPoint(1,2), 1, 0);
-	tile[11].setTile(CPoint(1,3), 0, 0);
-	tile[12].setTile(CPoint(1,4), 0, 0);
-	tile[13].setTile(CPoint(1,5), 1, 0);
-	tile[14].setTile(CPoint(1,6), 2, 0);
-	tile[15].setTile(CPoint(1,7), 1, 0);
-	tile[16].setTile(CPoint(0,8), 0, 0);
-	tile[17].setTile(CPoint(2,0), 0, 0);
-	tile[18].setTile(CPoint(2,1), 2, 0);
-	tile[19].setTile(CPoint(2,2), 1, 0);
-	tile[20].setTile(CPoint(2,3), 0, 0);
-	tile[21].setTile(CPoint(2,4), 1, 0);
-	tile[22].setTile(CPoint(2,5), 1, 0);
-	tile[23].setTile(CPoint(2,6), 1, 0);
-	tile[24].setTile(CPoint(2,7), 0, 0);
-	tile[25].setTile(CPoint(3,0), 0, 0);
-	tile[26].setTile(CPoint(3,1), 0, 0);
-	tile[27].setTile(CPoint(3,2), 1, 0);
-	tile[28].setTile(CPoint(3,3), 0, 0);
-	tile[29].setTile(CPoint(3,4), 1, 0);
-	tile[30].setTile(CPoint(3,5), 0, 0);
-	tile[31].setTile(CPoint(3,6), 1, 0);
-	tile[32].setTile(CPoint(3,7), 0, 0);
-	tile[33].setTile(CPoint(3,8), 0, 0);
-	tile[34].setTile(CPoint(4,0), 1, 0);
-	tile[35].setTile(CPoint(4,1), 1, 0);
-	tile[36].setTile(CPoint(4,2), 1, 0);
-	tile[37].setTile(CPoint(4,3), 1, 0);
+	tile[0].setTile(CPoint(0, 0), 0, 0);
+	tile[1].setTile(CPoint(0, 1), 0, 0);
+	tile[2].setTile(CPoint(0, 2), 1, 0);
+	tile[3].setTile(CPoint(0, 3), 1, 0);
+	tile[4].setTile(CPoint(0, 4), 1, 0);
+	tile[5].setTile(CPoint(0, 5), 1, 0);
+	tile[6].setTile(CPoint(0, 6), 1, 0);
+	tile[7].setTile(CPoint(0, 0), 0, 0);
+	tile[8].setTile(CPoint(0, 0), 0, 0);
+	tile[9].setTile(CPoint(1, 1), 1, 0);
+	tile[10].setTile(CPoint(1, 2), 1, 0);
+	tile[11].setTile(CPoint(1, 3), 0, 0);
+	tile[12].setTile(CPoint(1, 4), 0, 0);
+	tile[13].setTile(CPoint(1, 5), 1, 0);
+	tile[14].setTile(CPoint(1, 6), 2, 0);
+	tile[15].setTile(CPoint(1, 7), 1, 0);
+	tile[16].setTile(CPoint(0, 8), 0, 0);
+	tile[17].setTile(CPoint(2, 0), 0, 0);
+	tile[18].setTile(CPoint(2, 1), 2, 0);
+	tile[19].setTile(CPoint(2, 2), 1, 0);
+	tile[20].setTile(CPoint(2, 3), 0, 0);
+	tile[21].setTile(CPoint(2, 4), 1, 0);
+	tile[22].setTile(CPoint(2, 5), 1, 0);
+	tile[23].setTile(CPoint(2, 6), 1, 0);
+	tile[24].setTile(CPoint(2, 7), 0, 0);
+	tile[25].setTile(CPoint(3, 0), 0, 0);
+	tile[26].setTile(CPoint(3, 1), 0, 0);
+	tile[27].setTile(CPoint(3, 2), 1, 0);
+	tile[28].setTile(CPoint(3, 3), 0, 0);
+	tile[29].setTile(CPoint(3, 4), 1, 0);
+	tile[30].setTile(CPoint(3, 5), 0, 0);
+	tile[31].setTile(CPoint(3, 6), 1, 0);
+	tile[32].setTile(CPoint(3, 7), 0, 0);
+	tile[33].setTile(CPoint(3, 8), 0, 0);
+	tile[34].setTile(CPoint(4, 0), 1, 0);
+	tile[35].setTile(CPoint(4, 1), 1, 0);
+	tile[36].setTile(CPoint(4, 2), 1, 0);
+	tile[37].setTile(CPoint(4, 3), 1, 0);
 	tile[38].setTile(CPoint(4, 4), 1, 0);
 	tile[39].setTile(CPoint(4, 5), 1, 0);
 	tile[40].setTile(CPoint(4, 6), 1, 0);
@@ -142,9 +185,9 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	tile[98].setTile(CPoint(11, 5), 0, 0);
 	tile[99].setTile(CPoint(11, 6), 1, 0);
 	tile[100].setTile(CPoint(11, 7), 1, 0);
-	tile[101].setTile(CPoint(0,0), 0, 0);
-	tile[102].setTile((0,0), 0, 0);
-	tile[103].setTile(CPoint(12,1), 1, 0);
+	tile[101].setTile(CPoint(0, 0), 0, 0);
+	tile[102].setTile((0, 0), 0, 0);
+	tile[103].setTile(CPoint(12, 1), 1, 0);
 	tile[104].setTile(CPoint(12, 2), 1, 0);
 	tile[105].setTile(CPoint(12, 3), 1, 0);
 	tile[106].setTile(CPoint(12, 4), 1, 0);
@@ -160,7 +203,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	//homes
 	tile[56].setItem(3);
 	//watson
- 	tile[2].setItem(4);
+	tile[2].setItem(4);
 	//smith
 	tile[53].setItem(5);
 	//Lestrade
@@ -168,7 +211,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	//Stealthy
 	tile[75].setItem(7);
 	//William
-	tile[34].setItem(8); 
+	tile[34].setItem(8);
 	//goodley
 	tile[105].setItem(9);
 	//Jeremy
@@ -197,7 +240,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	}
 	for (int i = 42; i < 51; i++) {
 		int k = i - 42;
-		rect[i].SetRect(280, 22 + 58 * k , 325, 77 + 58 * k);
+		rect[i].SetRect(280, 22 + 58 * k, 325, 77 + 58 * k);
 	}
 	for (int i = 51; i < 59; i++) {
 		int k = i - 50;
@@ -205,7 +248,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	}
 	for (int i = 59; i < 68; i++) {
 		int k = i - 59;
-		rect[i].SetRect(380, 22 + 58 * k , 425, 77 + 58 * k);
+		rect[i].SetRect(380, 22 + 58 * k, 425, 77 + 58 * k);
 	}
 	for (int i = 68; i < 76; i++) {
 		int k = i - 67;
@@ -213,7 +256,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent /*=nullptr*/)
 	}
 	for (int i = 76; i < 85; i++) {
 		int k = i - 76;
-		rect[i].SetRect(480, 22 + 58 * k , 525, 77 + 58 *k );
+		rect[i].SetRect(480, 22 + 58 * k, 525, 77 + 58 * k);
 	}
 	for (int i = 85; i < 93; i++) {
 		int k = i - 84;
@@ -2484,57 +2527,64 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 }
 
 
-int CMrJackInLondonInGame::set_Jack()
+/// <summary>
+/// 잭을 정하는 함수(서버에서 이미 구현함)
+/// </summary>
+/// <returns></returns>
+
+inline int CMrJackInLondonInGame::set_Jack()
 {
-	srand((unsigned int)time(NULL));
+	//return this->gameData.jack;
+	/*srand((unsigned int)time(NULL));
 	int rand_pick = (rand() % 8) + 1;
 	homes.Jack = rand_pick;
 	if (rand_pick == 1) {
-		homes.b_jack = TRUE;
-		CString jack_name=(_T("Shelock Homes"));
-		s_is_jack+=jack_name;
+	homes.b_jack = TRUE;
+	CString jack_name=(_T("Shelock Homes"));
+	s_is_jack+=jack_name;
 	}
 	if (rand_pick == 2) {
-		watson.b_jack = TRUE;
-		CString jack_name = (_T("Watson"));
-		s_is_jack += jack_name;
+	watson.b_jack = TRUE;
+	CString jack_name = (_T("Watson"));
+	s_is_jack += jack_name;
 	}
 	if (rand_pick == 3) {
-		john.b_jack=TRUE;
-		CString jack_name = (_T("John Smith"));
-		s_is_jack += jack_name;
+	john.b_jack=TRUE;
+	CString jack_name = (_T("John Smith"));
+	s_is_jack += jack_name;
 	}
 	if (rand_pick == 4) {
-		lestrade.b_jack = TRUE;
-		CString jack_name = (_T("Lestrade"));
-		s_is_jack += jack_name;
+	lestrade.b_jack = TRUE;
+	CString jack_name = (_T("Lestrade"));
+	s_is_jack += jack_name;
 	}
 	if (rand_pick == 5) {
-		stealthy.b_jack = TRUE;
-		CString jack_name = (_T("Stealthy"));
-		s_is_jack += jack_name;
+	stealthy.b_jack = TRUE;
+	CString jack_name = (_T("Stealthy"));
+	s_is_jack += jack_name;
 	}
 	if (rand_pick == 6) {
-		william.b_jack = TRUE;
-		CString jack_name = (_T("william"));
-		s_is_jack += jack_name;
+	william.b_jack = TRUE;
+	CString jack_name = (_T("william"));
+	s_is_jack += jack_name;
 	}
 	if (rand_pick == 7) {
-		goodley.b_jack = TRUE;
-		CString jack_name = (_T("Goodley"));
-		s_is_jack += jack_name;
+	goodley.b_jack = TRUE;
+	CString jack_name = (_T("Goodley"));
+	s_is_jack += jack_name;
 	}
 	if (rand_pick == 8) {
-		jeremy.b_jack = TRUE;
-		CString jack_name = (_T("Jeremy Bert"));
-		s_is_jack += jack_name;
+	jeremy.b_jack = TRUE;
+	CString jack_name = (_T("Jeremy Bert"));
+	s_is_jack += jack_name;
 	}
-
 	// TODO: 여기에 구현 코드 추가.
-	return 0;
+	return 0;*/
 }
 
-
+/// <summary>
+/// 턴 종료 버튼 클릭 시 수행되는 함수
+/// </summary>
 void CMrJackInLondonInGame::OnBnClickedIgbTurnend()
 {
 	//Char좌표: (캐릭터명.p_charpos.x, 캐릭터명.p_charpos.y)

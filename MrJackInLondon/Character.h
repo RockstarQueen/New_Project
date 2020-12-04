@@ -3,7 +3,7 @@ class CCharacter
 {
 public:
 
-	enum Characters
+	enum Characters:int
 	{
 		Shelock = 0,
 		Watson,
