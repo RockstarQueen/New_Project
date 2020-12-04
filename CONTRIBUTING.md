@@ -23,8 +23,8 @@ ClientSocket에서 소켓 생성 후 Server에 접속 요청(2020/11/15)<br>
 서버와 클라이언트의 동작 방식을 시각자료로 제작(2020/11/19)<br>
 2인 통신 프로토타입(채팅) 제작 (2020/11/20)<br>
 multi room 구조(thread)로 2인 통신 제작 (2020/11/21)<br>
- https://github.com/hyunwoo9120/New_Project/blob/main/README.md<br>
- https://github.com/hyunwoo9120/New_Project/tree/main/socket<br>
+<br>자세한 사항은 링크에서 
+https://github.com/hyunwoo9120/mrJackServer.git
 </p>
 
   
