@@ -60,6 +60,9 @@ https://github.com/hyunwoo9120/mrJackServer.git
   확정시민일때, 이미지가 바뀌게 하는 현상 추가(2020/12/02)<br>
   가로등&Watson으로 onLight함수 동작 & 캐릭터가 on&off light상태 확인가능(2020/12/02)<br>
   마이너 버그 수정(watson.lightpos==0일때 동작, 가로등 꺼진 상태에서 동작하던거 수정) (2020/12/04~05)<br>
+  가로등&맨홀&검문소 기능 구현 완료(2020/12/05)<br>
+  잭이 탈출할 때, 조건 구현 완료(2020/12/05)<br>
+  turnend 버튼 누를 시, movecount 초기화 구현 완료(2020/12/05)<br>
 </p>
   
 ### arittung
