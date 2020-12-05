@@ -2641,6 +2641,15 @@ void CMrJackInLondonInGame::turn_end()
 			tile[i + 8].onLight = TRUE;
 			tile[i + 9].onLight = TRUE;
 		}
+		//캐릭터 주변 밝아져라.
+		if (tile[i].i_default_item > 2) {
+			tile[i - 1].onLight = TRUE;
+			tile[i + 1].onLight = TRUE;
+			tile[i - 9].onLight = TRUE;
+			tile[i - 8].onLight = TRUE;
+			tile[i + 8].onLight = TRUE;
+			tile[i + 9].onLight = TRUE;
+		}
 		//왓슨도 밝아져라.
 		if (tile[i].i_default_item == 4) {
 			while (tile[i].i_type_m != 0) {
@@ -2658,44 +2667,41 @@ void CMrJackInLondonInGame::turn_end()
 			if (tile[jack1dpos].onLight == TRUE) {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == FALSE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 5)
-								john.setInno();
-							else if (tile[i].i_default_item == 6)
-								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 9)
-								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
-								jeremy.setInno();
-						}
+						if (tile[i].i_default_item == 4 && tile[i].onLight == FALSE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == FALSE)
+							john.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == FALSE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == FALSE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == FALSE)
+							william.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == FALSE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == FALSE)
+							jeremy.setInno();
+						
 					}
 				}
 			}
 			else {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == TRUE) {
-							if (tile[i].i_default_item == 4)
+							if (tile[i].i_default_item == 4 && tile[i].onLight == TRUE)
 								watson.setInno();
-							else if (tile[i].i_default_item == 5)
+							else if (tile[i].i_default_item == 5 && tile[i].onLight == TRUE)
 								john.setInno();
-							else if (tile[i].i_default_item == 6)
+							else if (tile[i].i_default_item == 6 && tile[i].onLight == TRUE)
 								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
+							else if (tile[i].i_default_item == 7 && tile[i].onLight == TRUE)
 								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
+							else if (tile[i].i_default_item == 8 && tile[i].onLight == TRUE)
 								william.setInno();
-							else if (tile[i].i_default_item == 9)
+							else if (tile[i].i_default_item == 9 && tile[i].onLight == TRUE)
 								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
+							else if (tile[i].i_default_item == 10 && tile[i].onLight == TRUE)
 								jeremy.setInno();
-						}
 					}
 				}
 			}
@@ -2705,44 +2711,40 @@ void CMrJackInLondonInGame::turn_end()
 			if (tile[jack1dpos].onLight == TRUE) {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == FALSE) {
-							if (tile[i].i_default_item == 3)
+							if (tile[i].i_default_item == 3 && tile[i].onLight == FALSE)
 								homes.setInno();
-							else if (tile[i].i_default_item == 5)
+							else if (tile[i].i_default_item == 5 && tile[i].onLight == FALSE)
 								john.setInno();
-							else if (tile[i].i_default_item == 6)
+							else if (tile[i].i_default_item == 6 && tile[i].onLight == FALSE)
 								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
+							else if (tile[i].i_default_item == 7 && tile[i].onLight == FALSE)
 								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
+							else if (tile[i].i_default_item == 8 && tile[i].onLight == FALSE)
 								william.setInno();
-							else if (tile[i].i_default_item == 9)
+							else if (tile[i].i_default_item == 9 && tile[i].onLight == FALSE)
 								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
+							else if (tile[i].i_default_item == 10 && tile[i].onLight == FALSE)
 								jeremy.setInno();
-						}
 					}
 				}
 			}
 			else {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == TRUE) {
-							if (tile[i].i_default_item == 4)
+							if (tile[i].i_default_item == 4&& tile[i].onLight == TRUE)
 								homes.setInno();
-							else if (tile[i].i_default_item == 5)
+							else if (tile[i].i_default_item == 5 && tile[i].onLight == TRUE)
 								john.setInno();
-							else if (tile[i].i_default_item == 6)
+							else if (tile[i].i_default_item == 6 && tile[i].onLight == TRUE)
 								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
+							else if (tile[i].i_default_item == 7 && tile[i].onLight == TRUE)
 								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
+							else if (tile[i].i_default_item == 8 && tile[i].onLight == TRUE)
 								william.setInno();
-							else if (tile[i].i_default_item == 9)
+							else if (tile[i].i_default_item == 9 && tile[i].onLight == TRUE)
 								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
+							else if (tile[i].i_default_item == 10 && tile[i].onLight == TRUE)
 								jeremy.setInno();
-						}
 					}
 				}
 			}
@@ -2752,44 +2754,40 @@ void CMrJackInLondonInGame::turn_end()
 			if (tile[jack1dpos].onLight == TRUE) {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == FALSE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 3)
-								homes.setInno();
-							else if (tile[i].i_default_item == 6)
-								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 9)
-								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
-								jeremy.setInno();
-						}
+						if (tile[i].i_default_item == 4 && tile[i].onLight == FALSE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == FALSE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == FALSE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == FALSE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == FALSE)
+							william.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == FALSE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == FALSE)
+							jeremy.setInno();
 					}
 				}
 			}
 			else {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == TRUE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 3)
-								homes.setInno();
-							else if (tile[i].i_default_item == 6)
-								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 9)
-								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
-								jeremy.setInno();
-						}
+						if (tile[i].i_default_item == 4 && tile[i].onLight == TRUE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == TRUE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == TRUE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == TRUE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == TRUE)
+							william.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == TRUE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == TRUE)
+							jeremy.setInno();
 					}
 				}
 			}
@@ -2799,44 +2797,40 @@ void CMrJackInLondonInGame::turn_end()
 			if (tile[jack1dpos].onLight == TRUE) {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == FALSE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 3)
-								homes.setInno();
-							else if (tile[i].i_default_item == 5)
-								john.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 9)
-								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
-								jeremy.setInno();
-						}
+						if (tile[i].i_default_item == 4 && tile[i].onLight == FALSE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == FALSE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == FALSE)
+							john.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == FALSE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == FALSE)
+							william.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == FALSE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == FALSE)
+							jeremy.setInno();
 					}
 				}
 			}
 			else {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == TRUE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 3)
-								homes.setInno();
-							else if (tile[i].i_default_item == 5)
-								john.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 9)
-								goodley.setInno();
-							else if (tile[i].i_default_item == 10)
-								jeremy.setInno();
-						}
+						if (tile[i].i_default_item == 4)
+							watson.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == TRUE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == TRUE)
+							john.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == TRUE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == TRUE)
+							william.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == TRUE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == TRUE)
+							jeremy.setInno();
 					}
 				}
 			}
@@ -2846,44 +2840,41 @@ void CMrJackInLondonInGame::turn_end()
 		if (tile[jack1dpos].onLight == TRUE) {
 			for (int i = 0; i < 110; i++) {
 				if (tile[i].i_default_item > 2) {
-					if (tile[i].onLight == FALSE) {
-						if (tile[i].i_default_item == 4)
-							watson.setInno();
-						else if (tile[i].i_default_item == 5)
-							john.setInno();
-						else if (tile[i].i_default_item == 6)
-							lestrade.setInno();
-						else if (tile[i].i_default_item == 3)
-							homes.setInno();
-						else if (tile[i].i_default_item == 8)
-							william.setInno();
-						else if (tile[i].i_default_item == 9)
-							goodley.setInno();
-						else if (tile[i].i_default_item == 10)
-							jeremy.setInno();
-					}
+					if (tile[i].i_default_item == 4 && tile[i].onLight == FALSE)
+						watson.setInno();
+					else if (tile[i].i_default_item == 5 && tile[i].onLight == FALSE)
+						john.setInno();
+					else if (tile[i].i_default_item == 6 && tile[i].onLight == FALSE)
+						lestrade.setInno();
+					else if (tile[i].i_default_item == 3 && tile[i].onLight == FALSE)
+						homes.setInno();
+					else if (tile[i].i_default_item == 8 && tile[i].onLight == FALSE)
+						william.setInno();
+					else if (tile[i].i_default_item == 9 && tile[i].onLight == FALSE)
+						goodley.setInno();
+					else if (tile[i].i_default_item == 10 && tile[i].onLight == FALSE)
+						jeremy.setInno();
 				}
 			}
 		}
 		else {
 			for (int i = 0; i < 110; i++) {
 				if (tile[i].i_default_item > 2) {
-					if (tile[i].onLight == TRUE) {
-						if (tile[i].i_default_item == 4)
-							watson.setInno();
-						else if (tile[i].i_default_item == 5)
-							john.setInno();
-						else if (tile[i].i_default_item == 6)
-							lestrade.setInno();
-						else if (tile[i].i_default_item == 3)
-							homes.setInno();
-						else if (tile[i].i_default_item == 8)
-							william.setInno();
-						else if (tile[i].i_default_item == 9)
-							goodley.setInno();
-						else if (tile[i].i_default_item == 10)
-							jeremy.setInno();
-					}
+					if (tile[i].i_default_item == 4 && tile[i].onLight == TRUE)
+						watson.setInno();
+					else if (tile[i].i_default_item == 5 && tile[i].onLight == TRUE)
+						john.setInno();
+					else if (tile[i].i_default_item == 6 && tile[i].onLight == TRUE)
+						lestrade.setInno();
+					else if (tile[i].i_default_item == 3 && tile[i].onLight == TRUE)
+						homes.setInno();
+					else if (tile[i].i_default_item == 8 && tile[i].onLight == TRUE)
+						william.setInno();
+					else if (tile[i].i_default_item == 9 && tile[i].onLight == TRUE)
+						goodley.setInno();
+					else if (tile[i].i_default_item == 10 && tile[i].onLight == TRUE)
+						jeremy.setInno();
+
 				}
 			}
 		}
@@ -2956,23 +2947,21 @@ void CMrJackInLondonInGame::turn_end()
 			}
 			else {
 				for (int i = 0; i < 110; i++) {
-					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == TRUE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 5)
-								john.setInno();
-							else if (tile[i].i_default_item == 6)
-								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 3)
-								homes.setInno();
-							else if (tile[i].i_default_item == 10)
-								jeremy.setInno();
-						}
+					if (tile[i].i_default_item > 2) {				
+						if (tile[i].i_default_item == 4 && tile[i].onLight == TRUE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == TRUE)
+							john.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == TRUE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == TRUE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == TRUE)
+							william.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == TRUE)
+							homes.setInno();
+						else if (tile[i].i_default_item == 10 && tile[i].onLight == TRUE)
+							jeremy.setInno();
 					}
 				}
 			}
@@ -2982,44 +2971,41 @@ void CMrJackInLondonInGame::turn_end()
 			if (tile[jack1dpos].onLight == TRUE) {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == FALSE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 5)
-								john.setInno();
-							else if (tile[i].i_default_item == 6)
-								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 9)
-								goodley.setInno();
-							else if (tile[i].i_default_item == 3)
-								homes.setInno();
-						}
+						if (tile[i].i_default_item == 4 && tile[i].onLight == FALSE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == FALSE)
+							john.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == FALSE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == FALSE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == FALSE)
+							william.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == FALSE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == FALSE)
+							homes.setInno();
 					}
 				}
 			}
 			else {
 				for (int i = 0; i < 110; i++) {
 					if (tile[i].i_default_item > 2) {
-						if (tile[i].onLight == TRUE) {
-							if (tile[i].i_default_item == 4)
-								watson.setInno();
-							else if (tile[i].i_default_item == 5)
-								john.setInno();
-							else if (tile[i].i_default_item == 6)
-								lestrade.setInno();
-							else if (tile[i].i_default_item == 7)
-								stealthy.setInno();
-							else if (tile[i].i_default_item == 8)
-								william.setInno();
-							else if (tile[i].i_default_item == 9)
-								goodley.setInno();
-							else if (tile[i].i_default_item == 3)
-								homes.setInno();
-						}
+						if (tile[i].i_default_item == 4 && tile[i].onLight == TRUE)
+							watson.setInno();
+						else if (tile[i].i_default_item == 5 && tile[i].onLight == TRUE)
+							john.setInno();
+						else if (tile[i].i_default_item == 6 && tile[i].onLight == TRUE)
+							lestrade.setInno();
+						else if (tile[i].i_default_item == 7 && tile[i].onLight == TRUE)
+							stealthy.setInno();
+						else if (tile[i].i_default_item == 8 && tile[i].onLight == TRUE)
+							william.setInno();
+						else if (tile[i].i_default_item == 9 && tile[i].onLight == TRUE)
+							goodley.setInno();
+						else if (tile[i].i_default_item == 3 && tile[i].onLight == TRUE)
+							homes.setInno();
+						
 					}
 				}
 			}
