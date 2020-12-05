@@ -578,11 +578,11 @@ void CMrJackInLondonInGame::OnPaint()
 		characterMove();
 	}
 	//맨홀 45 제외
-	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 38 || i_Button_pressed_before == 36 || i_Button_pressed_before == 45) && i_Button_pressed_after == 37) {
+	if ((i_Button_pressed_before == 29 || i_Button_pressed_before == 38 || i_Button_pressed_before == 36 || i_Button_pressed_before == 45) && i_Button_pressed_after == 37) {
 		characterMove();
 	}
 	//맨홀 45 제외
-	if ((i_Button_pressed_before == 27 || i_Button_pressed_before == 37 || i_Button_pressed_before == 39||i_Button_pressed_before == 47) && i_Button_pressed_after == 38) {
+	if ((i_Button_pressed_before == 29 || i_Button_pressed_before == 37 || i_Button_pressed_before == 39||i_Button_pressed_before == 47) && i_Button_pressed_after == 38) {
 		characterMove();
 	}
 	if ((i_Button_pressed_before == 31 || i_Button_pressed_before == 40 || i_Button_pressed_before == 38||i_Button_pressed_before==47) && i_Button_pressed_after == 39) {
@@ -692,6 +692,9 @@ void CMrJackInLondonInGame::OnPaint()
 		characterMove();
 	}
 	if ((i_Button_pressed_before == 90 || i_Button_pressed_before == 107 || i_Button_pressed_before == 100) && i_Button_pressed_after == 99) {
+		characterMove();
+	}
+	if ((i_Button_pressed_before == 99) && i_Button_pressed_after == 100) {
 		characterMove();
 	}
 	if ((i_Button_pressed_before == 104||i_Button_pressed_after==94) && i_Button_pressed_after == 103) {
@@ -939,6 +942,7 @@ void CMrJackInLondonInGame::OnPaint()
 	else if (i_Button_pressed_before == 29) {
 		m_png_Light_Map.Draw(dc, 17 + 50 * 2, -65 + 6 * 58);
 		m_png_Light_Map.Draw(dc, 17 + 50 * 4, -65 + 5 * 58);
+		m_png_Light_Map.Draw(dc, 17 + 50 * 4, -65 + 6 * 58);
 	}
 	else if (i_Button_pressed_before == 31) {
 		m_png_Light_Map.Draw(dc, 17 + 50 * 2, -65 + 7 * 58);
@@ -1501,6 +1505,38 @@ void CMrJackInLondonInGame::round_end()
 
 void CMrJackInLondonInGame::turn_end()
 {
+
+	/*
+		
+	
+	
+	
+	
+	*/
+	/*
+	for(int i=0;i<113;i++)
+	if (tile[i].i_default_item>11) { // 겹칠때.
+		int characterA, int characterB;
+		characterA = tile[i].i_default_item%10;
+		characterB = tile[i].i_default_item/10;
+		if((characterA == 3 || characger B == 3) && homes.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+		if((characterA == 4 || characger B == 4) && watson.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+		if((characterA == 5 || characger B == 5) && john.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+		if((characterA == 6 || characger B == 6) && lestrade.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+		if((characterA == 7 || characger B == 7) && stealthy.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+		if((characterA == 8 || characger B == 8) && william.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+		if((characterA == 9 || characger B == 9) && goodley.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+		if((characterA == 10 || characger B == 10) && jeremy.b_jack==TRUE)
+			MessageBox(_T("잭 잡힘"));
+
+	*/
 	//가로등 주의 -> 밝아져랏.
 	for (int i = 9; i < 100; i++) {
 		if (tile[i].i_default_item == 1&&tile[i].b_lamp_on==TRUE) {
@@ -1991,8 +2027,22 @@ void CMrJackInLondonInGame::characterMove()
 	if (tile[i_Button_pressed_before].i_default_item == 10)
 		jeremy.Move(tile[i_Button_pressed_after].p_tilepos);
 
+	int temporary_default_item = tile[i_Button_pressed_after].i_default_item;
 	tile[i_Button_pressed_after].swapItem(tile[i_Button_pressed_before]);
-
+	/*
+	if (tile[i_Button_pressed_after].i_default_item == 999 && 캐릭터가 수사관일때) { // 겹칠때.
+		if(temporary_default_item==3 && homes.b_jack==TRUE)
+			MessageBox(_T("끝"));
+		if(temporary_default_item==4 && homes.b_jack==TRUE)
+			MessageBox(_T("끝"));
+		if(temporary_default_item==5 && homes.b_jack==TRUE)
+			MessageBox(_T("끝"));
+		if(temporary_default_item==6 && homes.b_jack==TRUE)
+			MessageBox(_T("끝"));
+		if(temporary_default_item==7 && homes.b_jack==TRUE)
+			MessageBox(_T("끝"));
+	}
+	*/
 	i_Button_pressed_before = 0;
 	i_Button_pressed_after = 0;
 	// TODO: 여기에 구현 코드 추가.
