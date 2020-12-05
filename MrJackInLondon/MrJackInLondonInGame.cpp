@@ -63,6 +63,7 @@ UINT CMrJackInLondonInGame::ThreadFunc(LPVOID lpVoid)
 CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent, CClient* tempsock)
 	: CDialogEx(IDD_DIALOG_InGame, pParent)
 {
+	
 	TRACE("\n~~~~~~~~~~~tmpSocket: %#x~~~~~~~~~~~\n", tempsock);
 
 
@@ -199,6 +200,12 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent, CClient* tempsock)
 			tile[i].setItem(1);
 		}
 	}
+	tile[14].b_switch_on = TRUE;
+	tile[18].b_switch_on = TRUE;
+	tile[47].b_switch_on = TRUE;
+	tile[62].b_switch_on = TRUE;
+	tile[91].b_switch_on = TRUE;
+	tile[95].b_switch_on = TRUE;
 
 	//homes
 	tile[56].setItem(3);
@@ -2626,7 +2633,7 @@ void CMrJackInLondonInGame::turn_end()
 {
 	//가로등 주의 -> 밝아져랏.
 	for (int i = 9; i < 100; i++) {
-		if (tile[i].i_default_item == 1) {
+		if (tile[i].i_default_item == 1&&tile[i].b_switch_on==TRUE) {
 			tile[i - 1].onLight = TRUE;
 			tile[i + 1].onLight = TRUE;
 			tile[i - 9].onLight = TRUE;
@@ -2637,6 +2644,8 @@ void CMrJackInLondonInGame::turn_end()
 		//왓슨도 밝아져라.
 		if (tile[i].i_default_item == 4) {
 			while (tile[i].i_type_m != 0) {
+				if (watson.i_light_pos == 0)
+					break;
 				i += watson.i_light_pos;
 				tile[i].onLight = TRUE;
 			}

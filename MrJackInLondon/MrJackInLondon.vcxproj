@@ -188,6 +188,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="CJeremy.h" />
     <ClInclude Include="CLestrade.h" />
+    <ClInclude Include="Client.h" />
     <ClInclude Include="CMrJackInLondonMatch.h" />
     <ClInclude Include="CShelock.h" />
     <ClInclude Include="CSmith.h" />
@@ -210,6 +211,7 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CJeremy.cpp" />
     <ClCompile Include="CLestrade.cpp" />
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="CMrJackInLondonMatch.cpp" />
     <ClCompile Include="CShelock.cpp" />
     <ClCompile Include="CSmith.cpp" />
