@@ -33,9 +33,11 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 	CPoint m_pos;
-	CRect rect[109];
+	CRect rect[113];
 	CRect Escape_route[4];
-	CTile tile[109];
+	CTile tile[113];
+	CTile manhole[7];
+	CTile lamp[6];
 public:
 	static UINT ThreadFunc(LPVOID lpVoid);
 	SOCKET rsock;
@@ -50,11 +52,11 @@ public:
 	afx_msg void OnPaint();
 	
 	CBitmap m_bitmap_map;
+	CImage m_png_Light_0;
 	CImage m_png_Light_1;
 	CImage m_png_Light_2;
 	CImage m_png_Light_3;
 	CImage m_png_Light_4;
-	CImage m_png_Light_5;
 	CImage m_png_etile;
 	int stealthy_move;
 	int goodley_move;
@@ -90,7 +92,7 @@ public:
 	CImage m_png_Watson_i;
 	CImage m_png_William_i;
 
-	CImage m_png_CheckPoint1;
+	CImage m_png_CheckPoint;
 	CImage m_png_Light_Map;
 	CImage m_png_Manhole_Closed;
 	//CTile m_Tile[110] = {CTile(0,0,0), CTile()};
@@ -113,4 +115,7 @@ public:
 	void round_end();
 	void turn_end();
 	int checkchar1dPos(int index);
+	afx_msg void OnBnClickedButtonMoveend();
+	afx_msg void OnDestroy();
+	void characterMove();
 };

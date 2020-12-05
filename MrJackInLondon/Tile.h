@@ -13,7 +13,9 @@ public:
 	int i_valid_m, i_num_m, i_type_m;
 	int i_default_item;
 	bool onLight;
-	bool b_switch_on;
+	bool b_lamp_on;
+	bool b_checkpoint_on;
+	bool b_manhole_on;
 	/*
 	type 0 장애물
 	type 1 일반 타일(길)
