@@ -59,6 +59,7 @@ https://github.com/hyunwoo9120/mrJackServer.git
   Round End시, 시민을 확정하게 하는 코드 추가(2020/12/02)<br>
   확정시민일때, 이미지가 바뀌게 하는 현상 추가(2020/12/02)<br>
   가로등&Watson으로 onLight함수 동작 & 캐릭터가 on&off light상태 확인가능(2020/12/02)<br>
+  마이너 버그 수정(watson.lightpos==0일때 동작, 가로등 꺼진 상태에서 동작하던거 수정) (2020/12/04~05)<br>
 </p>
   
 ### arittung
