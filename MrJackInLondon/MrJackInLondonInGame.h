@@ -36,7 +36,7 @@ protected:
 	CRect rect[113];
 	CRect Escape_route[4];
 	CTile tile[113];
-	CTile manhole[7];
+	CTile manhole[8];
 	CTile lamp[6];
 public:
 	static UINT ThreadFunc(LPVOID lpVoid);

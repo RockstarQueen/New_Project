@@ -222,14 +222,15 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent, CClient* tempsock)
 	manhole[3] = tile[45];
 	manhole[4] = tile[64];
 	manhole[5] = tile[67];
-	manhole[6] = tile[106];
+	manhole[6] = tile[94];
+	manhole[7] = tile[106];
 	//초기검문소 설정
 	tile[109].b_checkpoint_on = TRUE;
 	tile[110].b_checkpoint_on = FALSE;
 	tile[111].b_checkpoint_on = FALSE;
 	tile[112].b_checkpoint_on = TRUE;
 
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 8; i++) {
 		manhole[i].b_manhole_on = TRUE;
 	}
 	for (int i = 0; i < 6; i++) {
@@ -474,7 +475,8 @@ void CMrJackInLondonInGame::OnPaint()
 	tile[45].b_manhole_on = manhole[3].b_manhole_on;
 	tile[64].b_manhole_on = manhole[4].b_manhole_on;
 	tile[67].b_manhole_on = manhole[5].b_manhole_on;
-	tile[106].b_manhole_on = manhole[6].b_manhole_on;
+	tile[94].b_manhole_on = manhole[6].b_manhole_on;
+	tile[106].b_manhole_on = manhole[7].b_manhole_on;
 	
 	//tile[i_b_p_b] -> tile[i_b_p_a] 
 	if ((i_Button_pressed_before == 75 && i_Button_pressed_after == 67)) {
@@ -718,27 +720,31 @@ void CMrJackInLondonInGame::OnPaint()
 		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
 			characterMove();		
 	}
-	if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 106) && i_Button_pressed_after == 67) {
+	if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67 || i_Button_pressed_before==106) && i_Button_pressed_after == 94) {
 		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
 			characterMove();
 	}
-	if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 106 || i_Button_pressed_before == 67) && i_Button_pressed_after == 64) {
+	if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 94 ||i_Button_pressed_before == 106) && i_Button_pressed_after == 67) {
 		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
 			characterMove();
 	}
-	else if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 106 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67) && i_Button_pressed_after == 45) {
+	if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 106 || i_Button_pressed_before == 67||i_Button_pressed_before == 94) && i_Button_pressed_after == 64) {
 		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
 			characterMove();
 	}
-	else if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 106 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67) && i_Button_pressed_after == 42) {
+	else if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 106 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67|| i_Button_pressed_before == 94) && i_Button_pressed_after == 45) {
 		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
 			characterMove();
 	}
-	else if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 106 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67) && i_Button_pressed_after == 23) {
+	else if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 23 || i_Button_pressed_before == 106 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67|| i_Button_pressed_before == 94) && i_Button_pressed_after == 42) {
 		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
 			characterMove();
 	}
-	else if ((i_Button_pressed_before == 106 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67) && i_Button_pressed_after == 2) {
+	else if ((i_Button_pressed_before == 2 || i_Button_pressed_before == 106 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67|| i_Button_pressed_before == 94) && i_Button_pressed_after == 23) {
+		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
+			characterMove();
+	}
+	else if ((i_Button_pressed_before == 106 || i_Button_pressed_before == 23 || i_Button_pressed_before == 42 || i_Button_pressed_before == 45 || i_Button_pressed_before == 64 || i_Button_pressed_before == 67|| i_Button_pressed_before == 94) && i_Button_pressed_after == 2) {
 		if (tile[i_Button_pressed_after].b_manhole_on == TRUE)
 			characterMove();
 	}
@@ -865,7 +871,7 @@ void CMrJackInLondonInGame::OnPaint()
 		m_png_Light_Map.Draw(dc, 70 + 50 * 0, 81 + 1 * 58 );
 		m_png_Light_Map.Draw(dc, 17 + 50 * 0, 51 + 3 * 58);
 		m_png_Light_Map.Draw(dc, 70 + 50 * 1, 81 + 6 * 58 - 30);
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 8; i++) {
 			if (manhole[i].b_manhole_on == TRUE) {
 				manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 			}
@@ -1508,18 +1514,14 @@ void CMrJackInLondonInGame::turn_end()
 
 	/*
 		
-	
-	
-	
-	
 	*/
 	/*
 	for(int i=0;i<113;i++)
-	if (tile[i].i_default_item>11) { // 겹칠때.
+	if (tile[i].i_default_item>11) { // 겹칠때. 겹치면 i_default_item을 34 (3*10 + 4 ) (3=homes, 4=william이 겹칠 때) 로 해놨음. 그래서 11이상이면 캐릭터 겹친 칸을 조사하고, 나오는거임.
 		int characterA, int characterB;
-		characterA = tile[i].i_default_item%10;
+		characterA = tile[i].i_default_item%10; //캐릭터 A와 B를 분리시킴.
 		characterB = tile[i].i_default_item/10;
-		if((characterA == 3 || characger B == 3) && homes.b_jack==TRUE)
+		if((characterA == 3 || characger B == 3) && homes.b_jack==TRUE) //예시: character A와 character B 둘 중 하나가 homes고, homes가 잭이면 -> 게임 끝내야되는데 일단 메시지박스 처리. 이유: 캐릭터 둘 중 하나 잭이면 게임 승리, 아니면 게임오버.
 			MessageBox(_T("잭 잡힘"));
 		if((characterA == 4 || characger B == 4) && watson.b_jack==TRUE)
 			MessageBox(_T("잭 잡힘"));
@@ -1535,6 +1537,9 @@ void CMrJackInLondonInGame::turn_end()
 			MessageBox(_T("잭 잡힘"));
 		if((characterA == 10 || characger B == 10) && jeremy.b_jack==TRUE)
 			MessageBox(_T("잭 잡힘"));
+		else{
+			MessageBox(_T("잭이 잡히지 않았고, 무고한 시민을 잡았으니 게임오버"));
+		}
 
 	*/
 	//가로등 주의 -> 밝아져랏.
