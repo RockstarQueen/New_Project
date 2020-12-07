@@ -52,8 +52,8 @@
 
 ### 7) 캐릭터 능력
 |캐릭터|캐릭터 이름|이동|능력|
-|:---------:|:---------:|:---------:|:----------:|
-|<img src = "/Mr.JackImage/character/Sherlock Homes.png" alt = "char1" width="70px" height="100px"></img>|셜록 홈즈|1-3칸 이동 ‘후’ 능력 사용|7장의 카드 중 한 장 뽑아 무고한 시민이 누구인지 알아냄.|
+|:---------:|:---------:|:---------:|:----------------:|
+|<img src = "/Mr.JackImage/character/Sherlock Homes.png" alt = "char1" width="100px" height="100px"></img>|셜록 홈즈|1-3칸 이동 ‘후’ 능력 사용|7장의 카드 중 한 장 뽑아 무고한 시민이 누구인지 알아냄.|
 |<img src = "/Mr.JackImage/character/Jogn H Watson.png" alt = "char2" width="70px" height="100px"></img>|존 왓슨|1-3칸 이동 ‘후’ 능력 사용|손전등의 직선 방향으로 불을 비출 수 있고, 손전등이 비추는 거리에 있는 캐릭터들은 목격자가 있는 상태가 됨.|
 |<img src = "/Mr.JackImage/character/John Smith.png" alt = "char3" width="70px" height="100px"></img>|존 스미스|1-3칸 이동 ‘전후’ 능력 사용|가로등 1개 위치 이동.|
 |<img src = "/Mr.JackImage/character/Inspecteur Lestrade.png" alt = "char4" width="70px" height="100px"></img>|스트레이드 경감|1-3칸 이동 ‘전후’ 능력 사용|검문소 1개 위치 이동.|
