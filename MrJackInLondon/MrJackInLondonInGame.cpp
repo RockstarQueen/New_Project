@@ -394,6 +394,7 @@ BOOL CMrJackInLondonInGame::OnInitDialog()
 	m_png_CheckPoint.Load(L"res\\CheckPoint.png");
 	m_png_etile.Load(L"res\\empty_tile.png");
 	m_png_Light_Map.Load(L"res\\able_to_go.png");
+	m_png_Light_CheckPoint.Load(L"res\\able_to_move.png");
 	m_png_Manhole_Closed.Load(L"res\\Manhole_Closed.png");
 	
 	
@@ -1208,6 +1209,22 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_Map.Draw(dc, 17 + 50 * 11, 21 + 6 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 4 * 58);
 	}
+
+	else if (i_Button_pressed_before == 108)
+		{
+			if (tile[109].b_checkpoint_on == FALSE) {
+				m_png_Light_CheckPoint.Draw(dc, 10, 25);
+			}
+			if (tile[110].b_checkpoint_on == FALSE) {
+				m_png_Light_CheckPoint.Draw(dc, 570, 25);
+			}
+			if (tile[111].b_checkpoint_on == FALSE) {
+				m_png_Light_CheckPoint.Draw(dc, 10, 500);
+			}
+			if (tile[112].b_checkpoint_on == FALSE) {
+				m_png_Light_CheckPoint.Draw(dc, 600, 500);
+	}
+ }
 	
 	
 	else {
@@ -1335,7 +1352,7 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 	MessageBox(msg);
 	*/
 	for (int i = 1; i < 113; i++) {
-		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0&&tile[i].i_default_item>2) {
+		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0 && tile[i].i_default_item>2) {
 			if (tile[i].i_default_item == 3&&homes.move_count>0) {
 				i_Button_pressed_before = i;
 			}
@@ -1394,7 +1411,23 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			Invalidate();
 			break;
 		}
+		
 	}
+	/*
+	for(int j = 109; j < 113; j++)
+	{ 
+		if (rect[j].PtInRect(point) && i_Button_pressed_before == 0 && tile[j].b_checkpoint_on == TRUE)
+		{ 
+			i_Button_pressed_before = j;
+		}
+		else (rect[j].PtInRect(point) && i_Button_pressed_before != 0 && tile[j].b_checkpoint_on == TRUE)
+		{
+
+		}
+	}
+	*/
+	
+	
 	/*
 	for (int j = 0; j < 4; j++) {
 		if (Escape_route[j].PtInRect(point)) {

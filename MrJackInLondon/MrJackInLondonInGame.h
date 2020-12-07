@@ -96,6 +96,7 @@ public:
 	CImage m_png_CheckPoint;
 	CImage m_png_Light_Map;
 	CImage m_png_Manhole_Closed;
+	CImage m_png_Light_CheckPoint;
 	//CTile m_Tile[110] = {CTile(0,0,0), CTile()};
 	int i_Button_pressed_before;
 	int i_Button_pressed_after;
@@ -119,5 +120,6 @@ public:
 	afx_msg void OnBnClickedButtonMoveend();
 	afx_msg void OnDestroy();
 	void characterMove();
+	
 	
 };
