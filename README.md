@@ -54,6 +54,16 @@
 |캐릭터|캐릭터 이름|이동|능력|
 |:---------:|:---------:|:---------:|:----------:|
 |<img src = "/Mr.JackImage/character/Sherlock Homes.png" alt = "char1" width="70px" height="100px"></img>|셜록 홈즈|1-3칸 이동 ‘후’ 능력 사용|7장의 카드 중 한 장 뽑아 무고한 시민이 누구인지 알아냄.|
+|<img src = "/Mr.JackImage/character/Jogn H Watson.png" alt = "char2" width="70px" height="100px"></img>|존 왓슨|1-3칸 이동 ‘후’ 능력 사용|손전등의 직선 방향으로 불을 비출 수 있고, 손전등이 비추는 거리에 있는 캐릭터들은 목격자가 있는 상태가 됨.|
+|<img src = "/Mr.JackImage/character/John Smith.png" alt = "char3" width="70px" height="100px"></img>|존 스미스|1-3칸 이동 ‘전후’ 능력 사용|가로등 1개 위치 이동.|
+|<img src = "/Mr.JackImage/character/Inspecteur Lestrade.png" alt = "char4" width="70px" height="100px"></img>|스트레이드 경감|1-3칸 이동 ‘전후’ 능력 사용|검문소 1개 위치 이동.|
+|<img src = "/Mr.JackImage/character/Stealthy.png" alt = "char5" width="70px" height="100px"></img>|스텔시 양|1-4칸 이동|장애물 통과하여 4칸까지 이동 가능.|
+|<img src = "/Mr.JackImage/character/Goodley.png" alt = "char6" width="70px" height="100px"></img>|구들리 경사|1-3칸 이동 ‘전후’ 능력 사용|임의로 1명, 혹은 3명까지 구들리 경사와 인접한 곳으로 불러오기 위해 최대 3번의 이동을 사용할 수 있음. 단, 맨홀 이동은 제한됨.|
+|<img src = "/Mr.JackImage/character/Sir William Gull.png" alt = "char7" width="70px" height="100px"></img>|윌리엄 걸 경|1-3칸 이동이나 능력 사용|다른 캐릭터와 위치 교환.|
+|<img src = "/Mr.JackImage/character/Jeremy Bert.png" alt = "char8" width="70px" height="100px"></img>|제레미 버트|1-3칸 이동 ‘전후’ 능력 사용|맨홀 뚜껑 위치 이동.|<br><br><br>
+
+<hr/>
+
   
   
   
