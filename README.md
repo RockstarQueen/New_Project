@@ -7,7 +7,7 @@
 > - 게임 실행 시 다음과 같은 초기 화면이 나타난다.<br>
 > - Game Play 버튼을 누르면 게임에 접속하고, Game Rule 버튼을 누르면 Game 규칙에 대한 설명을 볼 수 있다.<br>
 <img src = "/Mr.JackImage/초기 화면.png" alt = "gamestart" width="250px" height="250px"></img><br>
-<br><br><br><br>
+<br>
 
 <hr/><br><br>
 
