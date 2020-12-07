@@ -325,6 +325,7 @@ void CMrJackInLondonInGame::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTON_SETTING, m_button_Setting);
 	DDX_Control(pDX, IDC_IGB_HELP, m_button_Help);
 	DDX_Control(pDX, IDC_IGB_TURNEND, m_button_TurnEnd);
+	DDX_Control(pDX, IDC_BUTTON_MOVEEND, m_button_MoveEnd);
 }
 
 
@@ -439,6 +440,8 @@ void CMrJackInLondonInGame::OnPaint()
 	m_button_TurnEnd.SizeToContent();
 	m_button_Help.LoadBitmaps(IDB_BITMAP_BT_INGAMERULE_DEF, IDB_BITMAP_BT_INGAMERULE_ON, NULL, NULL);
 	m_button_Help.SizeToContent();
+	m_button_MoveEnd.LoadBitmaps(IDB_BITMAP_BT_MOVEEND_DEF, IDB_BITMAP_BT_MOVEEND_ON, NULL, NULL);
+	m_button_MoveEnd.SizeToContent();
 	//m_png_Light_1.Draw(dc, 71, 81);//현재 테스트 상태, 나중에 Lamp1으로 교체
 	//m_png_Goodley.Draw(dc, 82, 90);
 	//m_png_CheckPoint1.Draw(dc, 10, 25);
@@ -1976,28 +1979,73 @@ int CMrJackInLondonInGame::checkchar1dPos(int index)
 void CMrJackInLondonInGame::OnBnClickedButtonMoveend()
 {
 
-	if (goodley.move_count < 3) {
+	if (homes.move_count < 3) {
+		int result = homes.ShelockAble();
+		switch (result)
+		{
+		case 1 :
+			homes.setInno();
+			Invalidate();
+			AfxMessageBox(_T("설록홈즈 무죄"),MB_OK);
+			break;
+		case 2 :
+			watson.setInno();
+			Invalidate();
+			AfxMessageBox(_T("왓슨 무죄"), MB_OK);
+			break;
+		case 3:
+			john.setInno();
+			Invalidate();
+			AfxMessageBox(_T("존 스미스 무죄"), MB_OK);
+			break;
+		case 4:
+			lestrade.setInno();
+			Invalidate();
+			AfxMessageBox(_T("레스트레이드 무죄"), MB_OK);
+			break;
+		case 5:
+			stealthy.setInno();
+			Invalidate();
+			AfxMessageBox(_T("스텔시 무죄"), MB_OK);
+			break;
+		case 6:
+			william.setInno();
+			Invalidate();
+			AfxMessageBox(_T("윌리엄 경 무죄"), MB_OK);
+			break;
+		case 7:
+			goodley.setInno();
+			Invalidate();
+			AfxMessageBox(_T("구들리 무죄"), MB_OK);
+			break;
+		case 8:
+			jeremy.setInno();
+			Invalidate();
+			AfxMessageBox(_T("제레미 무죄"), MB_OK);
+			break;
+		default:
+			break;
+		}
+	}
+	else if (jeremy.move_count < 3) {
+		
+	}
+	else if (lestrade.move_count < 3) {
+		AfxMessageBox(_T("옮길 검문소와 위치를 선택하세요."), MB_OK);
+	}
+	else if (goodley.move_count < 3) {
 		//구들리 능력 구현 장소
 	}
-	if (jeremy.move_count < 3) {
+	else if (goodley.move_count < 3) {
 		//구들리 능력 구현 장소
 	}
-	if (goodley.move_count < 3) {
+	else if (goodley.move_count < 3) {
 		//구들리 능력 구현 장소
 	}
-	if (goodley.move_count < 3) {
+	else if (goodley.move_count < 3) {
 		//구들리 능력 구현 장소
 	}
-	if (goodley.move_count < 3) {
-		//구들리 능력 구현 장소
-	}
-	if (goodley.move_count < 3) {
-		//구들리 능력 구현 장소
-	}
-	if (goodley.move_count < 3) {
-		//구들리 능력 구현 장소
-	}
-	if (goodley.move_count < 3) {
+	else if (goodley.move_count < 3) {
 		//구들리 능력 구현 장소
 	}
 

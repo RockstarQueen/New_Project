@@ -266,6 +266,8 @@
     <Image Include="GameRuleButtonOn.png" />
     <Image Include="Mr.jackIcon.ico" />
     <Image Include="res\Boardpan.bmp" />
+    <Image Include="res\ButtonMoveEndDefault.bmp" />
+    <Image Include="res\ButtonMoveEndOn.bmp" />
     <Image Include="res\ButtonSettingDefault.bmp" />
     <Image Include="res\ButtonSettingOn.bmp" />
     <Image Include="res\ButtonTrunEndOn.bmp" />

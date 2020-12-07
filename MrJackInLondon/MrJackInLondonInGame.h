@@ -49,6 +49,7 @@ public:
 	CBitmapButton m_button_Setting;
 	CBitmapButton m_button_Help;
 	CBitmapButton m_button_TurnEnd;
+	CBitmapButton m_button_MoveEnd;
 	afx_msg void OnPaint();
 	
 	CBitmap m_bitmap_map;
@@ -118,4 +119,5 @@ public:
 	afx_msg void OnBnClickedButtonMoveend();
 	afx_msg void OnDestroy();
 	void characterMove();
+	
 };
