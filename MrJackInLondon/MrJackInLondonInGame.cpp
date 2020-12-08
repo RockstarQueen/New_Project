@@ -1251,7 +1251,11 @@ void CMrJackInLondonInGame::OnPaint()
 		lamp[4].p_tilepos.x%2 == 0 ? m_png_Light_4.Draw(dc, 21 + 50 * lamp[4].p_tilepos.x, 51 + lamp[4].p_tilepos.y * 58) : m_png_Light_4.Draw(dc, 21 + 50 * lamp[4].p_tilepos.x, 23 + lamp[4].p_tilepos.y * 58);
 	if (lamp[5].b_lamp_on == TRUE)
 		lamp[5].p_tilepos.x%2 == 0 ? m_png_Light_2.Draw(dc, 21 + 50 * lamp[5].p_tilepos.x, 51 + lamp[5].p_tilepos.y * 58) : m_png_Light_2.Draw(dc, 21 + 50 * lamp[5].p_tilepos.x, 23 + lamp[5].p_tilepos.y * 58);
+	
+
+	
 	for (int i = 0; i < 8; i++) {
+		manhole[jeremy.i_manholeNum].b_manhole_on = FALSE;
 		if (manhole[i].b_manhole_on == FALSE)
 			manhole[i].p_tilepos.x % 2 == 0 ? m_png_Manhole_Closed.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Manhole_Closed.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 	}
@@ -1388,10 +1392,7 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			if (tile[i].i_default_item == 10 && jeremy.move_count > 0) {
 				i_Button_pressed_before = i;
 			}
-			if(tile[i].b_manhole_on && jeremy.move_count < 3 && jeremy.b_MoveEnd)
-			{
-				i_Button_pressed_before = i;
-			}
+			
 
 			Invalidate();
 		}
@@ -1421,11 +1422,6 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			Invalidate();
 			
 		}
-		else if (!tile[i].b_manhole_on && jeremy.move_count < 3 && jeremy.b_MoveEnd)
-		{
-			i_Button_pressed_before = i;
-		}
-		
 	}
 	
 	for(int j = 109; j < 113; j++)
@@ -1446,7 +1442,79 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 		}
 	}
 	
-	
+	for (int i = 0; i < 109; i++)
+	{
+		if (!tile[i].b_manhole_on && jeremy.move_count < 3 && i_Button_pressed_before == 0 && jeremy.b_MoveEnd && i_Button_pressed_before == i_Button_pressed_after)
+		{
+			i_Button_pressed_before = i;
+			switch (i_Button_pressed_before)
+			{
+			case 2:
+				manhole[0].b_manhole_on = TRUE;
+				break;
+			case 23:
+				manhole[1].b_manhole_on = TRUE;
+				break;
+			case 42:
+				manhole[2].b_manhole_on = TRUE;
+				break;
+			case 45:
+				manhole[3].b_manhole_on = TRUE;
+				break;
+			case 64:
+				manhole[4].b_manhole_on = TRUE;
+				break;
+			case 67:
+				manhole[5].b_manhole_on = TRUE;
+				break;
+			case 94:
+				manhole[6].b_manhole_on = TRUE;
+				break;
+			case 106:
+				manhole[7].b_manhole_on = TRUE;
+				break;
+			default:
+				break;
+			}
+			Invalidate();
+		}
+		else if (tile[i].b_manhole_on && jeremy.move_count < 3 && i_Button_pressed_before != 0 && jeremy.b_MoveEnd && i_Button_pressed_before != i_Button_pressed_after)
+		{
+			i_Button_pressed_after = i;
+			switch (i_Button_pressed_after)
+			{
+			case 2:
+				jeremy.i_manholeNum = 0;
+				break;
+			case 23:
+				jeremy.i_manholeNum = 1;
+				break;
+			case 42:
+				jeremy.i_manholeNum = 2;
+				break;
+			case 45:
+				jeremy.i_manholeNum = 3;
+				break;
+			case 64:
+				jeremy.i_manholeNum = 4;
+				break;
+			case 67:
+				jeremy.i_manholeNum = 5;
+				break;
+			case 94:
+				jeremy.i_manholeNum = 6;
+				break;
+			case 106:
+				jeremy.i_manholeNum = 7;
+				break;
+			default:
+				break;
+			}
+			i_Button_pressed_after = 0;
+			i_Button_pressed_before = 0;
+			Invalidate();
+		}
+	}
 	
 	/*
 	for (int j = 0; j < 4; j++) {
