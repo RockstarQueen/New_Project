@@ -237,6 +237,7 @@ CMrJackInLondonInGame::CMrJackInLondonInGame(CWnd* pParent, CClient* tempsock)
 		lamp[i].b_lamp_on = TRUE;
 	}
 	manhole[1].b_manhole_on = FALSE;
+	manhole[6].b_manhole_on = FALSE;
 
 	//homes
 	tile[56].setItem(3);
@@ -1382,6 +1383,10 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			if (tile[i].i_default_item == 10 && jeremy.move_count > 0) {
 				i_Button_pressed_before = i;
 			}
+			if(tile[i].b_manhole_on && jeremy.move_count < 3 && jeremy.b_MoveEnd)
+			{
+				i_Button_pressed_before = i;
+			}
 
 			Invalidate();
 		}
@@ -1409,7 +1414,11 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 			i_Button_pressed_after = i;
 			
 			Invalidate();
-			break;
+			
+		}
+		else if (!tile[i].b_manhole_on && jeremy.move_count < 3 && jeremy.b_MoveEnd)
+		{
+			i_Button_pressed_before = i;
 		}
 		
 	}
@@ -2067,7 +2076,8 @@ void CMrJackInLondonInGame::OnBnClickedButtonMoveend()
 		}
 	}
 	else if (jeremy.move_count < 3) {
-		
+		AfxMessageBox(_T("옮길 맨홀 뚜껑과 위치를 선택하세요."), MB_OK);
+		jeremy.b_MoveEnd = TRUE;
 	}
 	else if (lestrade.move_count < 3) {
 		AfxMessageBox(_T("옮길 검문소와 위치를 선택하세요."), MB_OK);
