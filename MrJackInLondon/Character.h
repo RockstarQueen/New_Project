@@ -24,9 +24,10 @@ public:
 	int GetPos();
 	int move_count;
 	bool b_jack;
-protected:
+	bool b_innocent = FALSE;
 	CPoint p_charpos;
-	bool b_innocent=FALSE;
+
+protected:
 	int i_position;
 	int i_xposition;
 	int i_yposition;

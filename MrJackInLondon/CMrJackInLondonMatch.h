@@ -1,7 +1,6 @@
 ﻿#pragma once
 #define PORT 18363
 #define PACKET_SIZE 1024
-#define IP "---.---.---.---"
 
 // CMrJackInLondonMatch 대화 상자
 
