@@ -5,10 +5,15 @@
 > - 서버 exe 파일을 실행시킵니다.<br>
 > - MrJackInLondon.sln 파일을 실행시킵니다. (Visual Studio프로그램이 컴퓨터에 설치되어 있어야 합니다.)<br>
 > - Client.h 파일에서 IP를 본인이 있는 곳의 IP로 바꿔줘야 합니다. <br><br>
-<img src = "/Mr.JackImage/ip.jpg" alt = "ip_img" width="100px" height="100px"></img><br><br>
+<img src = "/Mr.JackImage/ip.jpg" alt = "ip_img" width="100px" height="80px"></img><br><br>
 > - 본인 IP 아는 방법<br>
      ①	윈도우 시작버튼에서 마우스 오른쪽 버튼을 눌러 명령 프롬프트를 실행합니다.<br>
-     ②	Ipconfig를 입력하고 enter를 치면 나오는 내용 중 IPv4 주소가 본인의 IP주소 입니다.<br>
+     ②	Ipconfig를 입력하고 enter를 치면 나오는 내용 중 IPv4 주소가 본인의 IP주소 입니다.<br><br>
+     
+> - 게임 실행 시 다음과 같은 초기 화면이 나타납니다.<br>
+> - Game Play 버튼을 누르면 게임에 접속하고, Game Rule 버튼을 누르면 Game 규칙에 대한 설명을 볼 수 있습니다.<br><br>
+<img src = "/Mr.JackImage/초기 화면.png" alt = "gamestart" width="250px" height="250px"></img><br>
+<br>
 
 <hr/><br><br>
 
