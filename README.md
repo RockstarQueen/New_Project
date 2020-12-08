@@ -47,6 +47,7 @@
 |:---------:|:-------:|:----------:|
 |<img src = "/Mr.JackImage/톱니바퀴버튼.png" alt = "button1" width="100px" height="100px"></img>|게임 음소거 버튼|배경음악 소리를 조절할 수 있다.|
 |<img src = "/Mr.JackImage/턴엔드버튼.png" alt = "button2" width="100px" height="30px"></img>|게임 턴 종료 버튼|본인의 순서가 끝나면 턴 종료 버튼을 눌러야 한다.|
+|<img src = "/Mr.JackImage/무브엔드버튼.jpg" alt = "button3" width="100px" height="30px"></img>|움직임 종료 버튼|본인 순서에서 캐릭터의 움직임이 끝나고, 움직임 종료 버튼을 눌러야 한다.|
 
 <br><br><br>
 
