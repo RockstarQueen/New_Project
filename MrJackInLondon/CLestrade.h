@@ -5,5 +5,6 @@ class CLestrade :
 {
 public:
 	CLestrade();
+	bool b_Moved = FALSE;
 };
 

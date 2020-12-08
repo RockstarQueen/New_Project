@@ -1210,8 +1210,8 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 4 * 58);
 	}
 
-	else if (i_Button_pressed_before == 108)
-		{
+	else if (108 < i_Button_pressed_before && i_Button_pressed_before < 113)
+{
 			if (tile[109].b_checkpoint_on == FALSE) {
 				m_png_Light_CheckPoint.Draw(dc, 10, 25);
 			}
@@ -1223,7 +1223,7 @@ void CMrJackInLondonInGame::OnPaint()
 			}
 			if (tile[112].b_checkpoint_on == FALSE) {
 				m_png_Light_CheckPoint.Draw(dc, 600, 500);
-	}
+			}
  }
 	
 	
@@ -1351,7 +1351,7 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 	msg.Format(_T("값: %d, %d"), watson.GetXPos(), watson.GetYPos());
 	MessageBox(msg);
 	*/
-	for (int i = 1; i < 113; i++) {
+	for (int i = 1; i < 109; i++) {
 		if (rect[i].PtInRect(point) && i_Button_pressed_before == 0 && tile[i].i_default_item>2) {
 			if (tile[i].i_default_item == 3&&homes.move_count>0) {
 				i_Button_pressed_before = i;
@@ -1413,19 +1413,25 @@ void CMrJackInLondonInGame::OnLButtonDown(UINT nFlags, CPoint point)
 		}
 		
 	}
-	/*
+	
 	for(int j = 109; j < 113; j++)
 	{ 
-		if (rect[j].PtInRect(point) && i_Button_pressed_before == 0 && tile[j].b_checkpoint_on == TRUE)
-		{ 
-			i_Button_pressed_before = j;
-		}
-		else (rect[j].PtInRect(point) && i_Button_pressed_before != 0 && tile[j].b_checkpoint_on == TRUE)
+		if (rect[j].PtInRect(point) && i_Button_pressed_before == 0 && tile[j].b_checkpoint_on == TRUE && lestrade.move_count < 3 && lestrade.b_Moved)
 		{
-
+			i_Button_pressed_before = j;
+			Invalidate();
+		}
+		else if (rect[j].PtInRect(point) && i_Button_pressed_before != 0 && tile[j].b_checkpoint_on == FALSE && lestrade.move_count < 3 && lestrade.b_Moved)
+		{
+			i_Button_pressed_after = j;
+			tile[i_Button_pressed_before].b_checkpoint_on = FALSE;
+			tile[i_Button_pressed_after].b_checkpoint_on = TRUE;
+			i_Button_pressed_after = 0;
+			i_Button_pressed_before = 0;
+			Invalidate();
 		}
 	}
-	*/
+	
 	
 	
 	/*
@@ -2065,6 +2071,7 @@ void CMrJackInLondonInGame::OnBnClickedButtonMoveend()
 	}
 	else if (lestrade.move_count < 3) {
 		AfxMessageBox(_T("옮길 검문소와 위치를 선택하세요."), MB_OK);
+		lestrade.b_Moved = TRUE;
 	}
 	else if (goodley.move_count < 3) {
 		//구들리 능력 구현 장소
