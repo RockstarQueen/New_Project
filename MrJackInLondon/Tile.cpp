@@ -25,6 +25,7 @@ void CTile::checkPos() {
 void CTile::swapItem(CTile& old_tile) {
 	if (this->i_default_item > 3 && old_tile.i_default_item > 3) {
 		this->i_default_item = this->i_default_item * 10 + old_tile.i_default_item;
+		old_tile.i_default_item = 0;
 	}
 	else if (this->i_default_item > 11) {
 		old_tile.i_default_item = this->i_default_item / 10;

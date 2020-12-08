@@ -679,7 +679,7 @@ void CMrJackInLondonInGame::OnPaint()
 	if ((i_Button_pressed_before == 73 || i_Button_pressed_before == 74 || i_Button_pressed_before == 90) && i_Button_pressed_after == 82) {
 		characterMove();
 	}
-	if ((i_Button_pressed_before == 87 || i_Button_pressed_before == 78) && i_Button_pressed_after == 86) {
+	if ((i_Button_pressed_before == 87 || i_Button_pressed_before == 78||i_Button_pressed_before==94) && i_Button_pressed_after == 86) {
 		characterMove();
 	}
 	//맨홀 94 제외
@@ -704,7 +704,7 @@ void CMrJackInLondonInGame::OnPaint()
 	if ((i_Button_pressed_before == 99) && i_Button_pressed_after == 100) {
 		characterMove();
 	}
-	if ((i_Button_pressed_before == 104||i_Button_pressed_after==94) && i_Button_pressed_after == 103) {
+	if ((i_Button_pressed_before == 104||i_Button_pressed_before==94) && i_Button_pressed_after == 103) {
 		characterMove();
 	}
 	// 맨홀 94 제외
@@ -939,7 +939,7 @@ void CMrJackInLondonInGame::OnPaint()
 		m_png_Light_Map.Draw(dc, 17 + 50 * 1, 81 + 6 * 58);
 		m_png_Light_Map.Draw(dc, 17 + 50 * 2, 51 + 5 * 58);
 		m_png_Light_Map.Draw(dc, 17 + 50 * 3, 81 + 5 * 58);
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 8; i++) {
 			if (manhole[i].b_manhole_on == TRUE) {
 				manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 			}
@@ -1001,7 +1001,7 @@ void CMrJackInLondonInGame::OnPaint()
 	
 	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 0 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 0 * 58);
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 8; i++) {
 		if (manhole[i].b_manhole_on == TRUE) {
 			manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 		}
@@ -1013,7 +1013,7 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_Map.Draw(dc, 17 + 50 * 4, 51 + 3 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 2 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 3 * 58);
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 8; i++) {
 		if (manhole[i].b_manhole_on == TRUE) {
 			manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 		}
@@ -1076,7 +1076,7 @@ void CMrJackInLondonInGame::OnPaint()
 	m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 5 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 4 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 5 * 58);
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 8; i++) {
 		if (manhole[i].b_manhole_on == TRUE) {
 			manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 		}
@@ -1085,7 +1085,7 @@ void CMrJackInLondonInGame::OnPaint()
 	else if (i_Button_pressed_before == 67) {
 		m_png_Light_Map.Draw(dc, 17 + 50 * 6, 51 + 7 * 58);
 		m_png_Light_Map.Draw(dc, 17 + 50 * 8, 51 + 7 * 58);
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 8; i++) {
 			if (manhole[i].b_manhole_on == TRUE) {
 				manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 			}
@@ -1168,6 +1168,11 @@ void CMrJackInLondonInGame::OnPaint()
 	else if (i_Button_pressed_before == 94) {
 	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 1 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 1 * 58);
+	for (int i = 0; i < 8; i++) {
+		if (manhole[i].b_manhole_on == TRUE) {
+			manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
+		}
+	}
 	}
 	else if (i_Button_pressed_before == 96) {
 	m_png_Light_Map.Draw(dc, 17 + 50 * 10, 51 + 2 * 58);
@@ -1200,7 +1205,7 @@ void CMrJackInLondonInGame::OnPaint()
 	else if (i_Button_pressed_before == 106) {
 	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 3 * 58);
 	m_png_Light_Map.Draw(dc, 17 + 50 * 12, 51 + 5 * 58);
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 8; i++) {
 		if (manhole[i].b_manhole_on == TRUE) {
 			manhole[i].p_tilepos.x % 2 == 0 ? m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Light_Map.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 		}
@@ -1246,7 +1251,7 @@ void CMrJackInLondonInGame::OnPaint()
 		lamp[4].p_tilepos.x%2 == 0 ? m_png_Light_4.Draw(dc, 21 + 50 * lamp[4].p_tilepos.x, 51 + lamp[4].p_tilepos.y * 58) : m_png_Light_4.Draw(dc, 21 + 50 * lamp[4].p_tilepos.x, 23 + lamp[4].p_tilepos.y * 58);
 	if (lamp[5].b_lamp_on == TRUE)
 		lamp[5].p_tilepos.x%2 == 0 ? m_png_Light_2.Draw(dc, 21 + 50 * lamp[5].p_tilepos.x, 51 + lamp[5].p_tilepos.y * 58) : m_png_Light_2.Draw(dc, 21 + 50 * lamp[5].p_tilepos.x, 23 + lamp[5].p_tilepos.y * 58);
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 8; i++) {
 		if (manhole[i].b_manhole_on == FALSE)
 			manhole[i].p_tilepos.x % 2 == 0 ? m_png_Manhole_Closed.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 51 + manhole[i].p_tilepos.y * 58) : m_png_Manhole_Closed.Draw(dc, 21 + 50 * manhole[i].p_tilepos.x, 23 + manhole[i].p_tilepos.y * 58);
 	}
