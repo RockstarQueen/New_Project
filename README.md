@@ -1,19 +1,20 @@
 # Mr.Jack in London
 
 ## 실행파일 다운받는 방법
-> - <https://github.com/RockstarQueen/New_Project> 로 들어가 다운로드 받은 다음,
-> - Relase 폴더로 들어가서 그림과 같은 MrJackInLondon.exe 실행파일을 실행시킵니다.<br><br>
-<img src = "/Mr.JackImage/exe2.jpg" alt = "exefile" width = "400px" height="200px"></img><br><br>
-> - 게임 실행 시 다음과 같은 초기 화면이 나타납니다.<br>
-> - Game Play 버튼을 누르면 게임에 접속하고, Game Rule 버튼을 누르면 Game 규칙에 대한 설명을 볼 수 있습니다.<br>
-<img src = "/Mr.JackImage/초기 화면.png" alt = "gamestart" width="250px" height="250px"></img><br>
-<br>
+> - <https://github.com/RockstarQueen/New_Project> 로 들어가 다운로드 받은 다음,<br>
+> - 서버 exe 파일을 실행시킵니다.<br>
+> - MrJackInLondon.sln 파일을 실행시킵니다. (Visual Studio프로그램이 컴퓨터에 설치되어 있어야 합니다.)<br>
+> - Client.h 파일에서 IP를 본인이 있는 곳의 IP로 바꿔줘야 합니다. <br><br>
+<img src = "/Mr.JackImage/ip.jpg" alt = "ip_img" width="100px" height="100px"></img><br><br>
+> - 본인 IP 아는 방법<br>
+     ①	윈도우 시작버튼에서 마우스 오른쪽 버튼을 눌러 명령 프롬프트를 실행합니다.<br>
+     ②	Ipconfig를 입력하고 enter를 치면 나오는 내용 중 IPv4 주소가 본인의 IP주소 입니다.<br>
 
 <hr/><br><br>
 
 ## 게임방법
 ### 1) 게임초기화면
-  > 게임에 접속하면, 유저들에게 각각 잭과 수사관의 역할 중 하나가 주어지고 그림과 같은 게임판의 초기 화면이 나타납니다.<br><Br>
+  > 게임에 접속하면, 유저들에게 각각 잭과 수사관의 역할 중 하나가 주어지고 그림과 같은 게임판의 초기 화면이 나타납니다.<br><br>
   > <img src = "/Mr.JackImage/게임초기판.jpg" alt = "gameinit" width="400px" height="270px"></img><br><br><br>
 
 ### 2) 게임 라운드, 턴 정보
