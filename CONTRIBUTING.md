@@ -23,6 +23,15 @@ ClientSocket에서 소켓 생성 후 Server에 접속 요청(2020/11/15)<br>
 서버와 클라이언트의 동작 방식을 시각자료로 제작(2020/11/19)<br>
 2인 통신 프로토타입(채팅) 제작 (2020/11/20)<br>
 multi room 구조(thread)로 2인 통신 제작 (2020/11/21)<br>
+주고 받을 데이터(gaemdata) 재정의 (2020/12/6)
+받은 gamedata를 파일로 저장<br>
+서버에서 gamedata를 확인하여 라운드에 따라 다르게 동작<br>
+mfc 안에서<br>
+ - 서버에서 받은 gamedata를 자체 사용 데이터에 넣기<br>
+ - 서버에 데이터를 보내기 전에 자체 데이터를 gamedata에 넣기<br>
+ - gamedata에서 유저 차례를 확인하여 내 차례가 아니면 데이터 recv<br>
+ - turn end 버튼 클릭 시 라운드, 턴 정보를 갱신하여 gamedata에 넣기<br>
+ - turn end 버튼 클릭 시 서버에 gamedata 전달하고 받기<br>
 <br>자세한 사항은 링크에서 
 https://github.com/hyunwoo9120/mrJackServer.git
 </p>
